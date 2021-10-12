@@ -1,0 +1,22 @@
+<RCC>
+  <qresource prefix="Icon">
+    <file>Recursos/Registrar.png</file>
+    <file>Recursos/Modificar.png</file>
+    <file>Recursos/Consultar.png</file>
+    <file>Recursos/Eliminar.png</file>
+    <file>Recursos/Icon Home.png</file>
+    <file>Recursos/IDM.png</file>
+    <file>Recursos/lajalle.png</file>
+    <file>Recursos/Mantenimiento.png</file>
+    <file>Recursos/Pretamos.png</file>
+    <file>Recursos/Profile.png</file>
+    <file>Recursos/Reparaciones.png</file>
+    <file>Recursos/Search.png</file>
+    <file>Recursos/user.png</file>
+    <file>Recursos/Icon Home.png</file>
+    <file>Recursos/ajuste.png</file>
+    <file>Recursos/Asignacion.png</file>
+    <file>Recursos/Ayuda.png</file>
+    <file>Recursos/Consulta.png</file>
+  </qresource>
+</RCC>
