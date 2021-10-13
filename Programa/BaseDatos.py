@@ -168,20 +168,20 @@ class metodos:
     def LoadDataTabla1(self):
         data = Instrumento.ConsultarTablaInstrumento(self)
         fila = 0
-        self.tableWidget.setRowCount(len(data))
+        self.TInstrumento.setRowCount(len(data))
         # self.tableWidget.setColumnCount(9)
         for num in data:
             fecha = "{}".format(num[6])
             valor = "$ {}".format(num[8])
-            self.tableWidget.setItem(fila, 0, QTableWidgetItem(num[0]))
-            self.tableWidget.setItem(fila, 1, QTableWidgetItem(num[1]))
-            self.tableWidget.setItem(fila, 2, QTableWidgetItem(num[2]))
-            self.tableWidget.setItem(fila, 3, QTableWidgetItem(num[3]))
-            self.tableWidget.setItem(fila, 4, QTableWidgetItem(num[4]))
-            self.tableWidget.setItem(fila, 5, QTableWidgetItem(num[5]))
-            self.tableWidget.setItem(fila, 6, QTableWidgetItem(fecha))
-            self.tableWidget.setItem(fila, 7, QTableWidgetItem(num[7]))
-            self.tableWidget.setItem(fila, 8, QTableWidgetItem(valor))
+            self.TInstrumento.setItem(fila, 0, QTableWidgetItem(num[0]))
+            self.TInstrumento.setItem(fila, 1, QTableWidgetItem(num[1]))
+            self.TInstrumento.setItem(fila, 2, QTableWidgetItem(num[2]))
+            self.TInstrumento.setItem(fila, 3, QTableWidgetItem(num[3]))
+            self.TInstrumento.setItem(fila, 4, QTableWidgetItem(num[4]))
+            self.TInstrumento.setItem(fila, 5, QTableWidgetItem(num[5]))
+            self.TInstrumento.setItem(fila, 6, QTableWidgetItem(fecha))
+            self.TInstrumento.setItem(fila, 7, QTableWidgetItem(num[7]))
+            self.TInstrumento.setItem(fila, 8, QTableWidgetItem(valor))
             fila += 1
 
     def ConsultaDataTabla1(self,val,aux):
@@ -192,37 +192,37 @@ class metodos:
         if aux in "TIPO":
             data = Instrumento.ConsultaTIpo(val)
         fila = 0
-        self.tableWidget_2.setRowCount(len(data))
+        self.TConsultaInstrumento.setRowCount(len(data))
         # self.tableWidget.setColumnCount(9)
         for num in data:
             fecha = "{}".format(num[6])
             valor = "$ {}".format(num[8])
-            self.tableWidget_2.setItem(fila, 0, QTableWidgetItem(num[0]))
-            self.tableWidget_2.setItem(fila, 1, QTableWidgetItem(num[1]))
-            self.tableWidget_2.setItem(fila, 2, QTableWidgetItem(num[2]))
-            self.tableWidget_2.setItem(fila, 3, QTableWidgetItem(num[3]))
-            self.tableWidget_2.setItem(fila, 4, QTableWidgetItem(num[4]))
-            self.tableWidget_2.setItem(fila, 5, QTableWidgetItem(num[5]))
-            self.tableWidget_2.setItem(fila, 6, QTableWidgetItem(fecha))
-            self.tableWidget_2.setItem(fila, 7, QTableWidgetItem(num[7]))
-            self.tableWidget_2.setItem(fila, 8, QTableWidgetItem(valor))
+            self.TConsultaInstrumento.setItem(fila, 0, QTableWidgetItem(num[0]))
+            self.TConsultaInstrumento.setItem(fila, 1, QTableWidgetItem(num[1]))
+            self.TConsultaInstrumento.setItem(fila, 2, QTableWidgetItem(num[2]))
+            self.TConsultaInstrumento.setItem(fila, 3, QTableWidgetItem(num[3]))
+            self.TConsultaInstrumento.setItem(fila, 4, QTableWidgetItem(num[4]))
+            self.TConsultaInstrumento.setItem(fila, 5, QTableWidgetItem(num[5]))
+            self.TConsultaInstrumento.setItem(fila, 6, QTableWidgetItem(fecha))
+            self.TConsultaInstrumento.setItem(fila, 7, QTableWidgetItem(num[7]))
+            self.TConsultaInstrumento.setItem(fila, 8, QTableWidgetItem(valor))
             fila += 1
     def LoadDataTabla2(self):
         data = Maquina.ConsultarTablaMaquina(self)
         fila = 0
-        self.tableWidget_3.setRowCount(len(data))
+        self.TMaquina.setRowCount(len(data))
         # self.tableWidget.setColumnCount(9)
         for num in data:
             fecha = "{}".format(num[4])
             valor = "$ {}".format(num[6])
-            self.tableWidget_3.setItem(fila, 0, QTableWidgetItem(num[0]))
-            self.tableWidget_3.setItem(fila, 1, QTableWidgetItem(num[1]))
-            self.tableWidget_3.setItem(fila, 2, QTableWidgetItem(num[2]))
-            self.tableWidget_3.setItem(fila, 3, QTableWidgetItem(num[3]))
-            self.tableWidget_3.setItem(fila, 4, QTableWidgetItem(fecha))
-            self.tableWidget_3.setItem(fila, 5, QTableWidgetItem(num[5]))
-            self.tableWidget_3.setItem(fila, 6, QTableWidgetItem(valor))
-            self.tableWidget_3.setItem(fila, 7, QTableWidgetItem(num[7]))
+            self.TMaquina.setItem(fila, 0, QTableWidgetItem(num[0]))
+            self.TMaquina.setItem(fila, 1, QTableWidgetItem(num[1]))
+            self.TMaquina.setItem(fila, 2, QTableWidgetItem(num[2]))
+            self.TMaquina.setItem(fila, 3, QTableWidgetItem(num[3]))
+            self.TMaquina.setItem(fila, 4, QTableWidgetItem(fecha))
+            self.TMaquina.setItem(fila, 5, QTableWidgetItem(num[5]))
+            self.TMaquina.setItem(fila, 6, QTableWidgetItem(valor))
+            self.TMaquina.setItem(fila, 7, QTableWidgetItem(num[7]))
             fila += 1
     def ConsultaDataTabla2(self,val,aux):
         if aux in "ID":
@@ -233,36 +233,36 @@ class metodos:
             data = Maquina.ConsultaTipo(val)
         print(data)
         fila = 0
-        self.tableWidget_4.setRowCount(len(data))
+        self.TConsultaMaquina.setRowCount(len(data))
         # self.tableWidget.setColumnCount(9)
         for num in data:
             fecha = "{}".format(num[4])
             valor = "$ {}".format(num[6])
-            self.tableWidget_4.setItem(fila, 0, QTableWidgetItem(num[0]))
-            self.tableWidget_4.setItem(fila, 1, QTableWidgetItem(num[1]))
-            self.tableWidget_4.setItem(fila, 2, QTableWidgetItem(num[2]))
-            self.tableWidget_4.setItem(fila, 3, QTableWidgetItem(num[3]))
-            self.tableWidget_4.setItem(fila, 4, QTableWidgetItem(fecha))
-            self.tableWidget_4.setItem(fila, 5, QTableWidgetItem(num[5]))
-            self.tableWidget_4.setItem(fila, 6, QTableWidgetItem(valor))
-            self.tableWidget_4.setItem(fila, 7, QTableWidgetItem(num[7]))
+            self.TConsultaMaquina.setItem(fila, 0, QTableWidgetItem(num[0]))
+            self.TConsultaMaquina.setItem(fila, 1, QTableWidgetItem(num[1]))
+            self.TConsultaMaquina.setItem(fila, 2, QTableWidgetItem(num[2]))
+            self.TConsultaMaquina.setItem(fila, 3, QTableWidgetItem(num[3]))
+            self.TConsultaMaquina.setItem(fila, 4, QTableWidgetItem(fecha))
+            self.TConsultaMaquina.setItem(fila, 5, QTableWidgetItem(num[5]))
+            self.TConsultaMaquina.setItem(fila, 6, QTableWidgetItem(valor))
+            self.TConsultaMaquina.setItem(fila, 7, QTableWidgetItem(num[7]))
             fila += 1
     def LoadDataTabla3(self):
         data = Reparacion.ConsultarTablaReparacion(self)
         fila = 0
-        self.tableWidget_3.setRowCount(len(data))
+        self.TInstrumentoReparacion.setRowCount(len(data))
         # self.tableWidget.setColumnCount(9)
         for num in data:
             aux = "{}".format(num[0])
             fecha1 = "{}".format(num[1])
             fecha2 = "$ {}".format(num[2])
-            self.tableWidget_3.setItem(fila, 0, QTableWidgetItem(aux))
-            self.tableWidget_3.setItem(fila, 1, QTableWidgetItem(fecha1))
-            self.tableWidget_3.setItem(fila, 2, QTableWidgetItem(fecha2))
-            self.tableWidget_3.setItem(fila, 3, QTableWidgetItem(num[3]))
-            self.tableWidget_3.setItem(fila, 4, QTableWidgetItem(num[4]))
-            self.tableWidget_3.setItem(fila, 5, QTableWidgetItem(num[5]))
-            self.tableWidget_3.setItem(fila, 6, QTableWidgetItem(num[6]))
+            self.TInstrumentoReparacion.setItem(fila, 0, QTableWidgetItem(aux))
+            self.TInstrumentoReparacion.setItem(fila, 1, QTableWidgetItem(fecha1))
+            self.TInstrumentoReparacion.setItem(fila, 2, QTableWidgetItem(fecha2))
+            self.TInstrumentoReparacion.setItem(fila, 3, QTableWidgetItem(num[3]))
+            self.TInstrumentoReparacion.setItem(fila, 4, QTableWidgetItem(num[4]))
+            self.TInstrumentoReparacion.setItem(fila, 5, QTableWidgetItem(num[5]))
+            self.TInstrumentoReparacion.setItem(fila, 6, QTableWidgetItem(num[6]))
             fila += 1
     def ConsultaDataTabla3(self,val,aux):
         if aux in "ID":
@@ -272,19 +272,19 @@ class metodos:
         if aux in "ID MAQUINA":
             data = Reparacion.ConsultaIDMaquina(val)
         fila = 0
-        self.tableWidget_4.setRowCount(len(data))
+        self.TConsultaInstrumentoReparacion.setRowCount(len(data))
         # self.tableWidget.setColumnCount(9)
         for num in data:
             aux = "{}".format(num[0])
             fecha1 = "{}".format(num[1])
             fecha2 = "$ {}".format(num[2])
-            self.tableWidget_4.setItem(fila, 0, QTableWidgetItem(aux))
-            self.tableWidget_4.setItem(fila, 1, QTableWidgetItem(fecha1))
-            self.tableWidget_4.setItem(fila, 2, QTableWidgetItem(fecha2))
-            self.tableWidget_4.setItem(fila, 3, QTableWidgetItem(num[3]))
-            self.tableWidget_4.setItem(fila, 4, QTableWidgetItem(num[4]))
-            self.tableWidget_4.setItem(fila, 5, QTableWidgetItem(num[5]))
-            self.tableWidget_4.setItem(fila, 6, QTableWidgetItem(num[6]))
+            self.TConsultaInstrumentoReparacion.setItem(fila, 0, QTableWidgetItem(aux))
+            self.TConsultaInstrumentoReparacion.setItem(fila, 1, QTableWidgetItem(fecha1))
+            self.TConsultaInstrumentoReparacion.setItem(fila, 2, QTableWidgetItem(fecha2))
+            self.TConsultaInstrumentoReparacion.setItem(fila, 3, QTableWidgetItem(num[3]))
+            self.TConsultaInstrumentoReparacion.setItem(fila, 4, QTableWidgetItem(num[4]))
+            self.TConsultaInstrumentoReparacion.setItem(fila, 5, QTableWidgetItem(num[5]))
+            self.TConsultaInstrumentoReparacion.setItem(fila, 6, QTableWidgetItem(num[6]))
             fila += 1
 
 

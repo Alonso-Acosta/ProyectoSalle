@@ -3,9 +3,11 @@ from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
 from Login import Ui_Form1
 from InterfazPrincipal import Ui_MainWindow
 from Reparacion import  Ui_Form2
+
 from Regitro import Ui_Form
 import sys, BaseDatos
 DB =BaseDatos
+
 
 class ReparacionWindow(QMainWindow,Ui_Form2):
     def __init__(self):
@@ -243,47 +245,67 @@ class MainWindow2(QMainWindow, Ui_MainWindow):
         self.pushButton_2.clicked.connect(self.MostrarRegistro)
         self.pushButton_3.clicked.connect(self.MostrarReparacion)
         self.ReparacionWindow = ReparacionWindow()
-
+        self.pushButton.clicked.connect(self.Inicio)
+        self.Wregistrar.setGeometry(0, 0, 1250,0)
+        self.Wreparacion.setGeometry(0, 0, 1250, 0)
         "Inicializacion de registro"
         DB.metodos.LoadDataTabla1(self)
         DB.metodos.LoadDataTabla2(self)
-        self.pushButton_11.clicked.connect(self.Guardar1)
-        self.pushButton_10.clicked.connect(self.Modificar1)
-        self.pushButton_15.clicked.connect(self.Buscar1)
-        self.pushButton_14.clicked.connect(self.Eliminar1)
+        self.pushButton_19.clicked.connect(self.Guardar1)
+        self.pushButton_18.clicked.connect(self.Modificar1)
+        self.pushButton_27.clicked.connect(self.Buscar1)
+        self.pushButton_26.clicked.connect(self.Eliminar1)
 
-        self.pushButton_16.clicked.connect(self.Guardar2)
-        self.pushButton_17.clicked.connect(self.Modificar2)
-        self.pushButton_23.clicked.connect(self.Buscar2)
-        self.pushButton_22.clicked.connect(self.Eliminar2)
+        self.pushButton_28.clicked.connect(self.Guardar2)
+        self.pushButton_29.clicked.connect(self.Modificar2)
+        self.pushButton_33.clicked.connect(self.Buscar2)
+        self.pushButton_32.clicked.connect(self.Eliminar2)
 
-        self.comboBox.addItem("BUENO")
-        self.comboBox.addItem("REGULAR")
-        self.comboBox.addItem("MALO")
-        self.comboBox.addItem("PARA REPARACION")
+        self.comboBoxEstadoInstrumento.addItem("BUENO")
+        self.comboBoxEstadoInstrumento.addItem("REGULAR")
+        self.comboBoxEstadoInstrumento.addItem("MALO")
+        self.comboBoxEstadoInstrumento.addItem("PARA REPARACION")
 
-        self.comboBox_3.addItem("BUENO")
-        self.comboBox_3.addItem("REGULAR")
-        self.comboBox_3.addItem("MALO")
-        self.comboBox_3.addItem("PARA REPARACION")
+        self.comboBoxEstadoMaquina.addItem("BUENO")
+        self.comboBoxEstadoMaquina.addItem("REGULAR")
+        self.comboBoxEstadoMaquina.addItem("MALO")
+        self.comboBoxEstadoMaquina.addItem("PARA REPARACION")
 
-        self.comboBox_2.addItem("ID")
-        self.comboBox_2.addItem("NOMBRE")
-        self.comboBox_2.addItem("TIPO")
+        self.comboBoxBuscarInstrumento.addItem("ID")
+        self.comboBoxBuscarInstrumento.addItem("NOMBRE")
+        self.comboBoxBuscarInstrumento.addItem("TIPO")
 
-        self.comboBox_4.addItem("ID")
-        self.comboBox_4.addItem("NOMBRE")
-        self.comboBox_4.addItem("TIPO")
+        self.comboBoxBuscarMaquina.addItem("ID")
+        self.comboBoxBuscarMaquina.addItem("NOMBRE")
+        self.comboBoxBuscarMaquina.addItem("TIPO")
+        "Inicializacion de reparacion"
+        DB.metodos.LoadDataTabla3(self)
+        self.pushButton_36.clicked.connect(self.Guardar)
+        self.pushButton_37.clicked.connect(self.Modificar)
+        self.pushButton_42.clicked.connect(self.Buscar)
+        self.pushButton_41.clicked.connect(self.Eliminar)
+        self.pushButton_35.clicked.connect(self.ConsultaIDInstrU)
+        self.pushButton_34.clicked.connect(self.ConsultaIDLaboratorista)
+        self.comboBoxBuscarInstrumentoReparacion.addItem("ID")
+        self.comboBoxBuscarInstrumentoReparacion.addItem("ID LABORATORISTA")
+        self.comboBoxBuscarInstrumentoReparacion.addItem("ID INSTRUMENTO")
+
+        "Funcion Inicio"
+    def Inicio(self):
+        newHeight = 0
+        self.Wregistrar.setGeometry(250, 0, 1250, newHeight)
+        self.Wreparacion.setGeometry(250, 0, 1250, newHeight)
 
         "Funciones Registro"
     def MostrarRegistro(self):
-        "self.RegistroWindow.show()"
         height = self.Wregistrar.height()
         if height == 0:
             newHeight = 750
+            auxHeight =0
         else:
             newHeight = 0
-        self.Wregistrar.setGeometry(250, 0, 1250, newHeight)
+        self.Wreparacion.setGeometry(0, 0, 1250, auxHeight)
+        self.Wregistrar.setGeometry(0, 0, 1250, newHeight)
 
     def Actualizar(self):
         DB.metodos.LoadDataTabla1(self)
@@ -391,26 +413,111 @@ class MainWindow2(QMainWindow, Ui_MainWindow):
             DB.Maquina.Eliminar(val)
             DB.metodos.LoadDataTabla2(self)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    "Funciones de Reparacion:"
     def MostrarReparacion(self):
-        self.ReparacionWindow.show()
+        height = self.Wreparacion.height()
+        auxHeight = self.Wregistrar.height()
+        if height == 0:
+            newHeight = 750
+            if auxHeight != 0:
+                auxHeight = 0
+                self.Wregistrar.setGeometry(0, 0, 1250, auxHeight)
+        else:
+            newHeight = 0
+        self.Wreparacion.setGeometry(0, 0, 1250, newHeight)
+
+
+    def ConsultaIDInstrU(self):
+        Consulta = self.lineEdit_6.text()
+        val = (Consulta,)
+        sal=DB.Instrumento.ConsultaID(val)
+        print(sal)
+        if Consulta in sal[0]:
+            dialogo = QMessageBox(self)
+            dialogo.setWindowTitle("Existe")
+            dialogo.setText("Instrumento Existente")
+            dialogo.exec_()
+        else:
+            dialogo = QMessageBox(self)
+            dialogo.setWindowTitle("Inexistente")
+            dialogo.setText("Instrumento Inexistente")
+            dialogo.exec_()
+
+    def ConsultaIDLaboratorista(self):
+        Consulta = self.lineEdit_3.text()
+        val = (Consulta,)
+        sal=DB.metodos.ConsultaIDLaboratorista(val)
+
+        print(sal)
+        if Consulta in sal[0]:
+            dialogo = QMessageBox(self)
+            dialogo.setWindowTitle("Existe")
+            dialogo.setText("Laboratorista Existente")
+            dialogo.exec()
+        else:
+            dialogo = QMessageBox(self)
+            dialogo.setWindowTitle("Inexistente")
+            dialogo.setText("Laboratorista Inexistente")
+            dialogo.exec()
+
+    def Guardar(self):
+        dialogo = QMessageBox.question(self,"Guardar","Seguro Desea Guardar?")
+        if dialogo == QMessageBox.Yes:
+            ID = self.lineEdit.text()
+            FechaIngreso = self.dateEdit.text()
+            FechaRetorno = self.dateEdit_3.text()
+            Descripcion = "{}".format(self.textEdit.toPlainText())
+            IDLaboratorista = self.lineEdit_3.text()
+            IDInstrumento = self.lineEdit_6.text()
+            print(Descripcion)
+            val = (ID, FechaIngreso, FechaRetorno, Descripcion, IDLaboratorista, " ", IDInstrumento)
+            DB.Reparacion.agregar(val)
+
+
+
+    def Modificar(self):
+        dialogo = QMessageBox.question(self, "Modificar", "Seguro Desea Modificar?")
+        if dialogo == QMessageBox.Yes:
+            ID = self.lineEdit.text()
+            FechaIngreso = self.dateEdit.text()
+            FechaRetorno = self.dateEdit_3.text()
+            Descripcion = self.textEdit.toPlainText()
+            IDLaboratorista = self.lineEdit_3.text()
+            IDInstrumento = self.lineEdit_6.text()
+            val = (FechaIngreso, FechaRetorno, Descripcion, IDLaboratorista, " ", IDInstrumento, ID)
+            DB.Reparacion.Actualizar(val)
+
+
+    def Buscar(self):
+        Consulta = self.lineEdit_5.text()
+        aux = self.comboBox_2.currentText()
+        val=(Consulta,)
+        print(Consulta)
+        DB.metodos.ConsultaDataTabla3(self,val,aux)
+
+    def Eliminar(self):
+        dialogo = QMessageBox.question(self, "Eliminar", "Seguro Desea Eliminar?")
+        if dialogo == QMessageBox.Yes:
+            Consulta = self.lineEdit_5.text()
+            val = (Consulta,)
+            DB.Reparacion.Eliminar(val)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 class MainWindow(QMainWindow, Ui_Form1):
     def __init__(self):

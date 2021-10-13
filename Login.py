@@ -113,7 +113,7 @@ class Ui_Form1(object):
 "background-color: rgb(0, 48, 87);\n"
 "}")
 
-        self.retranslateUi(Form)git 
+        self.retranslateUi(Form)
 
         QMetaObject.connectSlotsByName(Form)
     # setupUi
