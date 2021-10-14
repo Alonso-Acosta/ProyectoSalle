@@ -15,6 +15,7 @@ sqlinstertLaboratorista = "INSERT INTO t_usuarios (id_laboratorista,cedula,nombr
 sqlinstertInstrumento = "INSERT INTO t_instrumento (id_instrumento,nombre,tipo_instr,tipo_practica,estado_instr,cod_seguridad,fecha_registro,fabricante,valor,id_banco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
 sqlinstertMaquina = "INSERT INTO t_maquina (id_maquina,nombre,tipo_maq,tipo_practica,fecha_registro,fabricante,valor,estado_maq) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)"
 sqlinstertReparacion = "INSERT INTO t_reparacion (id_reparacion,fecha_ingreso,fecha_retorno,descripcion,id_laboratorista,id_maquina,id_instrumento) VALUES (%s,%s,%s,%s,%s,%s,%s)"
+sqlinstertProveedores = "INSERT INTO t_proveedores (id_proveedor,FechaDiligenciamiento,RazonSocial,Nit,Telefonos,Email,Direccion,Fax,Ciudad,ContactoVentas,ContactoSoporte,PDFProveedor) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
 
 # CONSULTAR DATOS EN BASE DE DATOS
 sqlselectUsuarios = "SELECT * FROM t_usuarios WHERE user = %s"
@@ -35,15 +36,28 @@ sqlselectReparacionID = "SELECT * FROM t_reparacion WHERE id_reparacion = %s"
 sqlselectReparacionIDInstru = "SELECT * FROM t_reparacion WHERE id_instrumento = %s"
 sqlselectReparacionIDMaq = "SELECT * FROM t_reparacion WHERE id_maquina = %s"
 
+sqlselectProveedores = "SELECT * FROM t_proveedores"
+sqlselectProveedoresID = "SELECT * FROM t_proveedores WHERE id_proveedor = %s"
+sqlselectProveedoresRazonSocial = "SELECT * FROM t_proveedores WHERE RazonSocial = %s"
+sqlselectProveedoresNit = "SELECT * FROM t_proveedores WHERE Nit = %s"
+
+
+
 # MODIFICAR DATOS EN BASE DE DATOS
 sqlupdateInstrumento = "UPDATE t_instrumento SET nombre = %s,tipo_instr = %s,tipo_practica = %s,estado_instr = %s,cod_seguridad = %s,fecha_registro = %s,fabricante = %s,valor = %s,id_banco = %s WHERE id_instrumento = %s"
 sqlupdateMaquina = "UPDATE t_maquina SET nombre = %s, tipo_maq = %s,tipo_practica = %s, fecha_registro = %s, fabricante = %s, valor = %s, estado_maq = %s WHERE id_maquina = %s"
 sqlupdateReparacion = "UPDATE t_reparacion SET fecha_ingreso = %s, fecha_retorno = %s,descripcion = %s, id_laboratorista = %s,id_maquina = %s,id_instumento = %s WHERE id_reparacion = %s"
+sqlupdateProveedores = "UPDATE t_proveedores SET FechaDiligenciamiento = %s, RazonSocial = %s,Nit = %s, Telefonos = %s,Email = %s,Direccion = %s,Fax = %s,Ciudad = %s,ContactoVentas = %s,ContactoSoporte = %s,PDFProveedor = %s WHERE id_proveedor = %s"
+
+
+
 
 # ELIMINAR DATOS EN BASE DE DATOS
 sqlDeleteInstrumento = "DELETE FROM t_instrumento WHERE id_instrumento = %s"
 sqlDeleteMaquina = "DELETE FROM t_maquina WHERE id_maquina = %s"
 sqlDeleteReparacion = "DELETE FROM t_reparacion WHERE id_reparacion = %s"
+sqlDeleteProveedor = "DELETE FROM t_reparacion WHERE id_proveedor = %s"
+
 
 #val = ("45161004","126304","Miguel","Rojas","917508","321225461","Sincelejo","2000/10/15","calle walabi 4 2 sydni",)
 #mycursor.execute(sqlinstertLaboratorista,val)
@@ -153,6 +167,41 @@ class Reparacion:
     def Eliminar(val):
         mycursor.execute(sqlDeleteReparacion, val)
         mydb.commit()
+
+class Proveedores:
+    def agregar(val):
+        mycursor.execute(sqlinstertProveedores,val)
+        mydb.commit()
+
+    def ConsultaID(adr):
+        mycursor.execute(sqlselectProveedoresID, adr)
+        myresult = mycursor.fetchall()
+        return myresult
+
+    def ConsultaNit(adr):
+        mycursor.execute(sqlselectProveedoresNit, adr)
+        myresult = mycursor.fetchall()
+        return myresult
+
+    def ConsultaRazonSocial(adr):
+        mycursor.execute(sqlselectProveedoresRazonSocial, adr)
+        myresult = mycursor.fetchall()
+        return myresult
+
+    def ConsultarTablaProvedor(self):
+        mycursor.execute(sqlselectProveedores)
+        myresult = mycursor.fetchall()
+        return myresult
+
+    def Actualizar(val):
+        mycursor.execute(sqlupdateProveedores, val)
+        mydb.commit()
+
+    def Eliminar(val):
+        mycursor.execute(sqlDeleteProveedor, val)
+        mydb.commit()
+
+
 
 
 class metodos:
@@ -266,11 +315,17 @@ class metodos:
             fila += 1
     def ConsultaDataTabla3(self,val,aux):
         if aux in "ID":
-            data = Reparacion.ConsultaID(val)
+            aux1 = Reparacion.ConsultaID(val)
         if aux in "ID LABORATORISTA":
-            data = Reparacion.ConsultaIDInstrumento(val)
+            aux2 = Reparacion.ConsultaIDInstrumento(val)
         if aux in "ID MAQUINA":
-            data = Reparacion.ConsultaIDMaquina(val)
+            aux3 = Reparacion.ConsultaIDMaquina(val)
+            if aux1 != 0:
+                data = aux1
+            elif aux2 !=0:
+                data = aux2
+            elif aux3 != 0:
+                data = aux
         fila = 0
         self.TConsultaInstrumentoReparacion.setRowCount(len(data))
         # self.tableWidget.setColumnCount(9)
@@ -286,7 +341,6 @@ class metodos:
             self.TConsultaInstrumentoReparacion.setItem(fila, 5, QTableWidgetItem(num[5]))
             self.TConsultaInstrumentoReparacion.setItem(fila, 6, QTableWidgetItem(num[6]))
             fila += 1
-
 
 class IniciarSesion:
     def Verificar(usua, contra):
