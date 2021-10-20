@@ -1,21 +1,18 @@
-import ast
+import os
 
-import PyQt5.QtCore
-import PySide6.QtCore
-from PySide6.QtCore import QDate
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
+from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QFileDialog
 from Login import Ui_Form1
 from InterfazPrincipal import Ui_MainWindow
 from Reparacion import  Ui_Form2
 from DateTime import DateTime
+import shutil, subprocess
 
-from Regitro import Ui_Form
 import sys, BaseDatos
 DB =BaseDatos
 day =DateTime().day()
 month = DateTime().Month()
 year = DateTime().year()
-
+"""
 class ReparacionWindow(QMainWindow,Ui_Form2):
     def __init__(self):
         super().__init__()
@@ -109,7 +106,7 @@ class ReparacionWindow(QMainWindow,Ui_Form2):
             Consulta = self.lineEdit_5.text()
             val = (Consulta,)
             DB.Reparacion.Eliminar(val)
-
+"""
 """
 class RegistroWindow(QMainWindow,Ui_Form):
     def __init__(self):
@@ -252,7 +249,6 @@ class MainWindow2(QMainWindow, Ui_MainWindow):
         self.pushButton_2.clicked.connect(self.MostrarRegistro)
         self.pushButton_3.clicked.connect(self.MostrarReparacion)
         self.pushButton_5.clicked.connect(self.MostrarProveedore)
-        self.ReparacionWindow = ReparacionWindow()
         self.pushButton.clicked.connect(self.Inicio)
         self.Wregistrar.setGeometry(0, 0, 1250,0)
         self.Wreparacion.setGeometry(0, 0, 1250, 0)
@@ -300,6 +296,50 @@ class MainWindow2(QMainWindow, Ui_MainWindow):
         self.comboBoxBuscarInstrumentoReparacion.addItem("ID LABORATORISTA")
         self.comboBoxBuscarInstrumentoReparacion.addItem("ID INSTRUMENTO")
 
+        "Inicializacion de Proveedores"
+        DB.metodos.LoadDataTablaProveedores(self)
+        self.pushButton_62.clicked.connect(self.GuardarP)
+        self.pushButton_61.clicked.connect(self.ModificarP)
+        self.pushButton_66.clicked.connect(self.BuscarP)
+        self.pushButton_65.clicked.connect(self.EliminarP)
+        self.pushButton_23.clicked.connect(self.SeleccionarArchivo)
+        self.comboBoxBProveedores.addItem("ID")
+        self.comboBoxBProveedores.addItem("NOMBRE")
+        self.comboBoxBProveedores.addItem("NIT")
+        "Medotodos de las Tablas"
+        self.TProveedores.selectionModel().selectionChanged.connect(self.seleccionar)
+
+    def seleccionar(self, seleccion):
+        if seleccion.indexes():
+            self.fila = seleccion.indexes()[0].row()
+            self.columna = seleccion.indexes()[0].column()
+            ID =  self.TProveedores.item(self.fila,0).text()
+            FechaDi =  self.TProveedores.item(self.fila,1).text()
+            Nombre =  self.TProveedores.item(self.fila,2).text()
+            NIT =  self.TProveedores.item(self.fila,3).text()
+            Telefono =  self.TProveedores.item(self.fila,4).text()
+            Email =  self.TProveedores.item(self.fila,5).text()
+            Direccion =  self.TProveedores.item(self.fila,6).text()
+            Fax =  self.TProveedores.item(self.fila,7).text()
+            Ciudad =  self.TProveedores.item(self.fila,8).text()
+            ContactoVentas =  self.TProveedores.item(self.fila,9).text()
+            ContactoSoporte =  self.TProveedores.item(self.fila,10).text()
+            PDFProveedor = self.TProveedores.item(self.fila,11).text()
+            self.lineEdit_67.setText(ID)
+            self.lineEdit_60.setText(Nombre)
+            self.lineEdit_68.setText(NIT)
+            self.lineEdit_61.setText(Telefono)
+            self.lineEdit_57.setText(Email)
+            self.lineEdit_63.setText(Direccion)
+            self.lineEdit_62.setText(Fax)
+            self.lineEdit_58.setText(Ciudad)
+            self.lineEdit_59.setText(ContactoVentas)
+            self.lineEdit_64.setText(ContactoSoporte)
+            self.lineEdit_65.setText(PDFProveedor)
+            if self.columna == 11:
+                dialogo2 = QMessageBox.question(self, "PDF", "Desae abrir el PDF de este proveedor?")
+                if dialogo2 == QMessageBox.Yes:
+                    subprocess.Popen([rf"C:\Users\Orale\Documents\ProyectoT\Memoria\PDFProveedores\{PDFProveedor}"], shell=True)
         "Funcion Inicio"
     def Inicio(self):
         newHeight = 0
@@ -324,10 +364,6 @@ class MainWindow2(QMainWindow, Ui_MainWindow):
         else:
             newHeight = 0
         self.Wregistrar.setGeometry(0, 0, 1250, newHeight)
-    def Actualizar(self):
-        DB.metodos.LoadDataTabla1(self)
-    def Actualizar2(self):
-        DB.metodos.LoadDataTabla2(self)
     def Guardar1(self):
         dialogo = QMessageBox.question(self, "Guardar", "Seguro Desea Guardar?")
         if dialogo == QMessageBox.Yes:
@@ -343,7 +379,6 @@ class MainWindow2(QMainWindow, Ui_MainWindow):
             val = (ID, Nombre, Tipo_instr, Tipo_Pract, Estado, Codigo, Fecha_Re, Fabricante, Valor, "0")
             DB.Instrumento.agregar(val)
             DB.metodos.LoadDataTabla1(self)
-
     def Guardar2(self):
         dialogo = QMessageBox.question(self, "Guardar", "Seguro Desea Guardar?")
         if dialogo == QMessageBox.Yes:
@@ -472,7 +507,6 @@ class MainWindow2(QMainWindow, Ui_MainWindow):
             val = (ID, FechaIngreso, FechaRetorno, Descripcion, IDLaboratorista, " ", IDInstrumento)
             DB.Reparacion.agregar(val)
             DB.metodos.LoadDataTabla3(self)
-
     def Modificar(self):
         dialogo = QMessageBox.question(self, "Modificar", "Seguro Desea Modificar?")
         if dialogo == QMessageBox.Yes:
@@ -485,13 +519,11 @@ class MainWindow2(QMainWindow, Ui_MainWindow):
             val = (FechaIngreso, FechaRetorno, Descripcion, IDLaboratorista, " ", IDInstrumento, ID)
             DB.Reparacion.Actualizar(val)
             DB.metodos.LoadDataTabla3(self)
-
     def Buscar(self):
         Consulta = self.lineEdit_34.text()
         aux = self.comboBoxBuscarInstrumentoReparacion.currentText()
         val=(Consulta,)
         DB.metodos.ConsultaDataTabla3(self,val,aux)
-
     def Eliminar(self):
         dialogo = QMessageBox.question(self, "Eliminar", "Seguro Desea Eliminar?")
         if dialogo == QMessageBox.Yes:
@@ -517,19 +549,77 @@ class MainWindow2(QMainWindow, Ui_MainWindow):
             newHeight = 0
         self.Wproveedores.setGeometry(0, 0, 1250, newHeight)
 
+    def GuardarP(self):
+        dialogo = QMessageBox.question(self, "Guardar", "Seguro Desea Guardar?")
+        if dialogo == QMessageBox.Yes:
+            ID = self.lineEdit_67.text()
+            FechaDi = self.FDiligenciamiento_2.text()
+            Nombre = self.lineEdit_60.text()
+            NIT = self.lineEdit_68.text()
+            Telefono = self.lineEdit_61.text()
+            Email = self.lineEdit_57.text()
+            Direccion = self.lineEdit_63.text()
+            Fax = self.lineEdit_62.text()
+            Ciudad = self.lineEdit_58.text()
+            ContactoVentas = self.lineEdit_59.text()
+            ContactoSoporte = self.lineEdit_64.text()
+            PDFProveedor = self.ArchivoS
+            val = (ID, FechaDi, Nombre, NIT, Telefono,Email, Direccion,Fax,Ciudad,ContactoVentas,ContactoSoporte,PDFProveedor )
+            DB.Proveedores.agregar(val)
+            self.GuardarArchivo()
+            DB.metodos.LoadDataTablaProveedores(self)
+
+    def ModificarP(self):
+        dialogo = QMessageBox.question(self, "Modificar", "Seguro Desea Modificar?")
+        if dialogo == QMessageBox.Yes:
+            ID = self.lineEdit_67.text()
+            FechaDi = self.FDiligenciamiento_2.text()
+            Nombre = self.lineEdit_60.text()
+            NIT = self.lineEdit_68.text()
+            Telefono = self.lineEdit_61.text()
+            Email = self.lineEdit_57.text()
+            Direccion = self.lineEdit_63.text()
+            Fax = self.lineEdit_62.text()
+            Ciudad = self.lineEdit_58.text()
+            ContactoVentas = self.lineEdit_59.text()
+            ContactoSoporte = self.lineEdit_64.text()
+            PDFProveedor = self.lineEdit_65.text()
+            val = (FechaDi, Nombre, NIT, Telefono, Email, Direccion, Fax, Ciudad, ContactoVentas, ContactoSoporte,PDFProveedor,ID)
+            DB.Proveedores.Actualizar(val)
+            dialogo2 = QMessageBox.question(self, "Modificar", "Desea Modificar el Archivo PDF tambien?")
+            if dialogo2 == QMessageBox.Yes:
+                self.GuardarArchivo()
+            DB.metodos.LoadDataTablaProveedores(self)
+
+    def BuscarP(self):
+        Consulta = self.lineEdit_66.text()
+        aux = self.comboBoxBProveedores.currentText()
+        val=(Consulta,)
+        DB.metodos.ConsultaDataTablaP(self,val,aux)
+
+    def EliminarP(self):
+        dialogo = QMessageBox.question(self, "Eliminar", "Seguro Desea Eliminar?")
+        if dialogo == QMessageBox.Yes:
+            Consulta = self.lineEdit_66.text()
+            val = (Consulta,)
+            DB.Proveedores.Eliminar(val)
+            DB.metodos.LoadDataTablaProveedores(self)
+
+    def SeleccionarArchivo(self):
+        self.ArchivoE = QFileDialog.getOpenFileName()[0]
+        print(self.ArchivoE)
+        ArchivoName = self.ArchivoE.split("/")[-1]
+        self.ArchivoS = f"{ArchivoName}"
+        self.lineEdit_65.setText(ArchivoName)
+        subprocess.Popen([rf"C:\Users\Orale\Documents\ProyectoT\Memoria\PDFProveedores\{ArchivoName}"], shell=True)
+
+
+    def GuardarArchivo(self):
+        shutil.copy(self.ArchivoE, r'C:\Users\Orale\Documents\ProyectoT\Memoria\PDFProveedores')
 
 
 
-
-
-
-
-
-
-
-
-
-
+#class MetodosAux:
 
 
 

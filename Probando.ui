@@ -62,7 +62,7 @@ Background: #ffffff;
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="../Interfaces Python/resources.qrc">:/Icon/Recursos/lajalle.png</pixmap>
+         <pixmap resource="resources.qrc">:/Icon/Recursos/lajalle.png</pixmap>
         </property>
         <property name="scaledContents">
          <bool>true</bool>
@@ -105,7 +105,7 @@ Background: #ffffff;
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="../Interfaces Python/resources.qrc">:/Icon/Recursos/user.png</pixmap>
+            <pixmap resource="resources.qrc">:/Icon/Recursos/user.png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -204,7 +204,7 @@ Background:#ffffff;
            <string>     Inicio                                </string>
           </property>
           <property name="icon">
-           <iconset resource="../Interfaces Python/resources.qrc">
+           <iconset resource="resources.qrc">
             <normaloff>:/Icon/Recursos/Icon Home.png</normaloff>:/Icon/Recursos/Icon Home.png</iconset>
           </property>
           <property name="iconSize">
@@ -247,7 +247,7 @@ Background:#ffffff;
            <string>      Registrar                        </string>
           </property>
           <property name="icon">
-           <iconset resource="../Interfaces Python/resources.qrc">
+           <iconset resource="resources.qrc">
             <normaloff>:/Icon/Recursos/Search.png</normaloff>:/Icon/Recursos/Search.png</iconset>
           </property>
           <property name="iconSize">
@@ -290,7 +290,7 @@ Background:#ffffff;
            <string>     Reparaciones                 </string>
           </property>
           <property name="icon">
-           <iconset resource="../Interfaces Python/resources.qrc">
+           <iconset resource="resources.qrc">
             <normaloff>:/Icon/Recursos/Reparaciones.png</normaloff>:/Icon/Recursos/Reparaciones.png</iconset>
           </property>
           <property name="iconSize">
@@ -333,7 +333,7 @@ Background:#ffffff;
            <string>    Mantenimiento Máquina</string>
           </property>
           <property name="icon">
-           <iconset resource="../Interfaces Python/resources.qrc">
+           <iconset resource="resources.qrc">
             <normaloff>:/Icon/Recursos/Mantenimiento.png</normaloff>:/Icon/Recursos/Mantenimiento.png</iconset>
           </property>
           <property name="iconSize">
@@ -376,7 +376,7 @@ Background:#ffffff;
            <string>    Proveedores                       </string>
           </property>
           <property name="icon">
-           <iconset resource="../Interfaces Python/resources.qrc">
+           <iconset resource="resources.qrc">
             <normaloff>:/Icon/Recursos/Pretamos.png</normaloff>:/Icon/Recursos/Pretamos.png</iconset>
           </property>
           <property name="iconSize">
@@ -419,7 +419,7 @@ Background:#ffffff;
            <string>Asignación Modelamientos</string>
           </property>
           <property name="icon">
-           <iconset resource="../Interfaces Python/resources.qrc">
+           <iconset resource="resources.qrc">
             <normaloff>:/Icon/Recursos/Asignacion.png</normaloff>:/Icon/Recursos/Asignacion.png</iconset>
           </property>
           <property name="iconSize">
@@ -462,7 +462,7 @@ Background:#ffffff;
            <string>    Consulta Horarios           </string>
           </property>
           <property name="icon">
-           <iconset resource="../Interfaces Python/resources.qrc">
+           <iconset resource="resources.qrc">
             <normaloff>:/Icon/Recursos/Consulta.png</normaloff>:/Icon/Recursos/Consulta.png</iconset>
           </property>
           <property name="iconSize">
@@ -505,7 +505,7 @@ Background:#ffffff;
            <string>    Ayuda                                </string>
           </property>
           <property name="icon">
-           <iconset resource="../Interfaces Python/resources.qrc">
+           <iconset resource="resources.qrc">
             <normaloff>:/Icon/Recursos/Ayuda.png</normaloff>:/Icon/Recursos/Ayuda.png</iconset>
           </property>
           <property name="iconSize">
@@ -548,7 +548,7 @@ Background:#ffffff;
            <string>   Setting                              </string>
           </property>
           <property name="icon">
-           <iconset resource="../Interfaces Python/resources.qrc">
+           <iconset resource="resources.qrc">
             <normaloff>:/Icon/Recursos/ajuste.png</normaloff>:/Icon/Recursos/ajuste.png</iconset>
           </property>
           <property name="iconSize">
@@ -1055,7 +1055,7 @@ background:#FBD27E;
               <string>Modificar</string>
              </property>
              <property name="icon">
-              <iconset resource="../Interfaces Python/resources.qrc">
+              <iconset resource="resources.qrc">
                <normaloff>:/Icon/Recursos/Modificar.png</normaloff>:/Icon/Recursos/Modificar.png</iconset>
              </property>
              <property name="iconSize">
@@ -1508,7 +1508,7 @@ background:#FBD27E;
               <string>Registrar</string>
              </property>
              <property name="icon">
-              <iconset resource="../Interfaces Python/resources.qrc">
+              <iconset resource="resources.qrc">
                <normaloff>:/Icon/Recursos/Registrar.png</normaloff>:/Icon/Recursos/Registrar.png</iconset>
              </property>
              <property name="iconSize">
@@ -1884,7 +1884,7 @@ background: #ffffff;
               <string>Eliminar</string>
              </property>
              <property name="icon">
-              <iconset resource="../Interfaces Python/resources.qrc">
+              <iconset resource="resources.qrc">
                <normaloff>:/Icon/Recursos/Eliminar.png</normaloff>:/Icon/Recursos/Eliminar.png</iconset>
              </property>
             </widget>
@@ -1906,7 +1906,7 @@ background: #ffffff;
               <string>Consultar</string>
              </property>
              <property name="icon">
-              <iconset resource="../Interfaces Python/resources.qrc">
+              <iconset resource="resources.qrc">
                <normaloff>:/Icon/Recursos/Consultar.png</normaloff>:/Icon/Recursos/Consultar.png</iconset>
              </property>
             </widget>
@@ -2815,7 +2815,7 @@ border: white;
               <string>Registrar</string>
              </property>
              <property name="icon">
-              <iconset resource="../Interfaces Python/resources.qrc">
+              <iconset resource="resources.qrc">
                <normaloff>:/Icon/Recursos/Registrar.png</normaloff>:/Icon/Recursos/Registrar.png</iconset>
              </property>
              <property name="iconSize">
@@ -2852,7 +2852,7 @@ border: white;
               <string>Modificar</string>
              </property>
              <property name="icon">
-              <iconset resource="../Interfaces Python/resources.qrc">
+              <iconset resource="resources.qrc">
                <normaloff>:/Icon/Recursos/Modificar.png</normaloff>:/Icon/Recursos/Modificar.png</iconset>
              </property>
              <property name="iconSize">
@@ -3169,7 +3169,7 @@ border: white;
               <string>Eliminar</string>
              </property>
              <property name="icon">
-              <iconset resource="../Interfaces Python/resources.qrc">
+              <iconset resource="resources.qrc">
                <normaloff>:/Icon/Recursos/Eliminar.png</normaloff>:/Icon/Recursos/Eliminar.png</iconset>
              </property>
             </widget>
@@ -3191,7 +3191,7 @@ border: white;
               <string>Consultar</string>
              </property>
              <property name="icon">
-              <iconset resource="../Interfaces Python/resources.qrc">
+              <iconset resource="resources.qrc">
                <normaloff>:/Icon/Recursos/Consultar.png</normaloff>:/Icon/Recursos/Consultar.png</iconset>
              </property>
             </widget>
@@ -3626,7 +3626,7 @@ background: #ffffff;
               <string/>
              </property>
              <property name="icon">
-              <iconset resource="../Interfaces Python/resources.qrc">
+              <iconset resource="resources.qrc">
                <normaloff>:/Icon/Recursos/Profile.png</normaloff>:/Icon/Recursos/Profile.png</iconset>
              </property>
              <property name="iconSize">
@@ -3654,7 +3654,7 @@ background: #ffffff;
               <string/>
              </property>
              <property name="icon">
-              <iconset resource="../Interfaces Python/resources.qrc">
+              <iconset resource="resources.qrc">
                <normaloff>:/Icon/Recursos/IDM.png</normaloff>:/Icon/Recursos/IDM.png</iconset>
              </property>
              <property name="iconSize">
@@ -4101,7 +4101,7 @@ background: #ffffff;
               <string>Registrar</string>
              </property>
              <property name="icon">
-              <iconset resource="../Interfaces Python/resources.qrc">
+              <iconset resource="resources.qrc">
                <normaloff>:/Icon/Recursos/Registrar.png</normaloff>:/Icon/Recursos/Registrar.png</iconset>
              </property>
              <property name="iconSize">
@@ -4138,7 +4138,7 @@ background: #ffffff;
               <string>Modificar</string>
              </property>
              <property name="icon">
-              <iconset resource="../Interfaces Python/resources.qrc">
+              <iconset resource="resources.qrc">
                <normaloff>:/Icon/Recursos/Modificar.png</normaloff>:/Icon/Recursos/Modificar.png</iconset>
              </property>
              <property name="iconSize">
@@ -4492,7 +4492,7 @@ background: #ffffff;
               <string>Eliminar</string>
              </property>
              <property name="icon">
-              <iconset resource="../Interfaces Python/resources.qrc">
+              <iconset resource="resources.qrc">
                <normaloff>:/Icon/Recursos/Eliminar.png</normaloff>:/Icon/Recursos/Eliminar.png</iconset>
              </property>
             </widget>
@@ -4514,7 +4514,7 @@ background: #ffffff;
               <string>Consultar</string>
              </property>
              <property name="icon">
-              <iconset resource="../Interfaces Python/resources.qrc">
+              <iconset resource="resources.qrc">
                <normaloff>:/Icon/Recursos/Consultar.png</normaloff>:/Icon/Recursos/Consultar.png</iconset>
              </property>
             </widget>
@@ -4777,7 +4777,7 @@ border: white;
 }</string>
                 </property>
                 <property name="text">
-                 <string>Desciprcion</string>
+                 <string>Descripcion:</string>
                 </property>
                </widget>
               </item>
@@ -4822,7 +4822,7 @@ border: white;
 }</string>
                 </property>
                 <property name="text">
-                 <string>ID Máquina</string>
+                 <string>ID Máquina:</string>
                 </property>
                </widget>
               </item>
@@ -4876,7 +4876,7 @@ border: white;
 }</string>
                 </property>
                 <property name="text">
-                 <string>ID Laboratorista</string>
+                 <string>ID Laboratorista:</string>
                 </property>
                </widget>
               </item>
@@ -4900,7 +4900,7 @@ background: #ffffff;
               <string/>
              </property>
              <property name="icon">
-              <iconset resource="../Interfaces Python/resources.qrc">
+              <iconset resource="resources.qrc">
                <normaloff>:/Icon/Recursos/Profile.png</normaloff>:/Icon/Recursos/Profile.png</iconset>
              </property>
              <property name="iconSize">
@@ -4928,7 +4928,7 @@ background: #ffffff;
               <string/>
              </property>
              <property name="icon">
-              <iconset resource="../Interfaces Python/resources.qrc">
+              <iconset resource="resources.qrc">
                <normaloff>:/Icon/Recursos/IDM.png</normaloff>:/Icon/Recursos/IDM.png</iconset>
              </property>
              <property name="iconSize">
@@ -5375,7 +5375,7 @@ background: #ffffff;
               <string>Registrar</string>
              </property>
              <property name="icon">
-              <iconset resource="../Interfaces Python/resources.qrc">
+              <iconset resource="resources.qrc">
                <normaloff>:/Icon/Recursos/Registrar.png</normaloff>:/Icon/Recursos/Registrar.png</iconset>
              </property>
              <property name="iconSize">
@@ -5412,7 +5412,7 @@ background: #ffffff;
               <string>Modificar</string>
              </property>
              <property name="icon">
-              <iconset resource="../Interfaces Python/resources.qrc">
+              <iconset resource="resources.qrc">
                <normaloff>:/Icon/Recursos/Modificar.png</normaloff>:/Icon/Recursos/Modificar.png</iconset>
              </property>
              <property name="iconSize">
@@ -6161,7 +6161,7 @@ border: white;
               <string>Eliminar</string>
              </property>
              <property name="icon">
-              <iconset resource="../Interfaces Python/resources.qrc">
+              <iconset resource="resources.qrc">
                <normaloff>:/Icon/Recursos/Eliminar.png</normaloff>:/Icon/Recursos/Eliminar.png</iconset>
              </property>
             </widget>
@@ -6183,7 +6183,7 @@ border: white;
               <string>Consultar</string>
              </property>
              <property name="icon">
-              <iconset resource="../Interfaces Python/resources.qrc">
+              <iconset resource="resources.qrc">
                <normaloff>:/Icon/Recursos/Consultar.png</normaloff>:/Icon/Recursos/Consultar.png</iconset>
              </property>
             </widget>
@@ -6277,6 +6277,153 @@ Background: #FBD27E;
              </rect>
             </property>
             <layout class="QGridLayout" name="gridLayout_11">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_107">
+               <property name="font">
+                <font>
+                 <family>Arial</family>
+                 <pointsize>8</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLabel{
+border: white;
+}</string>
+               </property>
+               <property name="text">
+                <string>Fecha De Diligenciamiento:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_106">
+               <property name="font">
+                <font>
+                 <family>Arial</family>
+                 <pointsize>8</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLabel{
+border: white;
+}</string>
+               </property>
+               <property name="text">
+                <string>Nombre o Razon Social:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="5">
+              <widget class="QLineEdit" name="lineEdit_63">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>35</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Arial</family>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="7">
+              <widget class="QLineEdit" name="lineEdit_64">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>35</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Arial</family>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLineEdit" name="lineEdit_61">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>35</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Arial</family>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="4">
+              <widget class="QLabel" name="label_104">
+               <property name="font">
+                <font>
+                 <family>Arial</family>
+                 <pointsize>8</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLabel{
+border: white;
+}</string>
+               </property>
+               <property name="text">
+                <string>Fax:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="label_105">
+               <property name="font">
+                <font>
+                 <family>Arial</family>
+                 <pointsize>8</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLabel{
+border: white;
+}</string>
+               </property>
+               <property name="text">
+                <string>Telefonos:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="4">
+              <widget class="QLabel" name="label_100">
+               <property name="font">
+                <font>
+                 <family>Arial</family>
+                 <pointsize>8</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLabel{
+border: white;
+}</string>
+               </property>
+               <property name="text">
+                <string>NIT:</string>
+               </property>
+              </widget>
+             </item>
              <item row="0" column="1">
               <widget class="QDateEdit" name="FDiligenciamiento_2">
                <property name="minimumSize">
@@ -6326,42 +6473,6 @@ background:#FBD27E;
                </property>
               </widget>
              </item>
-             <item row="0" column="4">
-              <widget class="QLabel" name="label_100">
-               <property name="font">
-                <font>
-                 <family>Arial</family>
-                 <pointsize>8</pointsize>
-                </font>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QLabel{
-border: white;
-}</string>
-               </property>
-               <property name="text">
-                <string>E-mail:</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="5">
-              <widget class="QLineEdit" name="lineEdit_57">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>35</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Arial</family>
-                </font>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
-              </widget>
-             </item>
              <item row="1" column="4">
               <widget class="QLabel" name="label_78">
                <property name="font">
@@ -6377,24 +6488,6 @@ border: white;
                </property>
                <property name="text">
                 <string>Direccion:</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="7">
-              <widget class="QLineEdit" name="lineEdit_58">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>35</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Arial</family>
-                </font>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
                </property>
               </widget>
              </item>
@@ -6416,8 +6509,8 @@ border: white;
                </property>
               </widget>
              </item>
-             <item row="1" column="7">
-              <widget class="QLineEdit" name="lineEdit_59">
+             <item row="0" column="7">
+              <widget class="QLineEdit" name="lineEdit_58">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -6431,6 +6524,24 @@ border: white;
                </property>
                <property name="styleSheet">
                 <string notr="true"/>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="6">
+              <widget class="QLabel" name="label_102">
+               <property name="font">
+                <font>
+                 <family>Arial</family>
+                 <pointsize>8</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLabel{
+border: white;
+}</string>
+               </property>
+               <property name="text">
+                <string>Contacto Ventas:</string>
                </property>
               </widget>
              </item>
@@ -6455,21 +6566,21 @@ border: white;
                </property>
               </widget>
              </item>
-             <item row="1" column="6">
-              <widget class="QLabel" name="label_102">
+             <item row="1" column="7">
+              <widget class="QLineEdit" name="lineEdit_59">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>35</height>
+                </size>
+               </property>
                <property name="font">
                 <font>
                  <family>Arial</family>
-                 <pointsize>8</pointsize>
                 </font>
                </property>
                <property name="styleSheet">
-                <string notr="true">QLabel{
-border: white;
-}</string>
-               </property>
-               <property name="text">
-                <string>Contacto Ventas:</string>
+                <string notr="true"/>
                </property>
               </widget>
              </item>
@@ -6491,44 +6602,8 @@ border: white;
                </property>
               </widget>
              </item>
-             <item row="2" column="4">
-              <widget class="QLabel" name="label_104">
-               <property name="font">
-                <font>
-                 <family>Arial</family>
-                 <pointsize>8</pointsize>
-                </font>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QLabel{
-border: white;
-}</string>
-               </property>
-               <property name="text">
-                <string>Fax:</string>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="0">
-              <widget class="QLabel" name="label_105">
-               <property name="font">
-                <font>
-                 <family>Arial</family>
-                 <pointsize>8</pointsize>
-                </font>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QLabel{
-border: white;
-}</string>
-               </property>
-               <property name="text">
-                <string>Telefonos:</string>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="1">
-              <widget class="QLineEdit" name="lineEdit_61">
+             <item row="1" column="10">
+              <widget class="QLineEdit" name="lineEdit_57">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -6543,8 +6618,41 @@ border: white;
                <property name="styleSheet">
                 <string notr="true"/>
                </property>
+              </widget>
+             </item>
+             <item row="0" column="5">
+              <widget class="QLineEdit" name="lineEdit_68">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>35</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Arial</family>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="8">
+              <widget class="QLabel" name="label_113">
+               <property name="font">
+                <font>
+                 <family>Arial</family>
+                 <pointsize>8</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLabel{
+border: white;
+}</string>
+               </property>
                <property name="text">
-                <string/>
+                <string>E-mail:</string>
                </property>
               </widget>
              </item>
@@ -6566,44 +6674,8 @@ border: white;
                </property>
               </widget>
              </item>
-             <item row="1" column="0">
-              <widget class="QLabel" name="label_106">
-               <property name="font">
-                <font>
-                 <family>Arial</family>
-                 <pointsize>8</pointsize>
-                </font>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QLabel{
-border: white;
-}</string>
-               </property>
-               <property name="text">
-                <string>Nombre o Razon Social:</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="0">
-              <widget class="QLabel" name="label_107">
-               <property name="font">
-                <font>
-                 <family>Arial</family>
-                 <pointsize>8</pointsize>
-                </font>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QLabel{
-border: white;
-}</string>
-               </property>
-               <property name="text">
-                <string>Fecha De Diligenciamiento:</string>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="5">
-              <widget class="QLineEdit" name="lineEdit_63">
+             <item row="0" column="10">
+              <widget class="QLineEdit" name="lineEdit_67">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -6620,25 +6692,7 @@ border: white;
                </property>
               </widget>
              </item>
-             <item row="2" column="7">
-              <widget class="QLineEdit" name="lineEdit_64">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>35</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Arial</family>
-                </font>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="8">
+             <item row="2" column="8">
               <widget class="QPushButton" name="pushButton_23">
                <property name="enabled">
                 <bool>true</bool>
@@ -7077,7 +7131,7 @@ border: white;
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="../Interfaces Python/resources.qrc">
+                <iconset resource="resources.qrc">
                  <normaloff>:/Icon/Recursos/Mantenimiento.png</normaloff>:/Icon/Recursos/Mantenimiento.png</iconset>
                </property>
                <property name="iconSize">
@@ -7094,7 +7148,25 @@ border: white;
                </property>
               </widget>
              </item>
-             <item row="0" column="9">
+             <item row="0" column="8">
+              <widget class="QLabel" name="label_112">
+               <property name="font">
+                <font>
+                 <family>Arial</family>
+                 <pointsize>8</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLabel{
+border: white;
+}</string>
+               </property>
+               <property name="text">
+                <string>ID:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="10">
               <widget class="QLineEdit" name="lineEdit_65">
                <property name="minimumSize">
                 <size>
@@ -7135,7 +7207,7 @@ border: white;
              <string>Modificar</string>
             </property>
             <property name="icon">
-             <iconset resource="../Interfaces Python/resources.qrc">
+             <iconset resource="resources.qrc">
               <normaloff>:/Icon/Recursos/Modificar.png</normaloff>:/Icon/Recursos/Modificar.png</iconset>
             </property>
             <property name="iconSize">
@@ -7588,7 +7660,7 @@ border: white;
              <string>Registrar</string>
             </property>
             <property name="icon">
-             <iconset resource="../Interfaces Python/resources.qrc">
+             <iconset resource="resources.qrc">
               <normaloff>:/Icon/Recursos/Registrar.png</normaloff>:/Icon/Recursos/Registrar.png</iconset>
             </property>
             <property name="iconSize">
@@ -7630,7 +7702,7 @@ border: white;
              <string>Registro Proveedores</string>
             </property>
            </widget>
-           <widget class="QTableWidget" name="TInstrumento_3">
+           <widget class="QTableWidget" name="TProveedores">
             <property name="geometry">
              <rect>
               <x>30</x>
@@ -7648,7 +7720,7 @@ border-radius: 8px
              <number>0</number>
             </property>
             <property name="columnCount">
-             <number>10</number>
+             <number>12</number>
             </property>
             <attribute name="horizontalHeaderDefaultSectionSize">
              <number>120</number>
@@ -7659,6 +7731,11 @@ border-radius: 8px
             <attribute name="verticalHeaderDefaultSectionSize">
              <number>30</number>
             </attribute>
+            <column>
+             <property name="text">
+              <string>ID</string>
+             </property>
+            </column>
             <column>
              <property name="text">
               <string>Fecha</string>
@@ -7707,6 +7784,11 @@ border-radius: 8px
             <column>
              <property name="text">
               <string>Contacto Soporte Tecnico</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>PDF</string>
              </property>
             </column>
            </widget>
@@ -7786,7 +7868,7 @@ border: white;
              <string>Filtro De Busqueda</string>
             </property>
            </widget>
-           <widget class="QComboBox" name="comboBoxBProveedores_2">
+           <widget class="QComboBox" name="comboBoxBProveedores">
             <property name="geometry">
              <rect>
               <x>1030</x>
@@ -7969,7 +8051,7 @@ background: #ffffff;
              <string>Eliminar</string>
             </property>
             <property name="icon">
-             <iconset resource="../Interfaces Python/resources.qrc">
+             <iconset resource="resources.qrc">
               <normaloff>:/Icon/Recursos/Eliminar.png</normaloff>:/Icon/Recursos/Eliminar.png</iconset>
             </property>
            </widget>
@@ -7991,11 +8073,11 @@ background: #ffffff;
              <string>Consultar</string>
             </property>
             <property name="icon">
-             <iconset resource="../Interfaces Python/resources.qrc">
+             <iconset resource="resources.qrc">
               <normaloff>:/Icon/Recursos/Consultar.png</normaloff>:/Icon/Recursos/Consultar.png</iconset>
             </property>
            </widget>
-           <widget class="QTableWidget" name="TConsultaInstrumento_3">
+           <widget class="QTableWidget" name="TConsultaProveedores">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -8009,6 +8091,11 @@ background: #ffffff;
 border-radius: 8px 
 }</string>
             </property>
+            <column>
+             <property name="text">
+              <string>ID</string>
+             </property>
+            </column>
             <column>
              <property name="text">
               <string>Fecha</string>
@@ -8071,8 +8158,9 @@ border-radius: 8px
   </widget>
  </widget>
  <resources>
-  <include location="../Interfaces Python/resources.qrc"/>
   <include location="resources.qrc"/>
+  <include location="resources.qrc"/>
+  <include location="../Interfaces Python/resources.qrc"/>
  </resources>
  <connections/>
 </ui>

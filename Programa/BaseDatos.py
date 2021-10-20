@@ -1,6 +1,8 @@
 import sys
 import mysql.connector
-from PySide6.QtWidgets import QTableWidgetItem
+from PySide6.QtWidgets import QTableWidgetItem, QFileDialog,QPushButton, QHBoxLayout, QFrame, QAbstractItemView
+from PySide6.QtGui import QIcon, QCursor, QPixmap
+from PySide6.QtCore import  Qt
 
 mydb = mysql.connector.connect(host="localhost",
                                user="root",
@@ -15,7 +17,7 @@ sqlinstertLaboratorista = "INSERT INTO t_usuarios (id_laboratorista,cedula,nombr
 sqlinstertInstrumento = "INSERT INTO t_instrumento (id_instrumento,nombre,tipo_instr,tipo_practica,estado_instr,cod_seguridad,fecha_registro,fabricante,valor,id_banco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
 sqlinstertMaquina = "INSERT INTO t_maquina (id_maquina,nombre,tipo_maq,tipo_practica,fecha_registro,fabricante,valor,estado_maq) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)"
 sqlinstertReparacion = "INSERT INTO t_reparacion (id_reparacion,fecha_ingreso,fecha_retorno,descripcion,id_laboratorista,id_maquina,id_instrumento) VALUES (%s,%s,%s,%s,%s,%s,%s)"
-sqlinstertProveedores = "INSERT INTO t_proveedores (id_proveedor,FechaDiligenciamiento,RazonSocial,Nit,Telefonos,Email,Direccion,Fax,Ciudad,ContactoVentas,ContactoSoporte,PDFProveedor) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+sqlinstertProveedores = "INSERT INTO t_proveedores (id_proveedor,FechaDiligenciamiento,RazonSocial,Nit,Telefonos,Email,Direccion,Fax,Ciudad,ContactoVentas,ContactoSoporte,PDFProveedor) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
 
 # CONSULTAR DATOS EN BASE DE DATOS
 sqlselectUsuarios = "SELECT * FROM t_usuarios WHERE user = %s"
@@ -56,7 +58,7 @@ sqlupdateProveedores = "UPDATE t_proveedores SET FechaDiligenciamiento = %s, Raz
 sqlDeleteInstrumento = "DELETE FROM t_instrumento WHERE id_instrumento = %s"
 sqlDeleteMaquina = "DELETE FROM t_maquina WHERE id_maquina = %s"
 sqlDeleteReparacion = "DELETE FROM t_reparacion WHERE id_reparacion = %s"
-sqlDeleteProveedor = "DELETE FROM t_reparacion WHERE id_proveedor = %s"
+sqlDeleteProveedor = "DELETE FROM t_proveedores WHERE id_proveedor = %s"
 
 
 #val = ("45161004","126304","Miguel","Rojas","917508","321225461","Sincelejo","2000/10/15","calle walabi 4 2 sydni",)
@@ -173,6 +175,8 @@ class Proveedores:
         mycursor.execute(sqlinstertProveedores,val)
         mydb.commit()
 
+
+
     def ConsultaID(adr):
         mycursor.execute(sqlselectProveedoresID, adr)
         myresult = mycursor.fetchall()
@@ -195,6 +199,7 @@ class Proveedores:
 
     def Actualizar(val):
         mycursor.execute(sqlupdateProveedores, val)
+        print(val)
         mydb.commit()
 
     def Eliminar(val):
@@ -232,6 +237,9 @@ class metodos:
             self.TInstrumento.setItem(fila, 7, QTableWidgetItem(num[7]))
             self.TInstrumento.setItem(fila, 8, QTableWidgetItem(valor))
             fila += 1
+        self.TInstrumento.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.TInstrumento.setSelectionMode(QAbstractItemView.SingleSelection)
+
 
     def ConsultaDataTabla1(self,val,aux):
         if aux in "ID":
@@ -256,6 +264,10 @@ class metodos:
             self.TConsultaInstrumento.setItem(fila, 7, QTableWidgetItem(num[7]))
             self.TConsultaInstrumento.setItem(fila, 8, QTableWidgetItem(valor))
             fila += 1
+        self.TConsultaInstrumento.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.TConsultaInstrumento.setSelectionMode(QAbstractItemView.SingleSelection)
+
+
     def LoadDataTabla2(self):
         data = Maquina.ConsultarTablaMaquina(self)
         fila = 0
@@ -273,6 +285,10 @@ class metodos:
             self.TMaquina.setItem(fila, 6, QTableWidgetItem(valor))
             self.TMaquina.setItem(fila, 7, QTableWidgetItem(num[7]))
             fila += 1
+        self.TMaquina.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.TMaquina.setSelectionMode(QAbstractItemView.SingleSelection)
+
+
     def ConsultaDataTabla2(self,val,aux):
         if aux in "ID":
             data = Maquina.ConsultaID(val)
@@ -296,6 +312,10 @@ class metodos:
             self.TConsultaMaquina.setItem(fila, 6, QTableWidgetItem(valor))
             self.TConsultaMaquina.setItem(fila, 7, QTableWidgetItem(num[7]))
             fila += 1
+        self.TConsultaMaquina.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.TConsultaMaquina.setSelectionMode(QAbstractItemView.SingleSelection)
+
+
     def LoadDataTabla3(self):
         data = Reparacion.ConsultarTablaReparacion(self)
         fila = 0
@@ -313,6 +333,10 @@ class metodos:
             self.TInstrumentoReparacion.setItem(fila, 5, QTableWidgetItem(num[5]))
             self.TInstrumentoReparacion.setItem(fila, 6, QTableWidgetItem(num[6]))
             fila += 1
+        self.TInstrumentoReparacion.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.TInstrumentoReparacion.setSelectionMode(QAbstractItemView.SingleSelection)
+
+
     def ConsultaDataTabla3(self,val,aux):
         if aux in "ID":
             aux1 = Reparacion.ConsultaID(val)
@@ -341,6 +365,65 @@ class metodos:
             self.TConsultaInstrumentoReparacion.setItem(fila, 5, QTableWidgetItem(num[5]))
             self.TConsultaInstrumentoReparacion.setItem(fila, 6, QTableWidgetItem(num[6]))
             fila += 1
+        self.TConsultaInstrumentoReparacion.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.TConsultaInstrumentoReparacion.setSelectionMode(QAbstractItemView.SingleSelection)
+
+
+    def LoadDataTablaProveedores(self):
+        data = Proveedores.ConsultarTablaProvedor(self)
+        fila = 0
+        self.TProveedores.setRowCount(len(data))
+        for num in data:
+            fecha = "{}".format(num[1])
+            self.TProveedores.setItem(fila, 0, QTableWidgetItem(num[0]))
+            self.TProveedores.setItem(fila, 1, QTableWidgetItem(fecha))
+            self.TProveedores.setItem(fila, 2, QTableWidgetItem(num[2]))
+            self.TProveedores.setItem(fila, 3, QTableWidgetItem(num[3]))
+            self.TProveedores.setItem(fila, 4, QTableWidgetItem(num[4]))
+            self.TProveedores.setItem(fila, 5, QTableWidgetItem(num[5]))
+            self.TProveedores.setItem(fila, 6, QTableWidgetItem(num[6]))
+            self.TProveedores.setItem(fila, 7, QTableWidgetItem(num[7]))
+            self.TProveedores.setItem(fila, 8, QTableWidgetItem(num[8]))
+            self.TProveedores.setItem(fila, 9, QTableWidgetItem(num[9]))
+            self.TProveedores.setItem(fila, 10, QTableWidgetItem(num[10]))
+            self.TProveedores.setItem(fila, 11, QTableWidgetItem(num[11]))
+            fila += 1
+        self.TProveedores.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.TProveedores.setSelectionMode(QAbstractItemView.SingleSelection)
+
+
+    def ConsultaDataTablaP(self,val,aux):
+        if aux in "ID":
+            data = Proveedores.ConsultaID(val)
+            print(data)
+        if aux in "NOMBRE":
+            data = Proveedores.ConsultaRazonSocial(val)
+        if aux in "NIT":
+            data = Proveedores.ConsultaNit(val)
+        fila = 0
+        self.TConsultaProveedores.setRowCount(len(data))
+
+        for num in data:
+            fecha = "{}".format(num[1])
+            self.TConsultaProveedores.setItem(fila, 0, QTableWidgetItem(num[0]))
+            self.TConsultaProveedores.setItem(fila, 1, QTableWidgetItem(fecha))
+            self.TConsultaProveedores.setItem(fila, 2, QTableWidgetItem(num[2]))
+            self.TConsultaProveedores.setItem(fila, 3, QTableWidgetItem(num[3]))
+            self.TConsultaProveedores.setItem(fila, 4, QTableWidgetItem(num[4]))
+            self.TConsultaProveedores.setItem(fila, 5, QTableWidgetItem(num[5]))
+            self.TConsultaProveedores.setItem(fila, 6, QTableWidgetItem(num[6]))
+            self.TConsultaProveedores.setItem(fila, 7, QTableWidgetItem(num[7]))
+            self.TConsultaProveedores.setItem(fila, 8, QTableWidgetItem(num[8]))
+            self.TConsultaProveedores.setItem(fila, 9, QTableWidgetItem(num[9]))
+            self.TConsultaProveedores.setItem(fila, 10, QTableWidgetItem(num[10]))
+            self.TConsultaProveedores.setItem(fila, 11, QTableWidgetItem(num[11]))
+            fila += 1
+        self.TConsultaProveedores.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.TConsultaProveedores.setSelectionMode(QAbstractItemView.SingleSelection)
+        self.TConsultaProveedores.selectionModel().selectionChanged.connect(self.seleccionar)
+
+
+
 
 class IniciarSesion:
     def Verificar(usua, contra):
