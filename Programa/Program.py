@@ -255,36 +255,39 @@ class MainWindow2(QMainWindow, Ui_MainWindow):
         self.Wproveedores.setGeometry(0, 0, 1250, 0)
         "Inicializacion de registro"
         DB.metodos.LoadDataTabla1(self)
-        DB.metodos.LoadDataTabla2(self)
+        #DB.metodos.LoadDataTabla2(self)
 
-        self.pushButton_19.clicked.connect(self.Guardar1)
-        self.pushButton_18.clicked.connect(self.Modificar1)
-        self.pushButton_27.clicked.connect(self.Buscar1)
-        self.pushButton_26.clicked.connect(self.Eliminar1)
+        self.pushButton_21.clicked.connect(self.Guardar1)
+        self.pushButton_20.clicked.connect(self.Modificar1)
+        self.pushButton_54.clicked.connect(self.Buscar1)
+        self.pushButton_53.clicked.connect(self.Eliminar1)
 
-        self.pushButton_28.clicked.connect(self.Guardar2)
+        """self.pushButton_28.clicked.connect(self.Guardar2)
         self.pushButton_29.clicked.connect(self.Modificar2)
         self.pushButton_33.clicked.connect(self.Buscar2)
         self.pushButton_32.clicked.connect(self.Eliminar2)
+        """
+        self.comboBoxEstadoEquipo.addItem("BUENO")
+        self.comboBoxEstadoEquipo.addItem("REGULAR")
+        self.comboBoxEstadoEquipo.addItem("MALO")
+        self.comboBoxEstadoEquipo.addItem("PARA REPARACION")
 
-        self.comboBoxEstadoInstrumento.addItem("BUENO")
-        self.comboBoxEstadoInstrumento.addItem("REGULAR")
-        self.comboBoxEstadoInstrumento.addItem("MALO")
-        self.comboBoxEstadoInstrumento.addItem("PARA REPARACION")
+        self.comboBoxMantenimientoEquipo.addItem("Frecuencia de mantenimiento")
+        self.comboBoxMantenimientoEquipo.addItem("SEMESTRAL")
+        self.comboBoxMantenimientoEquipo.addItem("ANUAL")
+        self.comboBoxMantenimientoEquipo.addItem("2 AÑOS")
+        self.comboBoxMantenimientoEquipo.addItem("3 AÑOS")
 
-        self.comboBoxEstadoMaquina.addItem("BUENO")
-        self.comboBoxEstadoMaquina.addItem("REGULAR")
-        self.comboBoxEstadoMaquina.addItem("MALO")
-        self.comboBoxEstadoMaquina.addItem("PARA REPARACION")
-
-        self.comboBoxBuscarInstrumento.addItem("ID")
-        self.comboBoxBuscarInstrumento.addItem("NOMBRE")
-        self.comboBoxBuscarInstrumento.addItem("TIPO")
-
+        self.comboBoxBuscarEquipo.addItem("ID")
+        self.comboBoxBuscarEquipo.addItem("NOMBRE")
+        self.comboBoxBuscarEquipo.addItem("CODIGO")
+        """
         self.comboBoxBuscarMaquina.addItem("ID")
         self.comboBoxBuscarMaquina.addItem("NOMBRE")
         self.comboBoxBuscarMaquina.addItem("TIPO")
+        """
         "Inicializacion de reparacion"
+
         DB.metodos.LoadDataTabla3(self)
         self.pushButton_36.clicked.connect(self.Guardar)
         self.pushButton_37.clicked.connect(self.Modificar)
@@ -367,19 +370,20 @@ class MainWindow2(QMainWindow, Ui_MainWindow):
     def Guardar1(self):
         dialogo = QMessageBox.question(self, "Guardar", "Seguro Desea Guardar?")
         if dialogo == QMessageBox.Yes:
-            ID = self.lineEdit_16.text()
-            Nombre = self.lineEdit_17.text()
-            Codigo = self.lineEdit_18.text()
-            Tipo_instr = self.lineEdit_20.text()
-            Estado = self.comboBoxEstadoInstrumento.currentText()
-            Fabricante = self.lineEdit_19.text()
-            Tipo_Pract = self.lineEdit_21.text()
-            Valor = self.lineEdit_22.text()
-            Fecha_Re = self.dateEdit_3.text()
-            val = (ID, Nombre, Tipo_instr, Tipo_Pract, Estado, Codigo, Fecha_Re, Fabricante, Valor, "0")
-            DB.Instrumento.agregar(val)
+            ID = self.lineEdit_39.text()
+            Nombre = self.lineEdit_40.text()
+            Codigo = self.lineEdit_41.text()
+            Vida_util = self.lineEdit_43.text()
+            Estado = self.comboBoxEstadoEquipo.currentText()
+            Fabricante = self.lineEdit_42.text()
+            Mantenimiento = self.comboBoxMantenimientoEquipo.currentText()
+            Valor = self.lineEdit_44.text()
+            Fecha_Re = self.dateEdit_9.text()
+            val = (ID, Nombre, Vida_util, Mantenimiento, Estado, Codigo, Fecha_Re, Fabricante, Valor)
+            DB.Equipo.agregar(val)
             DB.metodos.LoadDataTabla1(self)
-    def Guardar2(self):
+
+    """ def Guardar2(self):
         dialogo = QMessageBox.question(self, "Guardar", "Seguro Desea Guardar?")
         if dialogo == QMessageBox.Yes:
             ID = self.lineEdit_25.text()
@@ -393,22 +397,23 @@ class MainWindow2(QMainWindow, Ui_MainWindow):
             val = (ID, Nombre, Tipo_Maq, Tipo_Pract, Fecha_Re, Fabricante, Valor, Estado)
             DB.Maquina.agregar(val)
             DB.metodos.LoadDataTabla2(self)
+        """
     def Modificar1(self):
         dialogo = QMessageBox.question(self, "Modificar", "Seguro Desea Modificar?")
         if dialogo == QMessageBox.Yes:
-            ID = self.lineEdit_16.text()
-            Nombre = self.lineEdit_17.text()
-            Codigo = self.lineEdit_18.text()
-            Tipo_instr = self.lineEdit_20.text()
-            Estado = self.comboBoxEstadoInstrumento.currentText()
-            Fabricante = self.lineEdit_19.text()
-            Tipo_Pract = self.lineEdit_21.text()
-            Valor = self.lineEdit_22.text()
-            Fecha_Re = self.dateEdit_3.text()
-            val = (Nombre, Tipo_instr, Tipo_Pract, Estado, Codigo, Fecha_Re, Fabricante, Valor, "0", ID)
-            DB.Instrumento.Actualizar(val)
+            ID = self.lineEdit_39.text()
+            Nombre = self.lineEdit_40.text()
+            Codigo = self.lineEdit_41.text()
+            Vida_util = self.lineEdit_43.text()
+            Estado = self.comboBoxEstadoEquipo.currentText()
+            Fabricante = self.lineEdit_42.text()
+            Mantenimiento = self.comboBoxMantenimientoEquipo.currentText()
+            Valor = self.lineEdit_44.text()
+            Fecha_Re = self.dateEdit_9.text()
+            val = (Nombre, Vida_util, Mantenimiento, Estado, Codigo, Fecha_Re, Fabricante, Valor,ID)
+            DB.Equipo.Actualizar(val)
             DB.metodos.LoadDataTabla1(self)
-    def Modificar2(self):
+    """def Modificar2(self):
         dialogo = QMessageBox.question(self, "Modificar", "Seguro Desea Modificar?")
         if dialogo == QMessageBox.Yes:
             ID = self.lineEdit_25.text()
@@ -422,31 +427,35 @@ class MainWindow2(QMainWindow, Ui_MainWindow):
             val = (Nombre, Tipo_Maq, Tipo_Pract, Fecha_Re, Fabricante, Valor, Estado, ID)
             DB.Maquina.Actualizar(val)
             DB.metodos.LoadDataTabla2(self)
+            """
     def Buscar1(self):
-
-        Consulta = self.lineEdit_23.text()
-        aux = self.comboBoxBuscarInstrumento.currentText()
+        Consulta = self.lineEdit_46.text()
+        aux = self.comboBoxBuscarEquipo.currentText()
         val=(Consulta,)
         DB.metodos.ConsultaDataTabla1(self,val,aux)
-    def Buscar2(self):
+
+    """def Buscar2(self):
         Consulta = self.lineEdit_30.text()
         aux = self.comboBoxBuscarMaquina.currentText()
         val=(Consulta,)
         DB.metodos.ConsultaDataTabla2(self,val,aux)
+        """
     def Eliminar1(self):
         dialogo = QMessageBox.question(self, "Eliminar", "Seguro Desea Eliminar?")
         if dialogo == QMessageBox.Yes:
-            Consulta = self.lineEdit_23.text()
+            Consulta = self.lineEdit_46.text()
             val = (Consulta,)
-            DB.Instrumento.Eliminar(val)
+            DB.Equipo.Eliminar(val)
             DB.metodos.LoadDataTabla1(self)
-    def Eliminar2(self):
+
+    """def Eliminar2(self):
         dialogo = QMessageBox.question(self, "Eliminar", "Seguro Desea Eliminar?")
         if dialogo == QMessageBox.Yes:
             Consulta = self.lineEdit_30.text()
             val = (Consulta,)
             DB.Maquina.Eliminar(val)
             DB.metodos.LoadDataTabla2(self)
+            """
 
     "Funciones de Reparacion:"
     def MostrarReparacion(self):
@@ -566,7 +575,7 @@ class MainWindow2(QMainWindow, Ui_MainWindow):
             PDFProveedor = self.ArchivoS
             val = (ID, FechaDi, Nombre, NIT, Telefono,Email, Direccion,Fax,Ciudad,ContactoVentas,ContactoSoporte,PDFProveedor )
             DB.Proveedores.agregar(val)
-            self.GuardarArchivo()
+            self.GuardarArchivoProveedores()
             DB.metodos.LoadDataTablaProveedores(self)
 
     def ModificarP(self):
@@ -588,7 +597,7 @@ class MainWindow2(QMainWindow, Ui_MainWindow):
             DB.Proveedores.Actualizar(val)
             dialogo2 = QMessageBox.question(self, "Modificar", "Desea Modificar el Archivo PDF tambien?")
             if dialogo2 == QMessageBox.Yes:
-                self.GuardarArchivo()
+                self.GuardarArchivoProveedores()
             DB.metodos.LoadDataTablaProveedores(self)
 
     def BuscarP(self):
@@ -614,7 +623,7 @@ class MainWindow2(QMainWindow, Ui_MainWindow):
         subprocess.Popen([rf"C:\Users\Orale\Documents\ProyectoT\Memoria\PDFProveedores\{ArchivoName}"], shell=True)
 
 
-    def GuardarArchivo(self):
+    def GuardarArchivoProveedores(self):
         shutil.copy(self.ArchivoE, r'C:\Users\Orale\Documents\ProyectoT\Memoria\PDFProveedores')
 
 
