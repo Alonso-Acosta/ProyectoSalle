@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="Icon">
+    <file>Recursos/Proveedores.png</file>
     <file>Recursos/Registrar.png</file>
     <file>Recursos/Modificar.png</file>
     <file>Recursos/Consultar.png</file>

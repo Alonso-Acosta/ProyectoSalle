@@ -367,7 +367,7 @@ class metodos:
         for num in data:
             aux = "{}".format(num[0])
             fecha1 = "{}".format(num[1])
-            fecha2 = "$ {}".format(num[2])
+            fecha2 = "{}".format(num[2])
             self.TInstrumentoReparacion.setItem(fila, 0, QTableWidgetItem(aux))
             self.TInstrumentoReparacion.setItem(fila, 1, QTableWidgetItem(fecha1))
             self.TInstrumentoReparacion.setItem(fila, 2, QTableWidgetItem(fecha2))
