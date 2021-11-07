@@ -1,246 +1,13 @@
-import os
-
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QFileDialog
+from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QFileDialog, QTableWidgetItem
 from Login import Ui_Form1
 from InterfazPrincipal import Ui_MainWindow
-from Reparacion import  Ui_Form2
 from DateTime import DateTime
 import shutil, subprocess
-
 import sys, BaseDatos
 DB =BaseDatos
 day =DateTime().day()
 month = DateTime().Month()
 year = DateTime().year()
-"""
-class ReparacionWindow(QMainWindow,Ui_Form2):
-    def __init__(self):
-        super().__init__()
-        self.setupUi(self)
-        self.pushButton_18.clicked.connect(self.Guardar)
-        self.pushButton_19.clicked.connect(self.Modificar)
-        self.pushButton_6.clicked.connect(self.Buscar)
-        self.pushButton_5.clicked.connect(self.Eliminar)
-        self.pushButton_22.clicked.connect(self.Actualizar)
-        self.pushButton_2.clicked.connect(self.ConsultaIDInstrU)
-        self.pushButton.clicked.connect(self.ConsultaIDLaboratorista)
-        self.comboBox_2.addItem("ID")
-        self.comboBox_2.addItem("ID LABORATORISTA")
-        self.comboBox_2.addItem("ID MAQUINA")
-
-
-    def Actualizar(self):
-        DB.metodos.LoadDataTabla3(self)
-
-    def ConsultaIDInstrU(self):
-        Consulta = self.lineEdit_6.text()
-        val = (Consulta,)
-        sal=DB.Instrumento.ConsultaID(val)
-        print(sal)
-        if Consulta in sal[0]:
-            dialogo = QMessageBox(self)
-            dialogo.setWindowTitle("Existe")
-            dialogo.setText("Instrumento Existente")
-            dialogo.exec_()
-        else:
-            dialogo = QMessageBox(self)
-            dialogo.setWindowTitle("Inexistente")
-            dialogo.setText("Instrumento Inexistente")
-            dialogo.exec_()
-
-    def ConsultaIDLaboratorista(self):
-        Consulta = self.lineEdit_3.text()
-        val = (Consulta,)
-        sal=DB.metodos.ConsultaIDLaboratorista(val)
-
-        print(sal)
-        if Consulta in sal[0]:
-            dialogo = QMessageBox(self)
-            dialogo.setWindowTitle("Existe")
-            dialogo.setText("Laboratorista Existente")
-            dialogo.exec()
-        else:
-            dialogo = QMessageBox(self)
-            dialogo.setWindowTitle("Inexistente")
-            dialogo.setText("Laboratorista Inexistente")
-            dialogo.exec()
-
-    def Guardar(self):
-        dialogo = QMessageBox.question(self,"Guardar","Seguro Desea Guardar?")
-        if dialogo == QMessageBox.Yes:
-            ID = self.lineEdit.text()
-            FechaIngreso = self.dateEdit.text()
-            FechaRetorno = self.dateEdit_3.text()
-            Descripcion = "{}".format(self.textEdit.toPlainText())
-            IDLaboratorista = self.lineEdit_3.text()
-            IDInstrumento = self.lineEdit_6.text()
-            print(Descripcion)
-            val = (ID, FechaIngreso, FechaRetorno, Descripcion, IDLaboratorista, " ", IDInstrumento)
-            DB.Reparacion.agregar(val)
-
-
-
-    def Modificar(self):
-        dialogo = QMessageBox.question(self, "Modificar", "Seguro Desea Modificar?")
-        if dialogo == QMessageBox.Yes:
-            ID = self.lineEdit.text()
-            FechaIngreso = self.dateEdit.text()
-            FechaRetorno = self.dateEdit_3.text()
-            Descripcion = self.textEdit.toPlainText()
-            IDLaboratorista = self.lineEdit_3.text()
-            IDInstrumento = self.lineEdit_6.text()
-            val = (FechaIngreso, FechaRetorno, Descripcion, IDLaboratorista, " ", IDInstrumento, ID)
-            DB.Reparacion.Actualizar(val)
-
-
-    def Buscar(self):
-        Consulta = self.lineEdit_5.text()
-        aux = self.comboBox_2.currentText()
-        val=(Consulta,)
-        print(Consulta)
-        DB.metodos.ConsultaDataTabla3(self,val,aux)
-
-    def Eliminar(self):
-        dialogo = QMessageBox.question(self, "Eliminar", "Seguro Desea Eliminar?")
-        if dialogo == QMessageBox.Yes:
-            Consulta = self.lineEdit_5.text()
-            val = (Consulta,)
-            DB.Reparacion.Eliminar(val)
-"""
-"""
-class RegistroWindow(QMainWindow,Ui_Form):
-    def __init__(self):
-        super().__init__()
-        self.setupUi(self)
-        self.pushButton_11.clicked.connect(self.Guardar1)
-        self.pushButton_10.clicked.connect(self.Modificar1)
-        self.pushButton_2.clicked.connect(self.Buscar1)
-        self.pushButton.clicked.connect(self.Eliminar1)
-        self.pushButton_14.clicked.connect(self.Guardar2)
-        self.pushButton_15.clicked.connect(self.Modificar2)
-        self.pushButton_4.clicked.connect(self.Buscar2)
-        self.pushButton_3.clicked.connect(self.Eliminar2)
-        self.pushButton_18.clicked.connect(self.Actualizar)
-        self.pushButton_19.clicked.connect(self.Actualizar2)
-
-        self.comboBox.addItem("BUENO")
-        self.comboBox.addItem("REGULAR")
-        self.comboBox.addItem("MALO")
-        self.comboBox.addItem("PARA REPARACION")
-
-        self.comboBox_3.addItem("BUENO")
-        self.comboBox_3.addItem("REGULAR")
-        self.comboBox_3.addItem("MALO")
-        self.comboBox_3.addItem("PARA REPARACION")
-
-        self.comboBox_2.addItem("ID")
-        self.comboBox_2.addItem("NOMBRE")
-        self.comboBox_2.addItem("TIPO")
-
-        self.comboBox_4.addItem("ID")
-        self.comboBox_4.addItem("NOMBRE")
-        self.comboBox_4.addItem("TIPO")
-
-    def Actualizar(self):
-        DB.metodos.LoadDataTabla1(self)
-
-    def Actualizar2(self):
-        DB.metodos.LoadDataTabla2(self)
-
-    def Guardar1(self):
-        dialogo = QMessageBox.question(self, "Guardar", "Seguro Desea Guardar?")
-        if dialogo == QMessageBox.Yes:
-            ID = self.lineEdit.text()
-            Nombre = self.lineEdit_2.text()
-            Codigo = self.lineEdit_3.text()
-            Tipo_instr = self.lineEdit_4.text()
-            Estado = self.comboBox.currentText()
-            Fabricante = self.lineEdit_6.text()
-            Tipo_Pract = self.lineEdit_8.text()
-            Valor = self.lineEdit_7.text()
-            Fecha_Re = self.dateEdit.text()
-            val = (ID, Nombre, Tipo_instr, Tipo_Pract, Estado, Codigo, Fecha_Re, Fabricante, Valor, "0")
-            DB.Instrumento.agregar(val)
-
-
-    def Guardar2(self):
-        dialogo = QMessageBox.question(self, "Guardar", "Seguro Desea Guardar?")
-        if dialogo == QMessageBox.Yes:
-            ID = self.lineEdit_9.text()
-            Nombre = self.lineEdit_10.text()
-            Tipo_Maq = self.lineEdit_13.text()
-            Estado = self.comboBox_3.currentText()
-            Fabricante = self.lineEdit_12.text()
-            Tipo_Pract = self.lineEdit_14.text()
-            Valor = self.lineEdit_15.text()
-            Fecha_Re = self.dateEdit_2.text()
-            val = (ID, Nombre, Tipo_Maq, Tipo_Pract, Fecha_Re, Fabricante, Valor, Estado)
-            DB.Maquina.agregar(val)
-
-
-    def Modificar1(self):
-        dialogo = QMessageBox.question(self, "Modificar", "Seguro Desea Modificar?")
-        if dialogo == QMessageBox.Yes:
-            ID = self.lineEdit.text()
-            Nombre = self.lineEdit_2.text()
-            Codigo = self.lineEdit_3.text()
-            Tipo_instr = self.lineEdit_4.text()
-            Estado = self.comboBox.currentText()
-            Fabricante = self.lineEdit_6.text()
-            Tipo_Pract = self.lineEdit_8.text()
-            Valor = self.lineEdit_7.text()
-            Fecha_Re = self.dateEdit.text()
-            val = (Nombre, Tipo_instr, Tipo_Pract, Estado, Codigo, Fecha_Re, Fabricante, Valor, "0", ID)
-            DB.Instrumento.Actualizar(val)
-
-
-    def Modificar2(self):
-        dialogo = QMessageBox.question(self, "Modificar", "Seguro Desea Modificar?")
-        if dialogo == QMessageBox.Yes:
-            ID = self.lineEdit_9.text()
-            Nombre = self.lineEdit_10.text()
-            Tipo_Maq = self.lineEdit_13.text()
-            Estado = self.comboBox_3.currentText()
-            Fabricante = self.lineEdit_12.text()
-            Tipo_Pract = self.lineEdit_14.text()
-            Valor = self.lineEdit_15.text()
-            Fecha_Re = self.dateEdit_2.text()
-            val = (Nombre, Tipo_Maq, Tipo_Pract, Fecha_Re, Fabricante, Valor, Estado, ID)
-            DB.Maquina.Actualizar(val)
-
-
-    def Buscar1(self):
-
-        Consulta = self.lineEdit_5.text()
-        aux = self.comboBox_2.currentText()
-        val=(Consulta,)
-        print(Consulta)
-        DB.metodos.ConsultaDataTabla1(self,val,aux)
-
-
-    def Buscar2(self):
-        Consulta = self.lineEdit_11.text()
-        aux = self.comboBox_4.currentText()
-        val=(Consulta,)
-        DB.metodos.ConsultaDataTabla2(self,val,aux)
-
-
-
-    def Eliminar1(self):
-        dialogo = QMessageBox.question(self, "Eliminar", "Seguro Desea Eliminar?")
-        if dialogo == QMessageBox.Yes:
-            Consulta = self.lineEdit_5.text()
-            val = (Consulta,)
-            DB.Instrumento.Eliminar(val)
-
-
-    def Eliminar2(self):
-        dialogo = QMessageBox.question(self, "Eliminar", "Seguro Desea Eliminar?")
-        if dialogo == QMessageBox.Yes:
-            Consulta = self.lineEdit_11.text()
-            val = (Consulta,)
-            DB.Maquina.Eliminar(val)
-"""
 
 class MainWindow2(QMainWindow, Ui_MainWindow):
     def __init__(self):
@@ -249,6 +16,8 @@ class MainWindow2(QMainWindow, Ui_MainWindow):
         self.pushButton_2.clicked.connect(self.MostrarRegistro)
         self.pushButton_3.clicked.connect(self.MostrarReparacion)
         self.pushButton_5.clicked.connect(self.MostrarProveedore)
+        self.pushButton_7.clicked.connect(self.MostrarPlan)
+        self.pushButton_71.clicked.connect(self.GenerarPlanM)
         self.pushButton.clicked.connect(self.Inicio)
         self.Wregistrar.setGeometry(0, 0, 1250,0)
         self.Wreparacion.setGeometry(0, 0, 1250, 0)
@@ -271,6 +40,19 @@ class MainWindow2(QMainWindow, Ui_MainWindow):
         self.comboBoxEstadoEquipo.addItem("REGULAR")
         self.comboBoxEstadoEquipo.addItem("MALO")
         self.comboBoxEstadoEquipo.addItem("PARA REPARACION")
+
+        self.comboBoxLaboratorio.addItem(" ")
+        self.comboBoxLaboratorio.addItem("BIOTECNOLOGÍA")
+        self.comboBoxLaboratorio.addItem("CIROC-SUELOS")
+        self.comboBoxLaboratorio.addItem("CDT")
+        self.comboBoxLaboratorio.addItem("HIDRÁULICA")
+        self.comboBoxLaboratorio.addItem("TOPOGRAFÍA")
+        self.comboBoxLaboratorio.addItem("PPA'S")
+        self.comboBoxLaboratorio.addItem("CTAS")
+
+        self.comboBoxCalibracion.addItem(" ")
+        self.comboBoxCalibracion.addItem("SI")
+        self.comboBoxCalibracion.addItem("NO")
 
         self.comboBoxMantenimientoEquipo.addItem("Frecuencia de mantenimiento")
         self.comboBoxMantenimientoEquipo.addItem("SEMESTRAL")
@@ -379,7 +161,9 @@ class MainWindow2(QMainWindow, Ui_MainWindow):
             Mantenimiento = self.comboBoxMantenimientoEquipo.currentText()
             Valor = self.lineEdit_44.text()
             Fecha_Re = self.dateEdit_9.text()
-            val = (ID, Nombre, Vida_util, Mantenimiento, Estado, Codigo, Fecha_Re, Fabricante, Valor)
+            Laboratorio = self.comboBoxLaboratorio.currentText()
+            Calibracion = self.comboBoxCalibracion.currentText()
+            val = (ID, Nombre, Vida_util, Mantenimiento, Estado, Codigo, Fecha_Re, Fabricante, Laboratorio, Calibracion, Valor)
             DB.Equipo.agregar(val)
             DB.metodos.LoadDataTabla1(self)
 
@@ -410,7 +194,9 @@ class MainWindow2(QMainWindow, Ui_MainWindow):
             Mantenimiento = self.comboBoxMantenimientoEquipo.currentText()
             Valor = self.lineEdit_44.text()
             Fecha_Re = self.dateEdit_9.text()
-            val = (Nombre, Vida_util, Mantenimiento, Estado, Codigo, Fecha_Re, Fabricante, Valor,ID)
+            Laboratorio = self.comboBoxLaboratorio.currentText()
+            Calibracion = self.comboBoxCalibracion.currentText()
+            val = (Nombre, Vida_util, Mantenimiento, Estado, Codigo, Fecha_Re, Fabricante, Laboratorio, Calibracion, Valor,ID)
             DB.Equipo.Actualizar(val)
             DB.metodos.LoadDataTabla1(self)
     """def Modificar2(self):
@@ -627,7 +413,152 @@ class MainWindow2(QMainWindow, Ui_MainWindow):
         shutil.copy(self.ArchivoE, r'C:\Users\Orale\Documents\ProyectoT\Memoria\PDFProveedores')
 
 
+# Funciones del Plan de mantenimientos
+    def MostrarPlan(self):
+        height = self.PlanM.height()
+        auxHeight = self.Wregistrar.height()
+        auxHeight2 = self.Wreparacion.height()
+        auxHeight3 = self.Wproveedores.height()
+        if height == 0:
+            newHeight = 750
+            if auxHeight != 0:
+                auxHeight = 0
+                self.Wregistrar.setGeometry(0, 0, 1250, auxHeight)
+            if auxHeight2 != 0:
+                auxHeight2 = 0
+                self.Wreparacion.setGeometry(0, 0, 1250, auxHeight2)
+            if auxHeight3 != 0:
+                auxHeight3 = 0
+                self.Wreparacion.setGeometry(0, 0, 1250, auxHeight3)
+        else:
+            newHeight = 0
+        self.PlanM.setGeometry(0, 0, 1250, newHeight)
 
+    def GenerarPlanM(self):
+        DatosE = DB.Equipo.ConsultarTablaEquipo(self)
+        DatosPlanM = DB.PlanM.ConsultarTablaPlanM(self)
+        fila = 0
+        pronostico1 = "      "
+        pronostico2 = "      "
+        pronostico3 = "      "
+        pronostico4 = "      "
+        pronostico5 = "      "
+        pronostico6 = "      "
+        pronostico7 = "      "
+        observaciones = ""
+
+        self.TPlan.setRowCount(len(DatosE))
+        for num in DatosE:
+            fecha = "{}".format(num[6])
+            if num[3] == "SEMESTRAL":
+                for aux in range(1,8):
+                    anoU = fecha.split("-")[0]
+                    mesU = fecha.split("-")[1]
+                    mesP = int(mesU) + 6
+                    AnoP = int(anoU)+aux
+                    if mesP > 12:
+                        mesP = mesP-12
+                    for i in range(8, 15):
+                        Nheader = self.TPlan.horizontalHeaderItem(i).text().split(" ")[1]
+                        if str(AnoP) == Nheader:
+                            fechaP = str(AnoP) + "-" + str(mesP) + "-" + fecha.split("-")[2] + " - " + str(AnoP) + "-" + fecha.split("-")[1] + "-" + fecha.split("-")[2]
+                            self.TPlan.setItem(fila, i, QTableWidgetItem(fechaP))
+                    if aux == 1:
+                        self.TPlan.setItem(fila, 7, QTableWidgetItem(fechaP))
+                        proximoM = fechaP
+                        pronostico1 = fechaP
+                    if aux == 2:
+                        pronostico2 = fechaP
+                    if aux == 3:
+                        pronostico3 = fechaP
+                    if aux == 4:
+                        pronostico4 = fechaP
+                    if aux == 5:
+                        pronostico5 = fechaP
+                    if aux == 6:
+                        pronostico6 = fechaP
+                    if aux == 7:
+                        pronostico7 = fechaP
+            if num[3] == "ANUAL":
+                for aux in range(1,8):
+                    anoU = fecha.split("-")[0]
+                    AnoP = int(anoU) + aux
+                    for i in range(8, 15):
+                        Nheader = self.TPlan.horizontalHeaderItem(i).text().split(" ")[1]
+                        if str(AnoP) == Nheader:
+                            fechaP = str(AnoP) + "-" + fecha.split("-")[1] + "-" + fecha.split("-")[2]
+                            self.TPlan.setItem(fila, i, QTableWidgetItem(fechaP))
+                    if aux == 1:
+                        self.TPlan.setItem(fila, 7, QTableWidgetItem(fechaP))
+                        proximoM=fechaP
+                        pronostico1 = fechaP
+                    if aux == 2:
+                        pronostico2 = fechaP
+                    if aux == 3:
+                        pronostico3 = fechaP
+                    if aux == 4:
+                        pronostico4 = fechaP
+                    if aux == 5:
+                        pronostico5 = fechaP
+                    if aux == 6:
+                        pronostico6 = fechaP
+                    if aux == 7:
+                        pronostico7 = fechaP
+
+            if num[3] == "2 AÑOS":
+                for aux in range(2,10,2):
+                    anoU = fecha.split("-")[0]
+                    AnoP = int(anoU) + aux
+                    for i in range(8,15):
+                        Nheader = self.TPlan.horizontalHeaderItem(i).text().split(" ")[1]
+                        if str(AnoP) == Nheader:
+                            fechaP = str(AnoP) + "-" + fecha.split("-")[1] + "-" + fecha.split("-")[2]
+                            self.TPlan.setItem(fila, i, QTableWidgetItem(fechaP))
+                    if aux == 2:
+                        self.TPlan.setItem(fila, 7, QTableWidgetItem(fechaP))
+                        proximoM = fechaP
+                        pronostico2 = fechaP
+                    if aux == 4:
+                        pronostico4 = fechaP
+                    if aux == 6:
+                        pronostico6 = fechaP
+
+            if num[3] == "3 AÑOS":
+                for aux in range(3, 10, 3):
+                    anoU = fecha.split("-")[0]
+                    AnoP = int(anoU) + aux
+                    for i in range(8, 15):
+                        Nheader = self.TPlan.horizontalHeaderItem(i).text().split(" ")[1]
+                        if str(AnoP) == Nheader:
+                            fechaP = str(AnoP) + "-" + fecha.split("-")[1] + "-" + fecha.split("-")[2]
+                            self.TPlan.setItem(fila, i, QTableWidgetItem(fechaP))
+                    if aux == 3:
+                        self.TPlan.setItem(fila, 7, QTableWidgetItem(fechaP))
+                        proximoM = fechaP
+                    if aux == 6:
+                        pronostico3 = fechaP
+                    if aux == 9:
+                        pronostico6 = fechaP
+            self.TPlan.setItem(fila, 0, QTableWidgetItem(num[8]))
+            self.TPlan.setItem(fila, 1, QTableWidgetItem(num[5]))
+            self.TPlan.setItem(fila, 2, QTableWidgetItem(num[1]))
+            self.TPlan.setItem(fila, 3, QTableWidgetItem(num[2]))
+            self.TPlan.setItem(fila, 4, QTableWidgetItem(num[9]))
+            self.TPlan.setItem(fila, 5, QTableWidgetItem(num[3]))
+            self.TPlan.setItem(fila, 6, QTableWidgetItem(fecha))
+            fila += 1
+            laboratorio = num[8]
+            codigo = num[5]
+            nombre = num[1]
+            vida_util = num[2]
+            calibracion = num[9]
+            frecuenciaM =num[3]
+            val = (laboratorio, codigo, nombre, vida_util, calibracion, frecuenciaM, fecha, proximoM, pronostico1, pronostico2, pronostico3, pronostico4, pronostico5, pronostico6, pronostico7,observaciones)
+            for num2 in DatosPlanM:
+                if num[1] == num2[2]:
+                    print("ya esta")
+                else:
+                    DB.PlanM.agregar(val)
 #class MetodosAux:
 
 

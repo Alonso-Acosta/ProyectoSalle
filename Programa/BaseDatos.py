@@ -13,7 +13,8 @@ mycursor = mydb.cursor()
 sqlinstertUsuarios = "INSERT INTO t_usuarios (user,password,cedula,tipousuario,cod_estud,id_laboratorista) VALUES (%s,%s,%s,%s,%s,%s)"
 sqlinstertLaboratorista = "INSERT INTO t_usuarios (id_laboratorista,cedula,nombres,apellidos,tel_fijo,celular,ciudad,fecha_nac,direccion) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)"
 
-sqlinstertEquipo =  "INSERT INTO t_equipo (id_equipo,nombre,vida_util,frec_mantenimiento,estado_equipo,codigo_equipo,fecha_registro,fabricante,valor) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+sqlinstertPlanM = "INSERT INTO t_planm (laboratorio,codigo_equipo,nombre,vida_util,calibracion,frec_mantenimiento,ultimoM,proximoM,pronostico1,pronostico2,pronostico3,pronostico4,pronostico5,pronostico6,pronostico7,observaciones) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+sqlinstertEquipo =  "INSERT INTO t_equipo (id_equipo,nombre,vida_util,frec_mantenimiento,estado_equipo,codigo_equipo,fecha_registro,fabricante,laboratorio,calibracion,valor) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
 sqlinstertInstrumento = "INSERT INTO t_instrumento (id_instrumento,nombre,tipo_instr,tipo_practica,estado_instr,cod_seguridad,fecha_registro,fabricante,valor,id_banco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
 sqlinstertMaquina = "INSERT INTO t_maquina (id_maquina,nombre,tipo_maq,tipo_practica,fecha_registro,fabricante,valor,estado_maq) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)"
 sqlinstertReparacion = "INSERT INTO t_reparacion (id_reparacion,fecha_ingreso,fecha_retorno,descripcion,id_laboratorista,id_maquina,id_instrumento) VALUES (%s,%s,%s,%s,%s,%s,%s)"
@@ -27,6 +28,12 @@ sqlselectEquipo = "SELECT * FROM t_equipo "
 sqlselectEquipoID = "SELECT * FROM t_equipo WHERE id_equipo = %s"
 sqlselectEquipoNombre = "SELECT * FROM t_equipo WHERE nombre = %s"
 sqlselectEquipoCodigo = "SELECT * FROM t_equipo WHERE codigo_equipo = %s"
+
+sqlselectPlanM = "SELECT * FROM t_planm "
+sqlselectPlanMLaboratorio = "SELECT * FROM t_planm WHERE laboratorio = %s"
+sqlselectPlanMNombre = "SELECT * FROM t_planm WHERE nombre = %s"
+sqlselectPlanMCodigo = "SELECT * FROM t_planm WHERE codigo_equipo = %s"
+
 
 sqlselectInstrumento = "SELECT * FROM t_instrumento "
 sqlselectInstrumentoID = "SELECT * FROM t_instrumento WHERE id_instrumento = %s"
@@ -52,7 +59,9 @@ sqlselectProveedoresNit = "SELECT * FROM t_proveedores WHERE Nit = %s"
 
 # MODIFICAR DATOS EN BASE DE DATOS
 
-sqlupdateEquipo = "UPDATE t_equipo SET nombre = %s,	vida_util = %s,frec_mantenimiento = %s,estado_equipo = %s,codigo_equipo = %s,fecha_registro = %s,fabricante = %s,valor = %s WHERE id_equipo = %s"
+sqlupdateEquipo = "UPDATE t_equipo SET nombre = %s,	vida_util = %s,frec_mantenimiento = %s,estado_equipo = %s,codigo_equipo = %s,fecha_registro = %s,fabricante = %s,laboratorio = %s,calibracion = %s,valor = %s WHERE id_equipo = %s"
+sqlupdatePlanM = "UPDATE t_planm SET laboratorio = %s, nombre = %s,	vida_util = %s,calibracion = %s,frec_mantenimiento = %s,ultimoM = %s, proximoM = %s, pronostico1 = %s,pronostico2 = %s,pronostico3 = %s,pronostico4 = %s,pronostico5 = %s,pronostico6 = %s,pronostico7 = %s, observaciones = %s  WHERE codigo_equipo = %s"
+
 sqlupdateInstrumento = "UPDATE t_instrumento SET nombre = %s,tipo_instr = %s,tipo_practica = %s,estado_instr = %s,cod_seguridad = %s,fecha_registro = %s,fabricante = %s,valor = %s,id_banco = %s WHERE id_instrumento = %s"
 sqlupdateMaquina = "UPDATE t_maquina SET nombre = %s, tipo_maq = %s,tipo_practica = %s, fecha_registro = %s, fabricante = %s, valor = %s, estado_maq = %s WHERE id_maquina = %s"
 sqlupdateReparacion = "UPDATE t_reparacion SET fecha_ingreso = %s, fecha_retorno = %s,descripcion = %s, id_laboratorista = %s,id_maquina = %s,id_instumento = %s WHERE id_reparacion = %s"
@@ -63,6 +72,8 @@ sqlupdateProveedores = "UPDATE t_proveedores SET FechaDiligenciamiento = %s, Raz
 
 # ELIMINAR DATOS EN BASE DE DATOS
 sqlDeleteEquipo = "DELETE FROM t_equipo WHERE id_equipo = %s"
+sqlDeletePlanM = "DELETE FROM t_planm WHERE codigo_equipo = %s"
+
 sqlDeleteInstrumento = "DELETE FROM t_instrumento WHERE id_instrumento = %s"
 sqlDeleteMaquina = "DELETE FROM t_maquina WHERE id_maquina = %s"
 sqlDeleteReparacion = "DELETE FROM t_reparacion WHERE id_reparacion = %s"
@@ -72,6 +83,7 @@ sqlDeleteProveedor = "DELETE FROM t_proveedores WHERE id_proveedor = %s"
 #val = ("45161004","126304","Miguel","Rojas","917508","321225461","Sincelejo","2000/10/15","calle walabi 4 2 sydni",)
 #mycursor.execute(sqlinstertLaboratorista,val)
 #mydb.commit()
+
 class Equipo:
     def agregar(val):
         mycursor.execute(sqlinstertEquipo, val)
@@ -106,6 +118,39 @@ class Equipo:
         mycursor.execute(sqlDeleteEquipo, val)
         mydb.commit()
         print(mycursor.rowcount, "record(s) deleted")
+
+class PlanM:
+    def agregar(val):
+        mycursor.execute(sqlinstertPlanM, val)
+        mydb.commit()
+
+    def ConsultarTablaPlanM(self):
+        mycursor.execute(sqlselectPlanM)
+        myresult = mycursor.fetchall()
+        return myresult
+
+    def ConsultaLaboratorio(adr):
+        mycursor.execute(sqlselectPlanMLaboratorio, adr)
+        myresult = mycursor.fetchall()
+        return myresult
+
+    def ConsultaNombre(adr):
+        mycursor.execute(sqlselectPlanMNombre, adr)
+        myresult = mycursor.fetchall()
+        return myresult
+
+    def ConsultaCodigo(adr):
+        mycursor.execute(sqlselectPlanMCodigo, adr)
+        myresult = mycursor.fetchall()
+        return myresult
+
+    def Actualizar(val):
+        mycursor.execute(sqlupdatePlanM, val)
+        mydb.commit()
+
+    def Eliminar(val):
+        mycursor.execute(sqlDeletePlanM, val)
+        mydb.commit()
 
 
 class Instrumento:
@@ -269,7 +314,7 @@ class metodos:
         # self.tableWidget.setColumnCount(9)
         for num in data:
             fecha = "{}".format(num[6])
-            valor = "$ {}".format(num[8])
+            valor = "$ {}".format(num[10])
             self.Tequipos.setItem(fila, 0, QTableWidgetItem(num[0]))
             self.Tequipos.setItem(fila, 1, QTableWidgetItem(num[1]))
             self.Tequipos.setItem(fila, 2, QTableWidgetItem(num[2]))
@@ -278,7 +323,9 @@ class metodos:
             self.Tequipos.setItem(fila, 5, QTableWidgetItem(num[5]))
             self.Tequipos.setItem(fila, 6, QTableWidgetItem(fecha))
             self.Tequipos.setItem(fila, 7, QTableWidgetItem(num[7]))
-            self.Tequipos.setItem(fila, 8, QTableWidgetItem(valor))
+            self.Tequipos.setItem(fila, 8, QTableWidgetItem(num[8]))
+            self.Tequipos.setItem(fila, 9, QTableWidgetItem(num[9]))
+            self.Tequipos.setItem(fila, 10, QTableWidgetItem(valor))
             fila += 1
         self.Tequipos.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.Tequipos.setSelectionMode(QAbstractItemView.SingleSelection)
