@@ -340,18 +340,26 @@ class Ui_MainWindow(object):
 "}")
         self.gridLayoutWidget_6 = QWidget(self.frame_5)
         self.gridLayoutWidget_6.setObjectName(u"gridLayoutWidget_6")
-        self.gridLayoutWidget_6.setGeometry(QRect(760, 60, 341, 114))
+        self.gridLayoutWidget_6.setGeometry(QRect(760, 50, 341, 163))
         self.gridLayout = QGridLayout(self.gridLayoutWidget_6)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.label_58 = QLabel(self.gridLayoutWidget_6)
-        self.label_58.setObjectName(u"label_58")
-        self.label_58.setFont(font3)
-        self.label_58.setStyleSheet(u"QLabel{\n"
+        self.label_90 = QLabel(self.gridLayoutWidget_6)
+        self.label_90.setObjectName(u"label_90")
+        self.label_90.setFont(font3)
+        self.label_90.setStyleSheet(u"QLabel{\n"
 "border: white;\n"
 "}")
 
-        self.gridLayout.addWidget(self.label_58, 1, 0, 1, 1)
+        self.gridLayout.addWidget(self.label_90, 2, 0, 1, 1)
+
+        self.lineEdit_45 = QLineEdit(self.gridLayoutWidget_6)
+        self.lineEdit_45.setObjectName(u"lineEdit_45")
+        self.lineEdit_45.setMinimumSize(QSize(0, 35))
+        self.lineEdit_45.setFont(font2)
+        self.lineEdit_45.setStyleSheet(u"")
+
+        self.gridLayout.addWidget(self.lineEdit_45, 2, 1, 1, 1)
 
         self.lineEdit_32 = QLineEdit(self.gridLayoutWidget_6)
         self.lineEdit_32.setObjectName(u"lineEdit_32")
@@ -378,9 +386,35 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.label_59, 0, 0, 1, 1)
 
+        self.label_58 = QLabel(self.gridLayoutWidget_6)
+        self.label_58.setObjectName(u"label_58")
+        self.label_58.setFont(font3)
+        self.label_58.setStyleSheet(u"QLabel{\n"
+"border: white;\n"
+"}")
+
+        self.gridLayout.addWidget(self.label_58, 1, 0, 1, 1)
+
+        self.label_91 = QLabel(self.gridLayoutWidget_6)
+        self.label_91.setObjectName(u"label_91")
+        self.label_91.setFont(font3)
+        self.label_91.setStyleSheet(u"QLabel{\n"
+"border: white;\n"
+"}")
+
+        self.gridLayout.addWidget(self.label_91, 3, 0, 1, 1)
+
+        self.lineEdit_47 = QLineEdit(self.gridLayoutWidget_6)
+        self.lineEdit_47.setObjectName(u"lineEdit_47")
+        self.lineEdit_47.setMinimumSize(QSize(0, 35))
+        self.lineEdit_47.setFont(font2)
+        self.lineEdit_47.setStyleSheet(u"")
+
+        self.gridLayout.addWidget(self.lineEdit_47, 3, 1, 1, 1)
+
         self.pushButton_34 = QPushButton(self.frame_5)
         self.pushButton_34.setObjectName(u"pushButton_34")
-        self.pushButton_34.setGeometry(QRect(1120, 75, 41, 28))
+        self.pushButton_34.setGeometry(QRect(1120, 55, 41, 28))
         self.pushButton_34.setStyleSheet(u"QPushButton{\n"
 "background: #ffffff;\n"
 "}")
@@ -390,7 +424,7 @@ class Ui_MainWindow(object):
         self.pushButton_34.setIconSize(QSize(30, 23))
         self.pushButton_35 = QPushButton(self.frame_5)
         self.pushButton_35.setObjectName(u"pushButton_35")
-        self.pushButton_35.setGeometry(QRect(1120, 125, 41, 28))
+        self.pushButton_35.setGeometry(QRect(1120, 98, 41, 28))
         self.pushButton_35.setStyleSheet(u"QPushButton{\n"
 "background: #ffffff;\n"
 "}")
@@ -486,32 +520,34 @@ class Ui_MainWindow(object):
         self.pushButton_37.setIcon(icon12)
         self.pushButton_37.setIconSize(QSize(100, 44))
         self.pushButton_37.setAutoDefault(False)
-        self.TInstrumentoReparacion = QTableWidget(self.frame_5)
-        if (self.TInstrumentoReparacion.columnCount() < 7):
-            self.TInstrumentoReparacion.setColumnCount(7)
+        self.TMantenimientosEnCurso = QTableWidget(self.frame_5)
+        if (self.TMantenimientosEnCurso.columnCount() < 8):
+            self.TMantenimientosEnCurso.setColumnCount(8)
         __qtablewidgetitem = QTableWidgetItem()
-        self.TInstrumentoReparacion.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        self.TMantenimientosEnCurso.setHorizontalHeaderItem(0, __qtablewidgetitem)
         __qtablewidgetitem1 = QTableWidgetItem()
-        self.TInstrumentoReparacion.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        self.TMantenimientosEnCurso.setHorizontalHeaderItem(1, __qtablewidgetitem1)
         __qtablewidgetitem2 = QTableWidgetItem()
-        self.TInstrumentoReparacion.setHorizontalHeaderItem(2, __qtablewidgetitem2)
+        self.TMantenimientosEnCurso.setHorizontalHeaderItem(2, __qtablewidgetitem2)
         __qtablewidgetitem3 = QTableWidgetItem()
-        self.TInstrumentoReparacion.setHorizontalHeaderItem(3, __qtablewidgetitem3)
+        self.TMantenimientosEnCurso.setHorizontalHeaderItem(3, __qtablewidgetitem3)
         __qtablewidgetitem4 = QTableWidgetItem()
-        self.TInstrumentoReparacion.setHorizontalHeaderItem(4, __qtablewidgetitem4)
+        self.TMantenimientosEnCurso.setHorizontalHeaderItem(4, __qtablewidgetitem4)
         __qtablewidgetitem5 = QTableWidgetItem()
-        self.TInstrumentoReparacion.setHorizontalHeaderItem(5, __qtablewidgetitem5)
+        self.TMantenimientosEnCurso.setHorizontalHeaderItem(5, __qtablewidgetitem5)
         __qtablewidgetitem6 = QTableWidgetItem()
-        self.TInstrumentoReparacion.setHorizontalHeaderItem(6, __qtablewidgetitem6)
-        self.TInstrumentoReparacion.setObjectName(u"TInstrumentoReparacion")
-        self.TInstrumentoReparacion.setGeometry(QRect(30, 260, 1021, 181))
-        self.TInstrumentoReparacion.setStyleSheet(u"QTableWidget{\n"
+        self.TMantenimientosEnCurso.setHorizontalHeaderItem(6, __qtablewidgetitem6)
+        __qtablewidgetitem7 = QTableWidgetItem()
+        self.TMantenimientosEnCurso.setHorizontalHeaderItem(7, __qtablewidgetitem7)
+        self.TMantenimientosEnCurso.setObjectName(u"TMantenimientosEnCurso")
+        self.TMantenimientosEnCurso.setGeometry(QRect(30, 260, 1021, 181))
+        self.TMantenimientosEnCurso.setStyleSheet(u"QTableWidget{\n"
 "border-radius: 8px \n"
 "}")
-        self.TInstrumentoReparacion.horizontalHeader().setDefaultSectionSize(145)
+        self.TMantenimientosEnCurso.horizontalHeader().setDefaultSectionSize(145)
         self.label_72 = QLabel(self.frame_5)
         self.label_72.setObjectName(u"label_72")
-        self.label_72.setGeometry(QRect(50, 10, 321, 31))
+        self.label_72.setGeometry(QRect(50, 10, 441, 31))
         font6 = QFont()
         font6.setFamilies([u"Arial"])
         font6.setPointSize(14)
@@ -520,6 +556,16 @@ class Ui_MainWindow(object):
         self.label_72.setStyleSheet(u"QLabel{\n"
 "border: white;\n"
 "}")
+        self.pushButton_55 = QPushButton(self.frame_5)
+        self.pushButton_55.setObjectName(u"pushButton_55")
+        self.pushButton_55.setGeometry(QRect(1120, 140, 41, 28))
+        self.pushButton_55.setStyleSheet(u"QPushButton{\n"
+"background: #ffffff;\n"
+"}")
+        icon13 = QIcon()
+        icon13.addFile(u":/Icon/Recursos/Proveedores.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_55.setIcon(icon13)
+        self.pushButton_55.setIconSize(QSize(30, 23))
         self.widget_3 = QWidget(self.tab_5)
         self.widget_3.setObjectName(u"widget_3")
         self.widget_3.setGeometry(QRect(0, 470, 1243, 251))
@@ -593,9 +639,9 @@ class Ui_MainWindow(object):
         self.pushButton_39.setStyleSheet(u"QPushButton{\n"
 "background: #ffffff;\n"
 "}")
-        icon13 = QIcon()
-        icon13.addFile(u":/Icon/Componente 29 \u2013 6.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_39.setIcon(icon13)
+        icon14 = QIcon()
+        icon14.addFile(u":/Icon/Componente 29 \u2013 6.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_39.setIcon(icon14)
         self.pushButton_39.setIconSize(QSize(100, 31))
         self.pushButton_39.setAutoDefault(False)
         self.pushButton_40 = QPushButton(self.widget_3)
@@ -605,340 +651,55 @@ class Ui_MainWindow(object):
         self.pushButton_40.setStyleSheet(u"QPushButton{\n"
 "background: #ffffff;\n"
 "}")
-        icon14 = QIcon()
-        icon14.addFile(u":/Icon/Componente 28 \u2013 6.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_40.setIcon(icon14)
+        icon15 = QIcon()
+        icon15.addFile(u":/Icon/Componente 28 \u2013 6.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_40.setIcon(icon15)
         self.pushButton_40.setIconSize(QSize(101, 35))
         self.pushButton_40.setAutoDefault(False)
         self.pushButton_41 = QPushButton(self.widget_3)
         self.pushButton_41.setObjectName(u"pushButton_41")
         self.pushButton_41.setGeometry(QRect(900, 200, 93, 28))
         self.pushButton_41.setFont(font5)
-        icon15 = QIcon()
-        icon15.addFile(u":/Icon/Recursos/Eliminar.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_41.setIcon(icon15)
+        icon16 = QIcon()
+        icon16.addFile(u":/Icon/Recursos/Eliminar.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_41.setIcon(icon16)
         self.pushButton_42 = QPushButton(self.widget_3)
         self.pushButton_42.setObjectName(u"pushButton_42")
         self.pushButton_42.setGeometry(QRect(1060, 200, 93, 28))
         self.pushButton_42.setFont(font5)
-        icon16 = QIcon()
-        icon16.addFile(u":/Icon/Recursos/Consultar.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_42.setIcon(icon16)
-        self.TConsultaInstrumentoReparacion = QTableWidget(self.widget_3)
-        if (self.TConsultaInstrumentoReparacion.columnCount() < 7):
-            self.TConsultaInstrumentoReparacion.setColumnCount(7)
-        __qtablewidgetitem7 = QTableWidgetItem()
-        self.TConsultaInstrumentoReparacion.setHorizontalHeaderItem(0, __qtablewidgetitem7)
+        icon17 = QIcon()
+        icon17.addFile(u":/Icon/Recursos/Consultar.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_42.setIcon(icon17)
+        self.TConsultaMantenimientos1 = QTableWidget(self.widget_3)
+        if (self.TConsultaMantenimientos1.columnCount() < 8):
+            self.TConsultaMantenimientos1.setColumnCount(8)
         __qtablewidgetitem8 = QTableWidgetItem()
-        self.TConsultaInstrumentoReparacion.setHorizontalHeaderItem(1, __qtablewidgetitem8)
+        self.TConsultaMantenimientos1.setHorizontalHeaderItem(0, __qtablewidgetitem8)
         __qtablewidgetitem9 = QTableWidgetItem()
-        self.TConsultaInstrumentoReparacion.setHorizontalHeaderItem(2, __qtablewidgetitem9)
+        self.TConsultaMantenimientos1.setHorizontalHeaderItem(1, __qtablewidgetitem9)
         __qtablewidgetitem10 = QTableWidgetItem()
-        self.TConsultaInstrumentoReparacion.setHorizontalHeaderItem(3, __qtablewidgetitem10)
+        self.TConsultaMantenimientos1.setHorizontalHeaderItem(2, __qtablewidgetitem10)
         __qtablewidgetitem11 = QTableWidgetItem()
-        self.TConsultaInstrumentoReparacion.setHorizontalHeaderItem(4, __qtablewidgetitem11)
+        self.TConsultaMantenimientos1.setHorizontalHeaderItem(3, __qtablewidgetitem11)
         __qtablewidgetitem12 = QTableWidgetItem()
-        self.TConsultaInstrumentoReparacion.setHorizontalHeaderItem(5, __qtablewidgetitem12)
+        self.TConsultaMantenimientos1.setHorizontalHeaderItem(4, __qtablewidgetitem12)
         __qtablewidgetitem13 = QTableWidgetItem()
-        self.TConsultaInstrumentoReparacion.setHorizontalHeaderItem(6, __qtablewidgetitem13)
-        self.TConsultaInstrumentoReparacion.setObjectName(u"TConsultaInstrumentoReparacion")
-        self.TConsultaInstrumentoReparacion.setGeometry(QRect(20, 50, 810, 180))
-        self.TConsultaInstrumentoReparacion.setStyleSheet(u"QTableWidget{\n"
+        self.TConsultaMantenimientos1.setHorizontalHeaderItem(5, __qtablewidgetitem13)
+        __qtablewidgetitem14 = QTableWidgetItem()
+        self.TConsultaMantenimientos1.setHorizontalHeaderItem(6, __qtablewidgetitem14)
+        __qtablewidgetitem15 = QTableWidgetItem()
+        self.TConsultaMantenimientos1.setHorizontalHeaderItem(7, __qtablewidgetitem15)
+        self.TConsultaMantenimientos1.setObjectName(u"TConsultaMantenimientos1")
+        self.TConsultaMantenimientos1.setGeometry(QRect(20, 50, 810, 180))
+        self.TConsultaMantenimientos1.setStyleSheet(u"QTableWidget{\n"
 "border-radius: 8px \n"
 "}")
         self.tabWidget_3.addTab(self.tab_5, "")
         self.tab_6 = QWidget()
         self.tab_6.setObjectName(u"tab_6")
-        self.frame_6 = QFrame(self.tab_6)
-        self.frame_6.setObjectName(u"frame_6")
-        self.frame_6.setGeometry(QRect(0, 0, 1243, 461))
-        self.frame_6.setFont(font2)
-        self.frame_6.setContextMenuPolicy(Qt.DefaultContextMenu)
-        self.frame_6.setStyleSheet(u"QFrame{\n"
-"border: 2px solid;\n"
-"border-radius: 25px;\n"
-"background: #ffffff;\n"
-"}\n"
-"QLineEdit{\n"
-"Border: 2px solid black;\n"
-"border-radius: 17px;\n"
-"Background: #FBD27E;\n"
-"}")
-        self.frame_6.setFrameShape(QFrame.StyledPanel)
-        self.frame_6.setFrameShadow(QFrame.Raised)
-        self.gridLayoutWidget_7 = QWidget(self.frame_6)
-        self.gridLayoutWidget_7.setObjectName(u"gridLayoutWidget_7")
-        self.gridLayoutWidget_7.setGeometry(QRect(50, 50, 381, 191))
-        self.gridLayout_7 = QGridLayout(self.gridLayoutWidget_7)
-        self.gridLayout_7.setObjectName(u"gridLayout_7")
-        self.gridLayout_7.setContentsMargins(0, 0, 0, 0)
-        self.label_63 = QLabel(self.gridLayoutWidget_7)
-        self.label_63.setObjectName(u"label_63")
-        self.label_63.setFont(font3)
-        self.label_63.setStyleSheet(u"QLabel{\n"
-"border: white;\n"
-"}")
-
-        self.gridLayout_7.addWidget(self.label_63, 1, 0, 1, 1)
-
-        self.label_64 = QLabel(self.gridLayoutWidget_7)
-        self.label_64.setObjectName(u"label_64")
-        self.label_64.setFont(font3)
-        self.label_64.setStyleSheet(u"QLabel{\n"
-"border: white;\n"
-"}")
-
-        self.gridLayout_7.addWidget(self.label_64, 2, 0, 1, 1)
-
-        self.dateEdit_7 = QDateEdit(self.gridLayoutWidget_7)
-        self.dateEdit_7.setObjectName(u"dateEdit_7")
-        self.dateEdit_7.setMinimumSize(QSize(0, 35))
-        self.dateEdit_7.setFont(font2)
-        self.dateEdit_7.setStyleSheet(u"QDateEdit{\n"
-"Border: 2px solid black;\n"
-"Border-radius: 17px;\n"
-"background:#FBD27E;\n"
-"}")
-        self.dateEdit_7.setMaximumDate(QDate(3000, 12, 31))
-        self.dateEdit_7.setMinimumDate(QDate(2021, 5, 17))
-
-        self.gridLayout_7.addWidget(self.dateEdit_7, 1, 1, 1, 1)
-
-        self.dateEdit_8 = QDateEdit(self.gridLayoutWidget_7)
-        self.dateEdit_8.setObjectName(u"dateEdit_8")
-        self.dateEdit_8.setMinimumSize(QSize(0, 35))
-        self.dateEdit_8.setFont(font2)
-        self.dateEdit_8.setStyleSheet(u"QDateEdit{\n"
-"Border: 2px solid black;\n"
-"Border-radius: 17px;\n"
-"background:#FBD27E;\n"
-"}")
-        self.dateEdit_8.setMaximumDate(QDate(3000, 12, 31))
-        self.dateEdit_8.setMinimumDate(QDate(2021, 5, 17))
-
-        self.gridLayout_7.addWidget(self.dateEdit_8, 2, 1, 1, 1)
-
-        self.lineEdit_35 = QLineEdit(self.gridLayoutWidget_7)
-        self.lineEdit_35.setObjectName(u"lineEdit_35")
-        self.lineEdit_35.setMinimumSize(QSize(0, 35))
-        self.lineEdit_35.setFont(font2)
-        self.lineEdit_35.setStyleSheet(u"")
-
-        self.gridLayout_7.addWidget(self.lineEdit_35, 0, 1, 1, 1)
-
-        self.label_65 = QLabel(self.gridLayoutWidget_7)
-        self.label_65.setObjectName(u"label_65")
-        self.label_65.setFont(font3)
-        self.label_65.setStyleSheet(u"QLabel{\n"
-"border: white;\n"
-"}")
-
-        self.gridLayout_7.addWidget(self.label_65, 0, 0, 1, 1)
-
-        self.label_66 = QLabel(self.gridLayoutWidget_7)
-        self.label_66.setObjectName(u"label_66")
-        self.label_66.setFont(font3)
-        self.label_66.setStyleSheet(u"QLabel{\n"
-"border: white;\n"
-"}")
-
-        self.gridLayout_7.addWidget(self.label_66, 0, 4, 1, 1)
-
-        self.textEdit_2 = QTextEdit(self.frame_6)
-        self.textEdit_2.setObjectName(u"textEdit_2")
-        self.textEdit_2.setGeometry(QRect(440, 60, 311, 161))
-        self.textEdit_2.setStyleSheet(u"QTextEdit{\n"
-"background: #FBD27E;\n"
-"}")
-        self.gridLayoutWidget_8 = QWidget(self.frame_6)
-        self.gridLayoutWidget_8.setObjectName(u"gridLayoutWidget_8")
-        self.gridLayoutWidget_8.setGeometry(QRect(760, 60, 341, 114))
-        self.gridLayout_8 = QGridLayout(self.gridLayoutWidget_8)
-        self.gridLayout_8.setObjectName(u"gridLayout_8")
-        self.gridLayout_8.setContentsMargins(0, 0, 0, 0)
-        self.label_67 = QLabel(self.gridLayoutWidget_8)
-        self.label_67.setObjectName(u"label_67")
-        self.label_67.setFont(font3)
-        self.label_67.setStyleSheet(u"QLabel{\n"
-"border: white;\n"
-"}")
-
-        self.gridLayout_8.addWidget(self.label_67, 1, 0, 1, 1)
-
-        self.lineEdit_36 = QLineEdit(self.gridLayoutWidget_8)
-        self.lineEdit_36.setObjectName(u"lineEdit_36")
-        self.lineEdit_36.setMinimumSize(QSize(0, 35))
-        self.lineEdit_36.setFont(font2)
-        self.lineEdit_36.setStyleSheet(u"")
-
-        self.gridLayout_8.addWidget(self.lineEdit_36, 1, 1, 1, 1)
-
-        self.lineEdit_37 = QLineEdit(self.gridLayoutWidget_8)
-        self.lineEdit_37.setObjectName(u"lineEdit_37")
-        self.lineEdit_37.setMinimumSize(QSize(0, 35))
-        self.lineEdit_37.setFont(font2)
-        self.lineEdit_37.setStyleSheet(u"")
-
-        self.gridLayout_8.addWidget(self.lineEdit_37, 0, 1, 1, 1)
-
-        self.label_68 = QLabel(self.gridLayoutWidget_8)
-        self.label_68.setObjectName(u"label_68")
-        self.label_68.setFont(font3)
-        self.label_68.setStyleSheet(u"QLabel{\n"
-"border: white;\n"
-"}")
-
-        self.gridLayout_8.addWidget(self.label_68, 0, 0, 1, 1)
-
-        self.pushButton_43 = QPushButton(self.frame_6)
-        self.pushButton_43.setObjectName(u"pushButton_43")
-        self.pushButton_43.setGeometry(QRect(1120, 75, 41, 28))
-        self.pushButton_43.setStyleSheet(u"QPushButton{\n"
-"background: #ffffff;\n"
-"}")
-        self.pushButton_43.setIcon(icon9)
-        self.pushButton_43.setIconSize(QSize(30, 23))
-        self.pushButton_44 = QPushButton(self.frame_6)
-        self.pushButton_44.setObjectName(u"pushButton_44")
-        self.pushButton_44.setGeometry(QRect(1120, 125, 41, 28))
-        self.pushButton_44.setStyleSheet(u"QPushButton{\n"
-"background: #ffffff;\n"
-"}")
-        self.pushButton_44.setIcon(icon10)
-        self.pushButton_44.setIconSize(QSize(30, 30))
-        self.pushButton_45 = QPushButton(self.frame_6)
-        self.pushButton_45.setObjectName(u"pushButton_45")
-        self.pushButton_45.setGeometry(QRect(1105, 300, 101, 31))
-        palette1 = QPalette()
-        palette1.setBrush(QPalette.Active, QPalette.WindowText, brush)
-        palette1.setBrush(QPalette.Active, QPalette.Button, brush1)
-        palette1.setBrush(QPalette.Active, QPalette.Light, brush2)
-        palette1.setBrush(QPalette.Active, QPalette.Midlight, brush3)
-        palette1.setBrush(QPalette.Active, QPalette.Dark, brush4)
-        palette1.setBrush(QPalette.Active, QPalette.Mid, brush5)
-        palette1.setBrush(QPalette.Active, QPalette.Text, brush)
-        palette1.setBrush(QPalette.Active, QPalette.BrightText, brush1)
-        palette1.setBrush(QPalette.Active, QPalette.ButtonText, brush)
-        palette1.setBrush(QPalette.Active, QPalette.Base, brush1)
-        palette1.setBrush(QPalette.Active, QPalette.Window, brush1)
-        palette1.setBrush(QPalette.Active, QPalette.Shadow, brush6)
-        palette1.setBrush(QPalette.Active, QPalette.AlternateBase, brush4)
-        palette1.setBrush(QPalette.Active, QPalette.ToolTipBase, brush7)
-        palette1.setBrush(QPalette.Active, QPalette.ToolTipText, brush6)
-        palette1.setBrush(QPalette.Inactive, QPalette.WindowText, brush)
-        palette1.setBrush(QPalette.Inactive, QPalette.Button, brush1)
-        palette1.setBrush(QPalette.Inactive, QPalette.Light, brush2)
-        palette1.setBrush(QPalette.Inactive, QPalette.Midlight, brush3)
-        palette1.setBrush(QPalette.Inactive, QPalette.Dark, brush4)
-        palette1.setBrush(QPalette.Inactive, QPalette.Mid, brush5)
-        palette1.setBrush(QPalette.Inactive, QPalette.Text, brush)
-        palette1.setBrush(QPalette.Inactive, QPalette.BrightText, brush1)
-        palette1.setBrush(QPalette.Inactive, QPalette.ButtonText, brush)
-        palette1.setBrush(QPalette.Inactive, QPalette.Base, brush1)
-        palette1.setBrush(QPalette.Inactive, QPalette.Window, brush1)
-        palette1.setBrush(QPalette.Inactive, QPalette.Shadow, brush6)
-        palette1.setBrush(QPalette.Inactive, QPalette.AlternateBase, brush4)
-        palette1.setBrush(QPalette.Inactive, QPalette.ToolTipBase, brush7)
-        palette1.setBrush(QPalette.Inactive, QPalette.ToolTipText, brush6)
-        palette1.setBrush(QPalette.Disabled, QPalette.WindowText, brush4)
-        palette1.setBrush(QPalette.Disabled, QPalette.Button, brush1)
-        palette1.setBrush(QPalette.Disabled, QPalette.Light, brush2)
-        palette1.setBrush(QPalette.Disabled, QPalette.Midlight, brush3)
-        palette1.setBrush(QPalette.Disabled, QPalette.Dark, brush4)
-        palette1.setBrush(QPalette.Disabled, QPalette.Mid, brush5)
-        palette1.setBrush(QPalette.Disabled, QPalette.Text, brush4)
-        palette1.setBrush(QPalette.Disabled, QPalette.BrightText, brush1)
-        palette1.setBrush(QPalette.Disabled, QPalette.ButtonText, brush4)
-        palette1.setBrush(QPalette.Disabled, QPalette.Base, brush1)
-        palette1.setBrush(QPalette.Disabled, QPalette.Window, brush1)
-        palette1.setBrush(QPalette.Disabled, QPalette.Shadow, brush6)
-        palette1.setBrush(QPalette.Disabled, QPalette.AlternateBase, brush)
-        palette1.setBrush(QPalette.Disabled, QPalette.ToolTipBase, brush7)
-        palette1.setBrush(QPalette.Disabled, QPalette.ToolTipText, brush6)
-        self.pushButton_45.setPalette(palette1)
-        self.pushButton_45.setFont(font4)
-        self.pushButton_45.setMouseTracking(False)
-        self.pushButton_45.setIcon(icon11)
-        self.pushButton_45.setIconSize(QSize(100, 44))
-        self.pushButton_45.setAutoDefault(False)
-        self.pushButton_46 = QPushButton(self.frame_6)
-        self.pushButton_46.setObjectName(u"pushButton_46")
-        self.pushButton_46.setGeometry(QRect(1105, 360, 100, 30))
-        self.pushButton_46.setFont(font5)
-        self.pushButton_46.setMouseTracking(False)
-        self.pushButton_46.setIcon(icon12)
-        self.pushButton_46.setIconSize(QSize(100, 44))
-        self.pushButton_46.setAutoDefault(False)
-        self.tableWidget_11 = QTableWidget(self.frame_6)
-        self.tableWidget_11.setObjectName(u"tableWidget_11")
-        self.tableWidget_11.setGeometry(QRect(30, 260, 1021, 181))
-        self.tableWidget_11.setStyleSheet(u"QTableWidget{\n"
-"border-radius: 8px \n"
-"}")
-        self.pushButton_47 = QPushButton(self.frame_6)
-        self.pushButton_47.setObjectName(u"pushButton_47")
-        self.pushButton_47.setGeometry(QRect(1060, 270, 31, 31))
-        palette2 = QPalette()
-        palette2.setBrush(QPalette.Active, QPalette.WindowText, brush)
-        palette2.setBrush(QPalette.Active, QPalette.Button, brush1)
-        palette2.setBrush(QPalette.Active, QPalette.Light, brush2)
-        palette2.setBrush(QPalette.Active, QPalette.Midlight, brush3)
-        palette2.setBrush(QPalette.Active, QPalette.Dark, brush4)
-        palette2.setBrush(QPalette.Active, QPalette.Mid, brush5)
-        palette2.setBrush(QPalette.Active, QPalette.Text, brush)
-        palette2.setBrush(QPalette.Active, QPalette.BrightText, brush1)
-        palette2.setBrush(QPalette.Active, QPalette.ButtonText, brush)
-        palette2.setBrush(QPalette.Active, QPalette.Base, brush1)
-        palette2.setBrush(QPalette.Active, QPalette.Window, brush1)
-        palette2.setBrush(QPalette.Active, QPalette.Shadow, brush6)
-        palette2.setBrush(QPalette.Active, QPalette.AlternateBase, brush4)
-        palette2.setBrush(QPalette.Active, QPalette.ToolTipBase, brush7)
-        palette2.setBrush(QPalette.Active, QPalette.ToolTipText, brush6)
-        palette2.setBrush(QPalette.Inactive, QPalette.WindowText, brush)
-        palette2.setBrush(QPalette.Inactive, QPalette.Button, brush1)
-        palette2.setBrush(QPalette.Inactive, QPalette.Light, brush2)
-        palette2.setBrush(QPalette.Inactive, QPalette.Midlight, brush3)
-        palette2.setBrush(QPalette.Inactive, QPalette.Dark, brush4)
-        palette2.setBrush(QPalette.Inactive, QPalette.Mid, brush5)
-        palette2.setBrush(QPalette.Inactive, QPalette.Text, brush)
-        palette2.setBrush(QPalette.Inactive, QPalette.BrightText, brush1)
-        palette2.setBrush(QPalette.Inactive, QPalette.ButtonText, brush)
-        palette2.setBrush(QPalette.Inactive, QPalette.Base, brush1)
-        palette2.setBrush(QPalette.Inactive, QPalette.Window, brush1)
-        palette2.setBrush(QPalette.Inactive, QPalette.Shadow, brush6)
-        palette2.setBrush(QPalette.Inactive, QPalette.AlternateBase, brush4)
-        palette2.setBrush(QPalette.Inactive, QPalette.ToolTipBase, brush7)
-        palette2.setBrush(QPalette.Inactive, QPalette.ToolTipText, brush6)
-        palette2.setBrush(QPalette.Disabled, QPalette.WindowText, brush4)
-        palette2.setBrush(QPalette.Disabled, QPalette.Button, brush1)
-        palette2.setBrush(QPalette.Disabled, QPalette.Light, brush2)
-        palette2.setBrush(QPalette.Disabled, QPalette.Midlight, brush3)
-        palette2.setBrush(QPalette.Disabled, QPalette.Dark, brush4)
-        palette2.setBrush(QPalette.Disabled, QPalette.Mid, brush5)
-        palette2.setBrush(QPalette.Disabled, QPalette.Text, brush4)
-        palette2.setBrush(QPalette.Disabled, QPalette.BrightText, brush1)
-        palette2.setBrush(QPalette.Disabled, QPalette.ButtonText, brush4)
-        palette2.setBrush(QPalette.Disabled, QPalette.Base, brush1)
-        palette2.setBrush(QPalette.Disabled, QPalette.Window, brush1)
-        palette2.setBrush(QPalette.Disabled, QPalette.Shadow, brush6)
-        palette2.setBrush(QPalette.Disabled, QPalette.AlternateBase, brush)
-        palette2.setBrush(QPalette.Disabled, QPalette.ToolTipBase, brush7)
-        palette2.setBrush(QPalette.Disabled, QPalette.ToolTipText, brush6)
-        self.pushButton_47.setPalette(palette2)
-        self.pushButton_47.setFont(font4)
-        self.pushButton_47.setMouseTracking(False)
-        self.pushButton_47.setIconSize(QSize(100, 44))
-        self.pushButton_47.setAutoDefault(False)
-        self.label_73 = QLabel(self.frame_6)
-        self.label_73.setObjectName(u"label_73")
-        self.label_73.setGeometry(QRect(50, 10, 321, 31))
-        self.label_73.setFont(font6)
-        self.label_73.setStyleSheet(u"QLabel{\n"
-"border: white;\n"
-"}")
         self.widget_8 = QWidget(self.tab_6)
         self.widget_8.setObjectName(u"widget_8")
-        self.widget_8.setGeometry(QRect(0, 470, 1243, 251))
+        self.widget_8.setGeometry(QRect(0, 0, 1243, 721))
         self.widget_8.setStyleSheet(u"QWidget{\n"
 "border: 2px solid;\n"
 "border-radius: 25px;\n"
@@ -954,25 +715,18 @@ class Ui_MainWindow(object):
 "border: 1px solid #003057;\n"
 "border-radius: 6px;\n"
 "}")
-        self.label_69 = QLabel(self.widget_8)
-        self.label_69.setObjectName(u"label_69")
-        self.label_69.setGeometry(QRect(30, 20, 151, 16))
-        self.label_69.setFont(font7)
-        self.label_69.setStyleSheet(u"QLabel{\n"
-"border: white;\n"
-"}")
         self.pushButton_48 = QPushButton(self.widget_8)
         self.pushButton_48.setObjectName(u"pushButton_48")
         self.pushButton_48.setGeometry(QRect(1290, 210, 101, 31))
         self.pushButton_48.setMouseTracking(False)
-        self.pushButton_48.setIcon(icon13)
+        self.pushButton_48.setIcon(icon14)
         self.pushButton_48.setIconSize(QSize(100, 31))
         self.pushButton_48.setAutoDefault(False)
         self.pushButton_49 = QPushButton(self.widget_8)
         self.pushButton_49.setObjectName(u"pushButton_49")
         self.pushButton_49.setGeometry(QRect(1410, 210, 101, 31))
         self.pushButton_49.setMouseTracking(False)
-        self.pushButton_49.setIcon(icon14)
+        self.pushButton_49.setIcon(icon15)
         self.pushButton_49.setIconSize(QSize(101, 35))
         self.pushButton_49.setAutoDefault(False)
         self.label_70 = QLabel(self.widget_8)
@@ -1012,17 +766,57 @@ class Ui_MainWindow(object):
         self.pushButton_50.setObjectName(u"pushButton_50")
         self.pushButton_50.setGeometry(QRect(900, 200, 93, 28))
         self.pushButton_50.setFont(font5)
-        self.pushButton_50.setIcon(icon15)
+        self.pushButton_50.setIcon(icon16)
         self.pushButton_51 = QPushButton(self.widget_8)
         self.pushButton_51.setObjectName(u"pushButton_51")
         self.pushButton_51.setGeometry(QRect(1060, 200, 93, 28))
         self.pushButton_51.setFont(font5)
-        self.pushButton_51.setIcon(icon16)
-        self.tableWidget_12 = QTableWidget(self.widget_8)
-        self.tableWidget_12.setObjectName(u"tableWidget_12")
-        self.tableWidget_12.setGeometry(QRect(20, 50, 810, 180))
-        self.tableWidget_12.setStyleSheet(u"QTableWidget{\n"
+        self.pushButton_51.setIcon(icon17)
+        self.TManteniR = QTableWidget(self.widget_8)
+        if (self.TManteniR.columnCount() < 8):
+            self.TManteniR.setColumnCount(8)
+        __qtablewidgetitem16 = QTableWidgetItem()
+        self.TManteniR.setHorizontalHeaderItem(0, __qtablewidgetitem16)
+        __qtablewidgetitem17 = QTableWidgetItem()
+        self.TManteniR.setHorizontalHeaderItem(1, __qtablewidgetitem17)
+        __qtablewidgetitem18 = QTableWidgetItem()
+        self.TManteniR.setHorizontalHeaderItem(2, __qtablewidgetitem18)
+        __qtablewidgetitem19 = QTableWidgetItem()
+        self.TManteniR.setHorizontalHeaderItem(3, __qtablewidgetitem19)
+        __qtablewidgetitem20 = QTableWidgetItem()
+        self.TManteniR.setHorizontalHeaderItem(4, __qtablewidgetitem20)
+        __qtablewidgetitem21 = QTableWidgetItem()
+        self.TManteniR.setHorizontalHeaderItem(5, __qtablewidgetitem21)
+        __qtablewidgetitem22 = QTableWidgetItem()
+        self.TManteniR.setHorizontalHeaderItem(6, __qtablewidgetitem22)
+        __qtablewidgetitem23 = QTableWidgetItem()
+        self.TManteniR.setHorizontalHeaderItem(7, __qtablewidgetitem23)
+        self.TManteniR.setObjectName(u"TManteniR")
+        self.TManteniR.setGeometry(QRect(10, 240, 1221, 471))
+        self.TManteniR.setStyleSheet(u"QTableWidget{\n"
 "border-radius: 8px \n"
+"}")
+        self.TManteniR.horizontalHeader().setDefaultSectionSize(155)
+        self.label_73 = QLabel(self.widget_8)
+        self.label_73.setObjectName(u"label_73")
+        self.label_73.setGeometry(QRect(50, 10, 451, 31))
+        self.label_73.setFont(font6)
+        self.label_73.setStyleSheet(u"QLabel{\n"
+"border: white;\n"
+"}")
+        self.textEdit_2 = QTextEdit(self.widget_8)
+        self.textEdit_2.setObjectName(u"textEdit_2")
+        self.textEdit_2.setGeometry(QRect(440, 60, 311, 161))
+        self.textEdit_2.setFont(font2)
+        self.textEdit_2.setStyleSheet(u"QTextEdit{\n"
+"background: #FBD27E;\n"
+"}")
+        self.label_63 = QLabel(self.widget_8)
+        self.label_63.setObjectName(u"label_63")
+        self.label_63.setGeometry(QRect(353, 68, 77, 35))
+        self.label_63.setFont(font3)
+        self.label_63.setStyleSheet(u"QLabel{\n"
+"border: white;\n"
 "}")
         self.tabWidget_3.addTab(self.tab_6, "")
         self.Wproveedores = QWidget(self.WCentral)
@@ -1249,53 +1043,53 @@ class Ui_MainWindow(object):
         self.pushButton_23.setObjectName(u"pushButton_23")
         self.pushButton_23.setEnabled(True)
         self.pushButton_23.setMaximumSize(QSize(30, 30))
-        palette3 = QPalette()
-        palette3.setBrush(QPalette.Active, QPalette.WindowText, brush)
-        palette3.setBrush(QPalette.Active, QPalette.Button, brush1)
-        palette3.setBrush(QPalette.Active, QPalette.Light, brush2)
-        palette3.setBrush(QPalette.Active, QPalette.Midlight, brush3)
-        palette3.setBrush(QPalette.Active, QPalette.Dark, brush4)
-        palette3.setBrush(QPalette.Active, QPalette.Mid, brush5)
-        palette3.setBrush(QPalette.Active, QPalette.Text, brush)
-        palette3.setBrush(QPalette.Active, QPalette.BrightText, brush1)
-        palette3.setBrush(QPalette.Active, QPalette.ButtonText, brush)
-        palette3.setBrush(QPalette.Active, QPalette.Base, brush1)
-        palette3.setBrush(QPalette.Active, QPalette.Window, brush1)
-        palette3.setBrush(QPalette.Active, QPalette.Shadow, brush6)
-        palette3.setBrush(QPalette.Active, QPalette.AlternateBase, brush4)
-        palette3.setBrush(QPalette.Active, QPalette.ToolTipBase, brush7)
-        palette3.setBrush(QPalette.Active, QPalette.ToolTipText, brush6)
-        palette3.setBrush(QPalette.Inactive, QPalette.WindowText, brush)
-        palette3.setBrush(QPalette.Inactive, QPalette.Button, brush1)
-        palette3.setBrush(QPalette.Inactive, QPalette.Light, brush2)
-        palette3.setBrush(QPalette.Inactive, QPalette.Midlight, brush3)
-        palette3.setBrush(QPalette.Inactive, QPalette.Dark, brush4)
-        palette3.setBrush(QPalette.Inactive, QPalette.Mid, brush5)
-        palette3.setBrush(QPalette.Inactive, QPalette.Text, brush)
-        palette3.setBrush(QPalette.Inactive, QPalette.BrightText, brush1)
-        palette3.setBrush(QPalette.Inactive, QPalette.ButtonText, brush)
-        palette3.setBrush(QPalette.Inactive, QPalette.Base, brush1)
-        palette3.setBrush(QPalette.Inactive, QPalette.Window, brush1)
-        palette3.setBrush(QPalette.Inactive, QPalette.Shadow, brush6)
-        palette3.setBrush(QPalette.Inactive, QPalette.AlternateBase, brush4)
-        palette3.setBrush(QPalette.Inactive, QPalette.ToolTipBase, brush7)
-        palette3.setBrush(QPalette.Inactive, QPalette.ToolTipText, brush6)
-        palette3.setBrush(QPalette.Disabled, QPalette.WindowText, brush4)
-        palette3.setBrush(QPalette.Disabled, QPalette.Button, brush1)
-        palette3.setBrush(QPalette.Disabled, QPalette.Light, brush2)
-        palette3.setBrush(QPalette.Disabled, QPalette.Midlight, brush3)
-        palette3.setBrush(QPalette.Disabled, QPalette.Dark, brush4)
-        palette3.setBrush(QPalette.Disabled, QPalette.Mid, brush5)
-        palette3.setBrush(QPalette.Disabled, QPalette.Text, brush4)
-        palette3.setBrush(QPalette.Disabled, QPalette.BrightText, brush1)
-        palette3.setBrush(QPalette.Disabled, QPalette.ButtonText, brush4)
-        palette3.setBrush(QPalette.Disabled, QPalette.Base, brush1)
-        palette3.setBrush(QPalette.Disabled, QPalette.Window, brush1)
-        palette3.setBrush(QPalette.Disabled, QPalette.Shadow, brush6)
-        palette3.setBrush(QPalette.Disabled, QPalette.AlternateBase, brush)
-        palette3.setBrush(QPalette.Disabled, QPalette.ToolTipBase, brush7)
-        palette3.setBrush(QPalette.Disabled, QPalette.ToolTipText, brush6)
-        self.pushButton_23.setPalette(palette3)
+        palette1 = QPalette()
+        palette1.setBrush(QPalette.Active, QPalette.WindowText, brush)
+        palette1.setBrush(QPalette.Active, QPalette.Button, brush1)
+        palette1.setBrush(QPalette.Active, QPalette.Light, brush2)
+        palette1.setBrush(QPalette.Active, QPalette.Midlight, brush3)
+        palette1.setBrush(QPalette.Active, QPalette.Dark, brush4)
+        palette1.setBrush(QPalette.Active, QPalette.Mid, brush5)
+        palette1.setBrush(QPalette.Active, QPalette.Text, brush)
+        palette1.setBrush(QPalette.Active, QPalette.BrightText, brush1)
+        palette1.setBrush(QPalette.Active, QPalette.ButtonText, brush)
+        palette1.setBrush(QPalette.Active, QPalette.Base, brush1)
+        palette1.setBrush(QPalette.Active, QPalette.Window, brush1)
+        palette1.setBrush(QPalette.Active, QPalette.Shadow, brush6)
+        palette1.setBrush(QPalette.Active, QPalette.AlternateBase, brush4)
+        palette1.setBrush(QPalette.Active, QPalette.ToolTipBase, brush7)
+        palette1.setBrush(QPalette.Active, QPalette.ToolTipText, brush6)
+        palette1.setBrush(QPalette.Inactive, QPalette.WindowText, brush)
+        palette1.setBrush(QPalette.Inactive, QPalette.Button, brush1)
+        palette1.setBrush(QPalette.Inactive, QPalette.Light, brush2)
+        palette1.setBrush(QPalette.Inactive, QPalette.Midlight, brush3)
+        palette1.setBrush(QPalette.Inactive, QPalette.Dark, brush4)
+        palette1.setBrush(QPalette.Inactive, QPalette.Mid, brush5)
+        palette1.setBrush(QPalette.Inactive, QPalette.Text, brush)
+        palette1.setBrush(QPalette.Inactive, QPalette.BrightText, brush1)
+        palette1.setBrush(QPalette.Inactive, QPalette.ButtonText, brush)
+        palette1.setBrush(QPalette.Inactive, QPalette.Base, brush1)
+        palette1.setBrush(QPalette.Inactive, QPalette.Window, brush1)
+        palette1.setBrush(QPalette.Inactive, QPalette.Shadow, brush6)
+        palette1.setBrush(QPalette.Inactive, QPalette.AlternateBase, brush4)
+        palette1.setBrush(QPalette.Inactive, QPalette.ToolTipBase, brush7)
+        palette1.setBrush(QPalette.Inactive, QPalette.ToolTipText, brush6)
+        palette1.setBrush(QPalette.Disabled, QPalette.WindowText, brush4)
+        palette1.setBrush(QPalette.Disabled, QPalette.Button, brush1)
+        palette1.setBrush(QPalette.Disabled, QPalette.Light, brush2)
+        palette1.setBrush(QPalette.Disabled, QPalette.Midlight, brush3)
+        palette1.setBrush(QPalette.Disabled, QPalette.Dark, brush4)
+        palette1.setBrush(QPalette.Disabled, QPalette.Mid, brush5)
+        palette1.setBrush(QPalette.Disabled, QPalette.Text, brush4)
+        palette1.setBrush(QPalette.Disabled, QPalette.BrightText, brush1)
+        palette1.setBrush(QPalette.Disabled, QPalette.ButtonText, brush4)
+        palette1.setBrush(QPalette.Disabled, QPalette.Base, brush1)
+        palette1.setBrush(QPalette.Disabled, QPalette.Window, brush1)
+        palette1.setBrush(QPalette.Disabled, QPalette.Shadow, brush6)
+        palette1.setBrush(QPalette.Disabled, QPalette.AlternateBase, brush)
+        palette1.setBrush(QPalette.Disabled, QPalette.ToolTipBase, brush7)
+        palette1.setBrush(QPalette.Disabled, QPalette.ToolTipText, brush6)
+        self.pushButton_23.setPalette(palette1)
         self.pushButton_23.setFont(font4)
         self.pushButton_23.setMouseTracking(False)
         self.pushButton_23.setIcon(icon3)
@@ -1332,53 +1126,53 @@ class Ui_MainWindow(object):
         self.pushButton_62 = QPushButton(self.frame_9)
         self.pushButton_62.setObjectName(u"pushButton_62")
         self.pushButton_62.setGeometry(QRect(1105, 300, 101, 31))
-        palette4 = QPalette()
-        palette4.setBrush(QPalette.Active, QPalette.WindowText, brush)
-        palette4.setBrush(QPalette.Active, QPalette.Button, brush1)
-        palette4.setBrush(QPalette.Active, QPalette.Light, brush2)
-        palette4.setBrush(QPalette.Active, QPalette.Midlight, brush3)
-        palette4.setBrush(QPalette.Active, QPalette.Dark, brush4)
-        palette4.setBrush(QPalette.Active, QPalette.Mid, brush5)
-        palette4.setBrush(QPalette.Active, QPalette.Text, brush)
-        palette4.setBrush(QPalette.Active, QPalette.BrightText, brush1)
-        palette4.setBrush(QPalette.Active, QPalette.ButtonText, brush)
-        palette4.setBrush(QPalette.Active, QPalette.Base, brush1)
-        palette4.setBrush(QPalette.Active, QPalette.Window, brush1)
-        palette4.setBrush(QPalette.Active, QPalette.Shadow, brush6)
-        palette4.setBrush(QPalette.Active, QPalette.AlternateBase, brush4)
-        palette4.setBrush(QPalette.Active, QPalette.ToolTipBase, brush7)
-        palette4.setBrush(QPalette.Active, QPalette.ToolTipText, brush6)
-        palette4.setBrush(QPalette.Inactive, QPalette.WindowText, brush)
-        palette4.setBrush(QPalette.Inactive, QPalette.Button, brush1)
-        palette4.setBrush(QPalette.Inactive, QPalette.Light, brush2)
-        palette4.setBrush(QPalette.Inactive, QPalette.Midlight, brush3)
-        palette4.setBrush(QPalette.Inactive, QPalette.Dark, brush4)
-        palette4.setBrush(QPalette.Inactive, QPalette.Mid, brush5)
-        palette4.setBrush(QPalette.Inactive, QPalette.Text, brush)
-        palette4.setBrush(QPalette.Inactive, QPalette.BrightText, brush1)
-        palette4.setBrush(QPalette.Inactive, QPalette.ButtonText, brush)
-        palette4.setBrush(QPalette.Inactive, QPalette.Base, brush1)
-        palette4.setBrush(QPalette.Inactive, QPalette.Window, brush1)
-        palette4.setBrush(QPalette.Inactive, QPalette.Shadow, brush6)
-        palette4.setBrush(QPalette.Inactive, QPalette.AlternateBase, brush4)
-        palette4.setBrush(QPalette.Inactive, QPalette.ToolTipBase, brush7)
-        palette4.setBrush(QPalette.Inactive, QPalette.ToolTipText, brush6)
-        palette4.setBrush(QPalette.Disabled, QPalette.WindowText, brush4)
-        palette4.setBrush(QPalette.Disabled, QPalette.Button, brush1)
-        palette4.setBrush(QPalette.Disabled, QPalette.Light, brush2)
-        palette4.setBrush(QPalette.Disabled, QPalette.Midlight, brush3)
-        palette4.setBrush(QPalette.Disabled, QPalette.Dark, brush4)
-        palette4.setBrush(QPalette.Disabled, QPalette.Mid, brush5)
-        palette4.setBrush(QPalette.Disabled, QPalette.Text, brush4)
-        palette4.setBrush(QPalette.Disabled, QPalette.BrightText, brush1)
-        palette4.setBrush(QPalette.Disabled, QPalette.ButtonText, brush4)
-        palette4.setBrush(QPalette.Disabled, QPalette.Base, brush1)
-        palette4.setBrush(QPalette.Disabled, QPalette.Window, brush1)
-        palette4.setBrush(QPalette.Disabled, QPalette.Shadow, brush6)
-        palette4.setBrush(QPalette.Disabled, QPalette.AlternateBase, brush)
-        palette4.setBrush(QPalette.Disabled, QPalette.ToolTipBase, brush7)
-        palette4.setBrush(QPalette.Disabled, QPalette.ToolTipText, brush6)
-        self.pushButton_62.setPalette(palette4)
+        palette2 = QPalette()
+        palette2.setBrush(QPalette.Active, QPalette.WindowText, brush)
+        palette2.setBrush(QPalette.Active, QPalette.Button, brush1)
+        palette2.setBrush(QPalette.Active, QPalette.Light, brush2)
+        palette2.setBrush(QPalette.Active, QPalette.Midlight, brush3)
+        palette2.setBrush(QPalette.Active, QPalette.Dark, brush4)
+        palette2.setBrush(QPalette.Active, QPalette.Mid, brush5)
+        palette2.setBrush(QPalette.Active, QPalette.Text, brush)
+        palette2.setBrush(QPalette.Active, QPalette.BrightText, brush1)
+        palette2.setBrush(QPalette.Active, QPalette.ButtonText, brush)
+        palette2.setBrush(QPalette.Active, QPalette.Base, brush1)
+        palette2.setBrush(QPalette.Active, QPalette.Window, brush1)
+        palette2.setBrush(QPalette.Active, QPalette.Shadow, brush6)
+        palette2.setBrush(QPalette.Active, QPalette.AlternateBase, brush4)
+        palette2.setBrush(QPalette.Active, QPalette.ToolTipBase, brush7)
+        palette2.setBrush(QPalette.Active, QPalette.ToolTipText, brush6)
+        palette2.setBrush(QPalette.Inactive, QPalette.WindowText, brush)
+        palette2.setBrush(QPalette.Inactive, QPalette.Button, brush1)
+        palette2.setBrush(QPalette.Inactive, QPalette.Light, brush2)
+        palette2.setBrush(QPalette.Inactive, QPalette.Midlight, brush3)
+        palette2.setBrush(QPalette.Inactive, QPalette.Dark, brush4)
+        palette2.setBrush(QPalette.Inactive, QPalette.Mid, brush5)
+        palette2.setBrush(QPalette.Inactive, QPalette.Text, brush)
+        palette2.setBrush(QPalette.Inactive, QPalette.BrightText, brush1)
+        palette2.setBrush(QPalette.Inactive, QPalette.ButtonText, brush)
+        palette2.setBrush(QPalette.Inactive, QPalette.Base, brush1)
+        palette2.setBrush(QPalette.Inactive, QPalette.Window, brush1)
+        palette2.setBrush(QPalette.Inactive, QPalette.Shadow, brush6)
+        palette2.setBrush(QPalette.Inactive, QPalette.AlternateBase, brush4)
+        palette2.setBrush(QPalette.Inactive, QPalette.ToolTipBase, brush7)
+        palette2.setBrush(QPalette.Inactive, QPalette.ToolTipText, brush6)
+        palette2.setBrush(QPalette.Disabled, QPalette.WindowText, brush4)
+        palette2.setBrush(QPalette.Disabled, QPalette.Button, brush1)
+        palette2.setBrush(QPalette.Disabled, QPalette.Light, brush2)
+        palette2.setBrush(QPalette.Disabled, QPalette.Midlight, brush3)
+        palette2.setBrush(QPalette.Disabled, QPalette.Dark, brush4)
+        palette2.setBrush(QPalette.Disabled, QPalette.Mid, brush5)
+        palette2.setBrush(QPalette.Disabled, QPalette.Text, brush4)
+        palette2.setBrush(QPalette.Disabled, QPalette.BrightText, brush1)
+        palette2.setBrush(QPalette.Disabled, QPalette.ButtonText, brush4)
+        palette2.setBrush(QPalette.Disabled, QPalette.Base, brush1)
+        palette2.setBrush(QPalette.Disabled, QPalette.Window, brush1)
+        palette2.setBrush(QPalette.Disabled, QPalette.Shadow, brush6)
+        palette2.setBrush(QPalette.Disabled, QPalette.AlternateBase, brush)
+        palette2.setBrush(QPalette.Disabled, QPalette.ToolTipBase, brush7)
+        palette2.setBrush(QPalette.Disabled, QPalette.ToolTipText, brush6)
+        self.pushButton_62.setPalette(palette2)
         self.pushButton_62.setFont(font4)
         self.pushButton_62.setMouseTracking(False)
         self.pushButton_62.setIcon(icon11)
@@ -1394,30 +1188,30 @@ class Ui_MainWindow(object):
         self.TProveedores = QTableWidget(self.frame_9)
         if (self.TProveedores.columnCount() < 12):
             self.TProveedores.setColumnCount(12)
-        __qtablewidgetitem14 = QTableWidgetItem()
-        self.TProveedores.setHorizontalHeaderItem(0, __qtablewidgetitem14)
-        __qtablewidgetitem15 = QTableWidgetItem()
-        self.TProveedores.setHorizontalHeaderItem(1, __qtablewidgetitem15)
-        __qtablewidgetitem16 = QTableWidgetItem()
-        self.TProveedores.setHorizontalHeaderItem(2, __qtablewidgetitem16)
-        __qtablewidgetitem17 = QTableWidgetItem()
-        self.TProveedores.setHorizontalHeaderItem(3, __qtablewidgetitem17)
-        __qtablewidgetitem18 = QTableWidgetItem()
-        self.TProveedores.setHorizontalHeaderItem(4, __qtablewidgetitem18)
-        __qtablewidgetitem19 = QTableWidgetItem()
-        self.TProveedores.setHorizontalHeaderItem(5, __qtablewidgetitem19)
-        __qtablewidgetitem20 = QTableWidgetItem()
-        self.TProveedores.setHorizontalHeaderItem(6, __qtablewidgetitem20)
-        __qtablewidgetitem21 = QTableWidgetItem()
-        self.TProveedores.setHorizontalHeaderItem(7, __qtablewidgetitem21)
-        __qtablewidgetitem22 = QTableWidgetItem()
-        self.TProveedores.setHorizontalHeaderItem(8, __qtablewidgetitem22)
-        __qtablewidgetitem23 = QTableWidgetItem()
-        self.TProveedores.setHorizontalHeaderItem(9, __qtablewidgetitem23)
         __qtablewidgetitem24 = QTableWidgetItem()
-        self.TProveedores.setHorizontalHeaderItem(10, __qtablewidgetitem24)
+        self.TProveedores.setHorizontalHeaderItem(0, __qtablewidgetitem24)
         __qtablewidgetitem25 = QTableWidgetItem()
-        self.TProveedores.setHorizontalHeaderItem(11, __qtablewidgetitem25)
+        self.TProveedores.setHorizontalHeaderItem(1, __qtablewidgetitem25)
+        __qtablewidgetitem26 = QTableWidgetItem()
+        self.TProveedores.setHorizontalHeaderItem(2, __qtablewidgetitem26)
+        __qtablewidgetitem27 = QTableWidgetItem()
+        self.TProveedores.setHorizontalHeaderItem(3, __qtablewidgetitem27)
+        __qtablewidgetitem28 = QTableWidgetItem()
+        self.TProveedores.setHorizontalHeaderItem(4, __qtablewidgetitem28)
+        __qtablewidgetitem29 = QTableWidgetItem()
+        self.TProveedores.setHorizontalHeaderItem(5, __qtablewidgetitem29)
+        __qtablewidgetitem30 = QTableWidgetItem()
+        self.TProveedores.setHorizontalHeaderItem(6, __qtablewidgetitem30)
+        __qtablewidgetitem31 = QTableWidgetItem()
+        self.TProveedores.setHorizontalHeaderItem(7, __qtablewidgetitem31)
+        __qtablewidgetitem32 = QTableWidgetItem()
+        self.TProveedores.setHorizontalHeaderItem(8, __qtablewidgetitem32)
+        __qtablewidgetitem33 = QTableWidgetItem()
+        self.TProveedores.setHorizontalHeaderItem(9, __qtablewidgetitem33)
+        __qtablewidgetitem34 = QTableWidgetItem()
+        self.TProveedores.setHorizontalHeaderItem(10, __qtablewidgetitem34)
+        __qtablewidgetitem35 = QTableWidgetItem()
+        self.TProveedores.setHorizontalHeaderItem(11, __qtablewidgetitem35)
         self.TProveedores.setObjectName(u"TProveedores")
         self.TProveedores.setGeometry(QRect(30, 260, 1021, 181))
         self.TProveedores.setStyleSheet(u"QTableWidget{\n"
@@ -1495,7 +1289,7 @@ class Ui_MainWindow(object):
         self.pushButton_63.setStyleSheet(u"QPushButton{\n"
 "background: #ffffff;\n"
 "}")
-        self.pushButton_63.setIcon(icon13)
+        self.pushButton_63.setIcon(icon14)
         self.pushButton_63.setIconSize(QSize(100, 31))
         self.pushButton_63.setAutoDefault(False)
         self.pushButton_64 = QPushButton(self.widget_11)
@@ -1505,44 +1299,44 @@ class Ui_MainWindow(object):
         self.pushButton_64.setStyleSheet(u"QPushButton{\n"
 "background: #ffffff;\n"
 "}")
-        self.pushButton_64.setIcon(icon14)
+        self.pushButton_64.setIcon(icon15)
         self.pushButton_64.setIconSize(QSize(101, 35))
         self.pushButton_64.setAutoDefault(False)
         self.pushButton_65 = QPushButton(self.widget_11)
         self.pushButton_65.setObjectName(u"pushButton_65")
         self.pushButton_65.setGeometry(QRect(900, 200, 93, 28))
         self.pushButton_65.setFont(font5)
-        self.pushButton_65.setIcon(icon15)
+        self.pushButton_65.setIcon(icon16)
         self.pushButton_66 = QPushButton(self.widget_11)
         self.pushButton_66.setObjectName(u"pushButton_66")
         self.pushButton_66.setGeometry(QRect(1060, 200, 93, 28))
         self.pushButton_66.setFont(font5)
-        self.pushButton_66.setIcon(icon16)
+        self.pushButton_66.setIcon(icon17)
         self.TConsultaProveedores = QTableWidget(self.widget_11)
         if (self.TConsultaProveedores.columnCount() < 11):
             self.TConsultaProveedores.setColumnCount(11)
-        __qtablewidgetitem26 = QTableWidgetItem()
-        self.TConsultaProveedores.setHorizontalHeaderItem(0, __qtablewidgetitem26)
-        __qtablewidgetitem27 = QTableWidgetItem()
-        self.TConsultaProveedores.setHorizontalHeaderItem(1, __qtablewidgetitem27)
-        __qtablewidgetitem28 = QTableWidgetItem()
-        self.TConsultaProveedores.setHorizontalHeaderItem(2, __qtablewidgetitem28)
-        __qtablewidgetitem29 = QTableWidgetItem()
-        self.TConsultaProveedores.setHorizontalHeaderItem(3, __qtablewidgetitem29)
-        __qtablewidgetitem30 = QTableWidgetItem()
-        self.TConsultaProveedores.setHorizontalHeaderItem(4, __qtablewidgetitem30)
-        __qtablewidgetitem31 = QTableWidgetItem()
-        self.TConsultaProveedores.setHorizontalHeaderItem(5, __qtablewidgetitem31)
-        __qtablewidgetitem32 = QTableWidgetItem()
-        self.TConsultaProveedores.setHorizontalHeaderItem(6, __qtablewidgetitem32)
-        __qtablewidgetitem33 = QTableWidgetItem()
-        self.TConsultaProveedores.setHorizontalHeaderItem(7, __qtablewidgetitem33)
-        __qtablewidgetitem34 = QTableWidgetItem()
-        self.TConsultaProveedores.setHorizontalHeaderItem(8, __qtablewidgetitem34)
-        __qtablewidgetitem35 = QTableWidgetItem()
-        self.TConsultaProveedores.setHorizontalHeaderItem(9, __qtablewidgetitem35)
         __qtablewidgetitem36 = QTableWidgetItem()
-        self.TConsultaProveedores.setHorizontalHeaderItem(10, __qtablewidgetitem36)
+        self.TConsultaProveedores.setHorizontalHeaderItem(0, __qtablewidgetitem36)
+        __qtablewidgetitem37 = QTableWidgetItem()
+        self.TConsultaProveedores.setHorizontalHeaderItem(1, __qtablewidgetitem37)
+        __qtablewidgetitem38 = QTableWidgetItem()
+        self.TConsultaProveedores.setHorizontalHeaderItem(2, __qtablewidgetitem38)
+        __qtablewidgetitem39 = QTableWidgetItem()
+        self.TConsultaProveedores.setHorizontalHeaderItem(3, __qtablewidgetitem39)
+        __qtablewidgetitem40 = QTableWidgetItem()
+        self.TConsultaProveedores.setHorizontalHeaderItem(4, __qtablewidgetitem40)
+        __qtablewidgetitem41 = QTableWidgetItem()
+        self.TConsultaProveedores.setHorizontalHeaderItem(5, __qtablewidgetitem41)
+        __qtablewidgetitem42 = QTableWidgetItem()
+        self.TConsultaProveedores.setHorizontalHeaderItem(6, __qtablewidgetitem42)
+        __qtablewidgetitem43 = QTableWidgetItem()
+        self.TConsultaProveedores.setHorizontalHeaderItem(7, __qtablewidgetitem43)
+        __qtablewidgetitem44 = QTableWidgetItem()
+        self.TConsultaProveedores.setHorizontalHeaderItem(8, __qtablewidgetitem44)
+        __qtablewidgetitem45 = QTableWidgetItem()
+        self.TConsultaProveedores.setHorizontalHeaderItem(9, __qtablewidgetitem45)
+        __qtablewidgetitem46 = QTableWidgetItem()
+        self.TConsultaProveedores.setHorizontalHeaderItem(10, __qtablewidgetitem46)
         self.TConsultaProveedores.setObjectName(u"TConsultaProveedores")
         self.TConsultaProveedores.setGeometry(QRect(20, 50, 810, 180))
         self.TConsultaProveedores.setStyleSheet(u"QTableWidget{\n"
@@ -1814,53 +1608,53 @@ class Ui_MainWindow(object):
         self.pushButton_21 = QPushButton(self.frame_7)
         self.pushButton_21.setObjectName(u"pushButton_21")
         self.pushButton_21.setGeometry(QRect(1105, 300, 101, 31))
-        palette5 = QPalette()
-        palette5.setBrush(QPalette.Active, QPalette.WindowText, brush)
-        palette5.setBrush(QPalette.Active, QPalette.Button, brush1)
-        palette5.setBrush(QPalette.Active, QPalette.Light, brush2)
-        palette5.setBrush(QPalette.Active, QPalette.Midlight, brush3)
-        palette5.setBrush(QPalette.Active, QPalette.Dark, brush4)
-        palette5.setBrush(QPalette.Active, QPalette.Mid, brush5)
-        palette5.setBrush(QPalette.Active, QPalette.Text, brush)
-        palette5.setBrush(QPalette.Active, QPalette.BrightText, brush1)
-        palette5.setBrush(QPalette.Active, QPalette.ButtonText, brush)
-        palette5.setBrush(QPalette.Active, QPalette.Base, brush1)
-        palette5.setBrush(QPalette.Active, QPalette.Window, brush1)
-        palette5.setBrush(QPalette.Active, QPalette.Shadow, brush6)
-        palette5.setBrush(QPalette.Active, QPalette.AlternateBase, brush4)
-        palette5.setBrush(QPalette.Active, QPalette.ToolTipBase, brush7)
-        palette5.setBrush(QPalette.Active, QPalette.ToolTipText, brush6)
-        palette5.setBrush(QPalette.Inactive, QPalette.WindowText, brush)
-        palette5.setBrush(QPalette.Inactive, QPalette.Button, brush1)
-        palette5.setBrush(QPalette.Inactive, QPalette.Light, brush2)
-        palette5.setBrush(QPalette.Inactive, QPalette.Midlight, brush3)
-        palette5.setBrush(QPalette.Inactive, QPalette.Dark, brush4)
-        palette5.setBrush(QPalette.Inactive, QPalette.Mid, brush5)
-        palette5.setBrush(QPalette.Inactive, QPalette.Text, brush)
-        palette5.setBrush(QPalette.Inactive, QPalette.BrightText, brush1)
-        palette5.setBrush(QPalette.Inactive, QPalette.ButtonText, brush)
-        palette5.setBrush(QPalette.Inactive, QPalette.Base, brush1)
-        palette5.setBrush(QPalette.Inactive, QPalette.Window, brush1)
-        palette5.setBrush(QPalette.Inactive, QPalette.Shadow, brush6)
-        palette5.setBrush(QPalette.Inactive, QPalette.AlternateBase, brush4)
-        palette5.setBrush(QPalette.Inactive, QPalette.ToolTipBase, brush7)
-        palette5.setBrush(QPalette.Inactive, QPalette.ToolTipText, brush6)
-        palette5.setBrush(QPalette.Disabled, QPalette.WindowText, brush4)
-        palette5.setBrush(QPalette.Disabled, QPalette.Button, brush1)
-        palette5.setBrush(QPalette.Disabled, QPalette.Light, brush2)
-        palette5.setBrush(QPalette.Disabled, QPalette.Midlight, brush3)
-        palette5.setBrush(QPalette.Disabled, QPalette.Dark, brush4)
-        palette5.setBrush(QPalette.Disabled, QPalette.Mid, brush5)
-        palette5.setBrush(QPalette.Disabled, QPalette.Text, brush4)
-        palette5.setBrush(QPalette.Disabled, QPalette.BrightText, brush1)
-        palette5.setBrush(QPalette.Disabled, QPalette.ButtonText, brush4)
-        palette5.setBrush(QPalette.Disabled, QPalette.Base, brush1)
-        palette5.setBrush(QPalette.Disabled, QPalette.Window, brush1)
-        palette5.setBrush(QPalette.Disabled, QPalette.Shadow, brush6)
-        palette5.setBrush(QPalette.Disabled, QPalette.AlternateBase, brush)
-        palette5.setBrush(QPalette.Disabled, QPalette.ToolTipBase, brush7)
-        palette5.setBrush(QPalette.Disabled, QPalette.ToolTipText, brush6)
-        self.pushButton_21.setPalette(palette5)
+        palette3 = QPalette()
+        palette3.setBrush(QPalette.Active, QPalette.WindowText, brush)
+        palette3.setBrush(QPalette.Active, QPalette.Button, brush1)
+        palette3.setBrush(QPalette.Active, QPalette.Light, brush2)
+        palette3.setBrush(QPalette.Active, QPalette.Midlight, brush3)
+        palette3.setBrush(QPalette.Active, QPalette.Dark, brush4)
+        palette3.setBrush(QPalette.Active, QPalette.Mid, brush5)
+        palette3.setBrush(QPalette.Active, QPalette.Text, brush)
+        palette3.setBrush(QPalette.Active, QPalette.BrightText, brush1)
+        palette3.setBrush(QPalette.Active, QPalette.ButtonText, brush)
+        palette3.setBrush(QPalette.Active, QPalette.Base, brush1)
+        palette3.setBrush(QPalette.Active, QPalette.Window, brush1)
+        palette3.setBrush(QPalette.Active, QPalette.Shadow, brush6)
+        palette3.setBrush(QPalette.Active, QPalette.AlternateBase, brush4)
+        palette3.setBrush(QPalette.Active, QPalette.ToolTipBase, brush7)
+        palette3.setBrush(QPalette.Active, QPalette.ToolTipText, brush6)
+        palette3.setBrush(QPalette.Inactive, QPalette.WindowText, brush)
+        palette3.setBrush(QPalette.Inactive, QPalette.Button, brush1)
+        palette3.setBrush(QPalette.Inactive, QPalette.Light, brush2)
+        palette3.setBrush(QPalette.Inactive, QPalette.Midlight, brush3)
+        palette3.setBrush(QPalette.Inactive, QPalette.Dark, brush4)
+        palette3.setBrush(QPalette.Inactive, QPalette.Mid, brush5)
+        palette3.setBrush(QPalette.Inactive, QPalette.Text, brush)
+        palette3.setBrush(QPalette.Inactive, QPalette.BrightText, brush1)
+        palette3.setBrush(QPalette.Inactive, QPalette.ButtonText, brush)
+        palette3.setBrush(QPalette.Inactive, QPalette.Base, brush1)
+        palette3.setBrush(QPalette.Inactive, QPalette.Window, brush1)
+        palette3.setBrush(QPalette.Inactive, QPalette.Shadow, brush6)
+        palette3.setBrush(QPalette.Inactive, QPalette.AlternateBase, brush4)
+        palette3.setBrush(QPalette.Inactive, QPalette.ToolTipBase, brush7)
+        palette3.setBrush(QPalette.Inactive, QPalette.ToolTipText, brush6)
+        palette3.setBrush(QPalette.Disabled, QPalette.WindowText, brush4)
+        palette3.setBrush(QPalette.Disabled, QPalette.Button, brush1)
+        palette3.setBrush(QPalette.Disabled, QPalette.Light, brush2)
+        palette3.setBrush(QPalette.Disabled, QPalette.Midlight, brush3)
+        palette3.setBrush(QPalette.Disabled, QPalette.Dark, brush4)
+        palette3.setBrush(QPalette.Disabled, QPalette.Mid, brush5)
+        palette3.setBrush(QPalette.Disabled, QPalette.Text, brush4)
+        palette3.setBrush(QPalette.Disabled, QPalette.BrightText, brush1)
+        palette3.setBrush(QPalette.Disabled, QPalette.ButtonText, brush4)
+        palette3.setBrush(QPalette.Disabled, QPalette.Base, brush1)
+        palette3.setBrush(QPalette.Disabled, QPalette.Window, brush1)
+        palette3.setBrush(QPalette.Disabled, QPalette.Shadow, brush6)
+        palette3.setBrush(QPalette.Disabled, QPalette.AlternateBase, brush)
+        palette3.setBrush(QPalette.Disabled, QPalette.ToolTipBase, brush7)
+        palette3.setBrush(QPalette.Disabled, QPalette.ToolTipText, brush6)
+        self.pushButton_21.setPalette(palette3)
         self.pushButton_21.setFont(font4)
         self.pushButton_21.setMouseTracking(False)
         self.pushButton_21.setIcon(icon11)
@@ -1876,28 +1670,28 @@ class Ui_MainWindow(object):
         self.Tequipos = QTableWidget(self.frame_7)
         if (self.Tequipos.columnCount() < 11):
             self.Tequipos.setColumnCount(11)
-        __qtablewidgetitem37 = QTableWidgetItem()
-        self.Tequipos.setHorizontalHeaderItem(0, __qtablewidgetitem37)
-        __qtablewidgetitem38 = QTableWidgetItem()
-        self.Tequipos.setHorizontalHeaderItem(1, __qtablewidgetitem38)
-        __qtablewidgetitem39 = QTableWidgetItem()
-        self.Tequipos.setHorizontalHeaderItem(2, __qtablewidgetitem39)
-        __qtablewidgetitem40 = QTableWidgetItem()
-        self.Tequipos.setHorizontalHeaderItem(3, __qtablewidgetitem40)
-        __qtablewidgetitem41 = QTableWidgetItem()
-        self.Tequipos.setHorizontalHeaderItem(4, __qtablewidgetitem41)
-        __qtablewidgetitem42 = QTableWidgetItem()
-        self.Tequipos.setHorizontalHeaderItem(5, __qtablewidgetitem42)
-        __qtablewidgetitem43 = QTableWidgetItem()
-        self.Tequipos.setHorizontalHeaderItem(6, __qtablewidgetitem43)
-        __qtablewidgetitem44 = QTableWidgetItem()
-        self.Tequipos.setHorizontalHeaderItem(7, __qtablewidgetitem44)
-        __qtablewidgetitem45 = QTableWidgetItem()
-        self.Tequipos.setHorizontalHeaderItem(8, __qtablewidgetitem45)
-        __qtablewidgetitem46 = QTableWidgetItem()
-        self.Tequipos.setHorizontalHeaderItem(9, __qtablewidgetitem46)
         __qtablewidgetitem47 = QTableWidgetItem()
-        self.Tequipos.setHorizontalHeaderItem(10, __qtablewidgetitem47)
+        self.Tequipos.setHorizontalHeaderItem(0, __qtablewidgetitem47)
+        __qtablewidgetitem48 = QTableWidgetItem()
+        self.Tequipos.setHorizontalHeaderItem(1, __qtablewidgetitem48)
+        __qtablewidgetitem49 = QTableWidgetItem()
+        self.Tequipos.setHorizontalHeaderItem(2, __qtablewidgetitem49)
+        __qtablewidgetitem50 = QTableWidgetItem()
+        self.Tequipos.setHorizontalHeaderItem(3, __qtablewidgetitem50)
+        __qtablewidgetitem51 = QTableWidgetItem()
+        self.Tequipos.setHorizontalHeaderItem(4, __qtablewidgetitem51)
+        __qtablewidgetitem52 = QTableWidgetItem()
+        self.Tequipos.setHorizontalHeaderItem(5, __qtablewidgetitem52)
+        __qtablewidgetitem53 = QTableWidgetItem()
+        self.Tequipos.setHorizontalHeaderItem(6, __qtablewidgetitem53)
+        __qtablewidgetitem54 = QTableWidgetItem()
+        self.Tequipos.setHorizontalHeaderItem(7, __qtablewidgetitem54)
+        __qtablewidgetitem55 = QTableWidgetItem()
+        self.Tequipos.setHorizontalHeaderItem(8, __qtablewidgetitem55)
+        __qtablewidgetitem56 = QTableWidgetItem()
+        self.Tequipos.setHorizontalHeaderItem(9, __qtablewidgetitem56)
+        __qtablewidgetitem57 = QTableWidgetItem()
+        self.Tequipos.setHorizontalHeaderItem(10, __qtablewidgetitem57)
         self.Tequipos.setObjectName(u"Tequipos")
         self.Tequipos.setGeometry(QRect(30, 260, 1021, 181))
         self.Tequipos.setStyleSheet(u"QTableWidget{\n"
@@ -1975,7 +1769,7 @@ class Ui_MainWindow(object):
         self.pushButton_38.setStyleSheet(u"QPushButton{\n"
 "background: #ffffff;\n"
 "}")
-        self.pushButton_38.setIcon(icon13)
+        self.pushButton_38.setIcon(icon14)
         self.pushButton_38.setIconSize(QSize(100, 31))
         self.pushButton_38.setAutoDefault(False)
         self.pushButton_52 = QPushButton(self.widget_9)
@@ -1985,40 +1779,40 @@ class Ui_MainWindow(object):
         self.pushButton_52.setStyleSheet(u"QPushButton{\n"
 "background: #ffffff;\n"
 "}")
-        self.pushButton_52.setIcon(icon14)
+        self.pushButton_52.setIcon(icon15)
         self.pushButton_52.setIconSize(QSize(101, 35))
         self.pushButton_52.setAutoDefault(False)
         self.pushButton_53 = QPushButton(self.widget_9)
         self.pushButton_53.setObjectName(u"pushButton_53")
         self.pushButton_53.setGeometry(QRect(900, 200, 93, 28))
         self.pushButton_53.setFont(font5)
-        self.pushButton_53.setIcon(icon15)
+        self.pushButton_53.setIcon(icon16)
         self.pushButton_54 = QPushButton(self.widget_9)
         self.pushButton_54.setObjectName(u"pushButton_54")
         self.pushButton_54.setGeometry(QRect(1060, 200, 93, 28))
         self.pushButton_54.setFont(font5)
-        self.pushButton_54.setIcon(icon16)
+        self.pushButton_54.setIcon(icon17)
         self.TConsultaInstrumento = QTableWidget(self.widget_9)
         if (self.TConsultaInstrumento.columnCount() < 9):
             self.TConsultaInstrumento.setColumnCount(9)
-        __qtablewidgetitem48 = QTableWidgetItem()
-        self.TConsultaInstrumento.setHorizontalHeaderItem(0, __qtablewidgetitem48)
-        __qtablewidgetitem49 = QTableWidgetItem()
-        self.TConsultaInstrumento.setHorizontalHeaderItem(1, __qtablewidgetitem49)
-        __qtablewidgetitem50 = QTableWidgetItem()
-        self.TConsultaInstrumento.setHorizontalHeaderItem(2, __qtablewidgetitem50)
-        __qtablewidgetitem51 = QTableWidgetItem()
-        self.TConsultaInstrumento.setHorizontalHeaderItem(3, __qtablewidgetitem51)
-        __qtablewidgetitem52 = QTableWidgetItem()
-        self.TConsultaInstrumento.setHorizontalHeaderItem(4, __qtablewidgetitem52)
-        __qtablewidgetitem53 = QTableWidgetItem()
-        self.TConsultaInstrumento.setHorizontalHeaderItem(5, __qtablewidgetitem53)
-        __qtablewidgetitem54 = QTableWidgetItem()
-        self.TConsultaInstrumento.setHorizontalHeaderItem(6, __qtablewidgetitem54)
-        __qtablewidgetitem55 = QTableWidgetItem()
-        self.TConsultaInstrumento.setHorizontalHeaderItem(7, __qtablewidgetitem55)
-        __qtablewidgetitem56 = QTableWidgetItem()
-        self.TConsultaInstrumento.setHorizontalHeaderItem(8, __qtablewidgetitem56)
+        __qtablewidgetitem58 = QTableWidgetItem()
+        self.TConsultaInstrumento.setHorizontalHeaderItem(0, __qtablewidgetitem58)
+        __qtablewidgetitem59 = QTableWidgetItem()
+        self.TConsultaInstrumento.setHorizontalHeaderItem(1, __qtablewidgetitem59)
+        __qtablewidgetitem60 = QTableWidgetItem()
+        self.TConsultaInstrumento.setHorizontalHeaderItem(2, __qtablewidgetitem60)
+        __qtablewidgetitem61 = QTableWidgetItem()
+        self.TConsultaInstrumento.setHorizontalHeaderItem(3, __qtablewidgetitem61)
+        __qtablewidgetitem62 = QTableWidgetItem()
+        self.TConsultaInstrumento.setHorizontalHeaderItem(4, __qtablewidgetitem62)
+        __qtablewidgetitem63 = QTableWidgetItem()
+        self.TConsultaInstrumento.setHorizontalHeaderItem(5, __qtablewidgetitem63)
+        __qtablewidgetitem64 = QTableWidgetItem()
+        self.TConsultaInstrumento.setHorizontalHeaderItem(6, __qtablewidgetitem64)
+        __qtablewidgetitem65 = QTableWidgetItem()
+        self.TConsultaInstrumento.setHorizontalHeaderItem(7, __qtablewidgetitem65)
+        __qtablewidgetitem66 = QTableWidgetItem()
+        self.TConsultaInstrumento.setHorizontalHeaderItem(8, __qtablewidgetitem66)
         self.TConsultaInstrumento.setObjectName(u"TConsultaInstrumento")
         self.TConsultaInstrumento.setGeometry(QRect(20, 50, 810, 180))
         self.TConsultaInstrumento.setStyleSheet(u"QTableWidget{\n"
@@ -2026,7 +1820,7 @@ class Ui_MainWindow(object):
 "}")
         self.PlanM = QWidget(self.WCentral)
         self.PlanM.setObjectName(u"PlanM")
-        self.PlanM.setGeometry(QRect(0, 0, 1250, 750))
+        self.PlanM.setGeometry(QRect(0, 0, 1250, 0))
         self.PlanM.setStyleSheet(u"QFrame{\n"
 "border: 2px solid;\n"
 "border-radius: 25px;\n"
@@ -2044,40 +1838,38 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         self.TPlan = QTableWidget(self.PlanM)
-        if (self.TPlan.columnCount() < 16):
-            self.TPlan.setColumnCount(16)
-        __qtablewidgetitem57 = QTableWidgetItem()
-        self.TPlan.setHorizontalHeaderItem(0, __qtablewidgetitem57)
-        __qtablewidgetitem58 = QTableWidgetItem()
-        self.TPlan.setHorizontalHeaderItem(1, __qtablewidgetitem58)
-        __qtablewidgetitem59 = QTableWidgetItem()
-        self.TPlan.setHorizontalHeaderItem(2, __qtablewidgetitem59)
-        __qtablewidgetitem60 = QTableWidgetItem()
-        self.TPlan.setHorizontalHeaderItem(3, __qtablewidgetitem60)
-        __qtablewidgetitem61 = QTableWidgetItem()
-        self.TPlan.setHorizontalHeaderItem(4, __qtablewidgetitem61)
-        __qtablewidgetitem62 = QTableWidgetItem()
-        self.TPlan.setHorizontalHeaderItem(5, __qtablewidgetitem62)
-        __qtablewidgetitem63 = QTableWidgetItem()
-        self.TPlan.setHorizontalHeaderItem(6, __qtablewidgetitem63)
-        __qtablewidgetitem64 = QTableWidgetItem()
-        self.TPlan.setHorizontalHeaderItem(7, __qtablewidgetitem64)
-        __qtablewidgetitem65 = QTableWidgetItem()
-        self.TPlan.setHorizontalHeaderItem(8, __qtablewidgetitem65)
-        __qtablewidgetitem66 = QTableWidgetItem()
-        self.TPlan.setHorizontalHeaderItem(9, __qtablewidgetitem66)
+        if (self.TPlan.columnCount() < 15):
+            self.TPlan.setColumnCount(15)
         __qtablewidgetitem67 = QTableWidgetItem()
-        self.TPlan.setHorizontalHeaderItem(10, __qtablewidgetitem67)
+        self.TPlan.setHorizontalHeaderItem(0, __qtablewidgetitem67)
         __qtablewidgetitem68 = QTableWidgetItem()
-        self.TPlan.setHorizontalHeaderItem(11, __qtablewidgetitem68)
+        self.TPlan.setHorizontalHeaderItem(1, __qtablewidgetitem68)
         __qtablewidgetitem69 = QTableWidgetItem()
-        self.TPlan.setHorizontalHeaderItem(12, __qtablewidgetitem69)
+        self.TPlan.setHorizontalHeaderItem(2, __qtablewidgetitem69)
         __qtablewidgetitem70 = QTableWidgetItem()
-        self.TPlan.setHorizontalHeaderItem(13, __qtablewidgetitem70)
+        self.TPlan.setHorizontalHeaderItem(3, __qtablewidgetitem70)
         __qtablewidgetitem71 = QTableWidgetItem()
-        self.TPlan.setHorizontalHeaderItem(14, __qtablewidgetitem71)
+        self.TPlan.setHorizontalHeaderItem(4, __qtablewidgetitem71)
         __qtablewidgetitem72 = QTableWidgetItem()
-        self.TPlan.setHorizontalHeaderItem(15, __qtablewidgetitem72)
+        self.TPlan.setHorizontalHeaderItem(5, __qtablewidgetitem72)
+        __qtablewidgetitem73 = QTableWidgetItem()
+        self.TPlan.setHorizontalHeaderItem(6, __qtablewidgetitem73)
+        __qtablewidgetitem74 = QTableWidgetItem()
+        self.TPlan.setHorizontalHeaderItem(7, __qtablewidgetitem74)
+        __qtablewidgetitem75 = QTableWidgetItem()
+        self.TPlan.setHorizontalHeaderItem(8, __qtablewidgetitem75)
+        __qtablewidgetitem76 = QTableWidgetItem()
+        self.TPlan.setHorizontalHeaderItem(9, __qtablewidgetitem76)
+        __qtablewidgetitem77 = QTableWidgetItem()
+        self.TPlan.setHorizontalHeaderItem(10, __qtablewidgetitem77)
+        __qtablewidgetitem78 = QTableWidgetItem()
+        self.TPlan.setHorizontalHeaderItem(11, __qtablewidgetitem78)
+        __qtablewidgetitem79 = QTableWidgetItem()
+        self.TPlan.setHorizontalHeaderItem(12, __qtablewidgetitem79)
+        __qtablewidgetitem80 = QTableWidgetItem()
+        self.TPlan.setHorizontalHeaderItem(13, __qtablewidgetitem80)
+        __qtablewidgetitem81 = QTableWidgetItem()
+        self.TPlan.setHorizontalHeaderItem(14, __qtablewidgetitem81)
         self.TPlan.setObjectName(u"TPlan")
         self.TPlan.setGeometry(QRect(30, 210, 1191, 521))
         self.TPlan.setStyleSheet(u"QTableWidget{\n"
@@ -2123,7 +1915,7 @@ class Ui_MainWindow(object):
         self.pushButton_71.setObjectName(u"pushButton_71")
         self.pushButton_71.setGeometry(QRect(1050, 160, 93, 28))
         self.pushButton_71.setFont(font5)
-        self.pushButton_71.setIcon(icon16)
+        self.pushButton_71.setIcon(icon17)
         self.label_114 = QLabel(self.PlanM)
         self.label_114.setObjectName(u"label_114")
         self.label_114.setGeometry(QRect(50, 10, 321, 31))
@@ -2131,6 +1923,47 @@ class Ui_MainWindow(object):
         self.label_114.setStyleSheet(u"QLabel{\n"
 "border: white;\n"
 "}")
+        self.Wnotifi = QWidget(self.WCentral)
+        self.Wnotifi.setObjectName(u"Wnotifi")
+        self.Wnotifi.setGeometry(QRect(0, 0, 1250, 750))
+        self.Wnotifi.setStyleSheet(u"QFrame{\n"
+"border: 2px solid;\n"
+"border-radius: 25px;\n"
+"background: #ffffff;\n"
+"}\n"
+"QLineEdit{\n"
+"Border: 2px solid black;\n"
+"border-radius: 17px;\n"
+"Background: #FBD27E;\n"
+"}\n"
+"QPushButton{\n"
+"Background-color:rgb(255, 255, 255);\n"
+"border: 1px solid #003057;\n"
+"border-radius: 6px;\n"
+"}")
+        self.TNotifi = QTableWidget(self.Wnotifi)
+        if (self.TNotifi.columnCount() < 1):
+            self.TNotifi.setColumnCount(1)
+        __qtablewidgetitem82 = QTableWidgetItem()
+        self.TNotifi.setHorizontalHeaderItem(0, __qtablewidgetitem82)
+        self.TNotifi.setObjectName(u"TNotifi")
+        self.TNotifi.setGeometry(QRect(30, 90, 1210, 641))
+        font9 = QFont()
+        font9.setPointSize(15)
+        font9.setBold(True)
+        self.TNotifi.setFont(font9)
+        self.TNotifi.horizontalHeader().setDefaultSectionSize(1210)
+        self.TNotifi.verticalHeader().setDefaultSectionSize(50)
+        self.label_115 = QLabel(self.Wnotifi)
+        self.label_115.setObjectName(u"label_115")
+        self.label_115.setGeometry(QRect(50, 10, 321, 31))
+        self.label_115.setFont(font6)
+        self.label_115.setStyleSheet(u"QLabel{\n"
+"border: white;\n"
+"}")
+        self.pushButton_10 = QPushButton(self.Wnotifi)
+        self.pushButton_10.setObjectName(u"pushButton_10")
+        self.pushButton_10.setGeometry(QRect(1120, 50, 93, 28))
 
         self.verticalLayout.addWidget(self.widget_2)
 
@@ -2143,9 +1976,6 @@ class Ui_MainWindow(object):
         self.pushButton_37.setDefault(False)
         self.pushButton_39.setDefault(False)
         self.pushButton_40.setDefault(False)
-        self.pushButton_45.setDefault(False)
-        self.pushButton_46.setDefault(False)
-        self.pushButton_47.setDefault(False)
         self.pushButton_48.setDefault(False)
         self.pushButton_49.setDefault(False)
         self.pushButton_23.setDefault(False)
@@ -2169,8 +1999,8 @@ class Ui_MainWindow(object):
         self.label_3.setText("")
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"     Inicio                                ", None))
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"      Registrar                        ", None))
-        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"     Reparaciones                 ", None))
-        self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"    Mantenimiento M\u00e1quina", None))
+        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"     Mantenimientos                 ", None))
+        self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"Notificaciones", None))
         self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"    Proveedores                       ", None))
         self.pushButton_6.setText(QCoreApplication.translate("MainWindow", u"Asignaci\u00f3n Modelamientos", None))
         self.pushButton_7.setText(QCoreApplication.translate("MainWindow", u"Plan De Mantenimiento Correctivo", None))
@@ -2181,28 +2011,33 @@ class Ui_MainWindow(object):
         self.dateEdit_5.setDisplayFormat(QCoreApplication.translate("MainWindow", u"yyyy/MM/d", None))
         self.dateEdit_6.setDisplayFormat(QCoreApplication.translate("MainWindow", u"yyyy/MM/d", None))
         self.label_56.setText(QCoreApplication.translate("MainWindow", u"ID:", None))
-        self.label_57.setText(QCoreApplication.translate("MainWindow", u"Descripci\u00f3n:", None))
-        self.label_58.setText(QCoreApplication.translate("MainWindow", u"ID Instrumento", None))
-        self.label_59.setText(QCoreApplication.translate("MainWindow", u"ID Laboratorista", None))
+        self.label_57.setText(QCoreApplication.translate("MainWindow", u"Observaciones:", None))
+        self.label_90.setText(QCoreApplication.translate("MainWindow", u"ID Proveedor:", None))
+        self.label_59.setText(QCoreApplication.translate("MainWindow", u"ID Laboratorista:", None))
+        self.label_58.setText(QCoreApplication.translate("MainWindow", u"ID Equipo:", None))
+        self.label_91.setText(QCoreApplication.translate("MainWindow", u"Costo:", None))
         self.pushButton_34.setText("")
         self.pushButton_35.setText("")
         self.pushButton_36.setText(QCoreApplication.translate("MainWindow", u"Registrar", None))
         self.pushButton_37.setText(QCoreApplication.translate("MainWindow", u"Modificar", None))
-        ___qtablewidgetitem = self.TInstrumentoReparacion.horizontalHeaderItem(0)
+        ___qtablewidgetitem = self.TMantenimientosEnCurso.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"ID", None));
-        ___qtablewidgetitem1 = self.TInstrumentoReparacion.horizontalHeaderItem(1)
+        ___qtablewidgetitem1 = self.TMantenimientosEnCurso.horizontalHeaderItem(1)
         ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Fecha Ingreso", None));
-        ___qtablewidgetitem2 = self.TInstrumentoReparacion.horizontalHeaderItem(2)
+        ___qtablewidgetitem2 = self.TMantenimientosEnCurso.horizontalHeaderItem(2)
         ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Fecha Retorno", None));
-        ___qtablewidgetitem3 = self.TInstrumentoReparacion.horizontalHeaderItem(3)
-        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Descripcion", None));
-        ___qtablewidgetitem4 = self.TInstrumentoReparacion.horizontalHeaderItem(4)
+        ___qtablewidgetitem3 = self.TMantenimientosEnCurso.horizontalHeaderItem(3)
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Observerciones", None));
+        ___qtablewidgetitem4 = self.TMantenimientosEnCurso.horizontalHeaderItem(4)
         ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"ID Labaratorista", None));
-        ___qtablewidgetitem5 = self.TInstrumentoReparacion.horizontalHeaderItem(5)
-        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"ID Maquina", None));
-        ___qtablewidgetitem6 = self.TInstrumentoReparacion.horizontalHeaderItem(6)
-        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"ID Instrumento", None));
-        self.label_72.setText(QCoreApplication.translate("MainWindow", u"Reparacion De Instrumentos", None))
+        ___qtablewidgetitem5 = self.TMantenimientosEnCurso.horizontalHeaderItem(5)
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"ID Equipo", None));
+        ___qtablewidgetitem6 = self.TMantenimientosEnCurso.horizontalHeaderItem(6)
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"ID Proveedor", None));
+        ___qtablewidgetitem7 = self.TMantenimientosEnCurso.horizontalHeaderItem(7)
+        ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"Costo", None));
+        self.label_72.setText(QCoreApplication.translate("MainWindow", u"Mantenimientos Correctivos En Curso", None))
+        self.pushButton_55.setText("")
         self.label_60.setText(QCoreApplication.translate("MainWindow", u"TABLA CONSULTA", None))
         self.label_61.setText(QCoreApplication.translate("MainWindow", u"Filtro De Busqueda", None))
         self.comboBoxBuscarInstrumentoReparacion.setItemText(0, "")
@@ -2212,41 +2047,48 @@ class Ui_MainWindow(object):
         self.pushButton_40.setText("")
         self.pushButton_41.setText(QCoreApplication.translate("MainWindow", u"Eliminar", None))
         self.pushButton_42.setText(QCoreApplication.translate("MainWindow", u"Consultar", None))
-        ___qtablewidgetitem7 = self.TConsultaInstrumentoReparacion.horizontalHeaderItem(0)
-        ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"ID", None));
-        ___qtablewidgetitem8 = self.TConsultaInstrumentoReparacion.horizontalHeaderItem(1)
-        ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"Fecha Ingreso", None));
-        ___qtablewidgetitem9 = self.TConsultaInstrumentoReparacion.horizontalHeaderItem(2)
-        ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"Fecha Retorno", None));
-        ___qtablewidgetitem10 = self.TConsultaInstrumentoReparacion.horizontalHeaderItem(3)
-        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"Descripcion", None));
-        ___qtablewidgetitem11 = self.TConsultaInstrumentoReparacion.horizontalHeaderItem(4)
-        ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"Nueva columna", None));
-        ___qtablewidgetitem12 = self.TConsultaInstrumentoReparacion.horizontalHeaderItem(5)
-        ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"ID Maquina", None));
-        ___qtablewidgetitem13 = self.TConsultaInstrumentoReparacion.horizontalHeaderItem(6)
-        ___qtablewidgetitem13.setText(QCoreApplication.translate("MainWindow", u"ID Instrumento", None));
-        self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.tab_5), QCoreApplication.translate("MainWindow", u"Instrumetos", None))
-        self.label_63.setText(QCoreApplication.translate("MainWindow", u"Fecha De Ingreso:", None))
-        self.label_64.setText(QCoreApplication.translate("MainWindow", u"Fecha De Retorno:", None))
-        self.label_65.setText(QCoreApplication.translate("MainWindow", u"ID:", None))
-        self.label_66.setText(QCoreApplication.translate("MainWindow", u"Descripcion:", None))
-        self.label_67.setText(QCoreApplication.translate("MainWindow", u"ID M\u00e1quina:", None))
-        self.label_68.setText(QCoreApplication.translate("MainWindow", u"ID Laboratorista:", None))
-        self.pushButton_43.setText("")
-        self.pushButton_44.setText("")
-        self.pushButton_45.setText(QCoreApplication.translate("MainWindow", u"Registrar", None))
-        self.pushButton_46.setText(QCoreApplication.translate("MainWindow", u"Modificar", None))
-        self.pushButton_47.setText("")
-        self.label_73.setText(QCoreApplication.translate("MainWindow", u"Reparacion De M\u00e1quinas", None))
-        self.label_69.setText(QCoreApplication.translate("MainWindow", u"TABLA CONSULTA", None))
+        ___qtablewidgetitem8 = self.TConsultaMantenimientos1.horizontalHeaderItem(0)
+        ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"ID", None));
+        ___qtablewidgetitem9 = self.TConsultaMantenimientos1.horizontalHeaderItem(1)
+        ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"Fecha Ingreso", None));
+        ___qtablewidgetitem10 = self.TConsultaMantenimientos1.horizontalHeaderItem(2)
+        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"Fecha Retorno", None));
+        ___qtablewidgetitem11 = self.TConsultaMantenimientos1.horizontalHeaderItem(3)
+        ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"Observaciones", None));
+        ___qtablewidgetitem12 = self.TConsultaMantenimientos1.horizontalHeaderItem(4)
+        ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"ID Laboratorista", None));
+        ___qtablewidgetitem13 = self.TConsultaMantenimientos1.horizontalHeaderItem(5)
+        ___qtablewidgetitem13.setText(QCoreApplication.translate("MainWindow", u"ID Equipo", None));
+        ___qtablewidgetitem14 = self.TConsultaMantenimientos1.horizontalHeaderItem(6)
+        ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"ID Proveerdor", None));
+        ___qtablewidgetitem15 = self.TConsultaMantenimientos1.horizontalHeaderItem(7)
+        ___qtablewidgetitem15.setText(QCoreApplication.translate("MainWindow", u"Costo", None));
+        self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.tab_5), QCoreApplication.translate("MainWindow", u"Correctivos", None))
         self.pushButton_48.setText("")
         self.pushButton_49.setText("")
         self.label_70.setText(QCoreApplication.translate("MainWindow", u"Filtro De Busqueda:", None))
         self.label_71.setText(QCoreApplication.translate("MainWindow", u"Buscar:", None))
         self.pushButton_50.setText(QCoreApplication.translate("MainWindow", u"Eliminar", None))
         self.pushButton_51.setText(QCoreApplication.translate("MainWindow", u"Consultar", None))
-        self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.tab_6), QCoreApplication.translate("MainWindow", u"M\u00e1quinas", None))
+        ___qtablewidgetitem16 = self.TManteniR.horizontalHeaderItem(0)
+        ___qtablewidgetitem16.setText(QCoreApplication.translate("MainWindow", u"ID", None));
+        ___qtablewidgetitem17 = self.TManteniR.horizontalHeaderItem(1)
+        ___qtablewidgetitem17.setText(QCoreApplication.translate("MainWindow", u"Fecha Ingreso", None));
+        ___qtablewidgetitem18 = self.TManteniR.horizontalHeaderItem(2)
+        ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"Fecha Retorno", None));
+        ___qtablewidgetitem19 = self.TManteniR.horizontalHeaderItem(3)
+        ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"Observaciones", None));
+        ___qtablewidgetitem20 = self.TManteniR.horizontalHeaderItem(4)
+        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"ID Laboratorista", None));
+        ___qtablewidgetitem21 = self.TManteniR.horizontalHeaderItem(5)
+        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"ID Equipo", None));
+        ___qtablewidgetitem22 = self.TManteniR.horizontalHeaderItem(6)
+        ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"ID Proveedor", None));
+        ___qtablewidgetitem23 = self.TManteniR.horizontalHeaderItem(7)
+        ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"Costo", None));
+        self.label_73.setText(QCoreApplication.translate("MainWindow", u"Mantenimientos Correctivos Realizados", None))
+        self.label_63.setText(QCoreApplication.translate("MainWindow", u"Observaciones:", None))
+        self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.tab_6), QCoreApplication.translate("MainWindow", u"Realizado", None))
         self.label_107.setText(QCoreApplication.translate("MainWindow", u"Fecha De Diligenciamiento:", None))
         self.label_106.setText(QCoreApplication.translate("MainWindow", u"Nombre o Razon Social:", None))
         self.lineEdit_61.setText("")
@@ -2265,30 +2107,30 @@ class Ui_MainWindow(object):
         self.pushButton_61.setText(QCoreApplication.translate("MainWindow", u"Modificar", None))
         self.pushButton_62.setText(QCoreApplication.translate("MainWindow", u"Registrar", None))
         self.label_108.setText(QCoreApplication.translate("MainWindow", u"Registro Proveedores", None))
-        ___qtablewidgetitem14 = self.TProveedores.horizontalHeaderItem(0)
-        ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"ID", None));
-        ___qtablewidgetitem15 = self.TProveedores.horizontalHeaderItem(1)
-        ___qtablewidgetitem15.setText(QCoreApplication.translate("MainWindow", u"Fecha", None));
-        ___qtablewidgetitem16 = self.TProveedores.horizontalHeaderItem(2)
-        ___qtablewidgetitem16.setText(QCoreApplication.translate("MainWindow", u"Razon Social", None));
-        ___qtablewidgetitem17 = self.TProveedores.horizontalHeaderItem(3)
-        ___qtablewidgetitem17.setText(QCoreApplication.translate("MainWindow", u"NIT", None));
-        ___qtablewidgetitem18 = self.TProveedores.horizontalHeaderItem(4)
-        ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"Telefonos", None));
-        ___qtablewidgetitem19 = self.TProveedores.horizontalHeaderItem(5)
-        ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"E-mail", None));
-        ___qtablewidgetitem20 = self.TProveedores.horizontalHeaderItem(6)
-        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"Direccion", None));
-        ___qtablewidgetitem21 = self.TProveedores.horizontalHeaderItem(7)
-        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"Fax", None));
-        ___qtablewidgetitem22 = self.TProveedores.horizontalHeaderItem(8)
-        ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"Ciudad", None));
-        ___qtablewidgetitem23 = self.TProveedores.horizontalHeaderItem(9)
-        ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"Contacto Ventas", None));
-        ___qtablewidgetitem24 = self.TProveedores.horizontalHeaderItem(10)
-        ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"Contacto Soporte Tecnico", None));
-        ___qtablewidgetitem25 = self.TProveedores.horizontalHeaderItem(11)
-        ___qtablewidgetitem25.setText(QCoreApplication.translate("MainWindow", u"PDF", None));
+        ___qtablewidgetitem24 = self.TProveedores.horizontalHeaderItem(0)
+        ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"ID", None));
+        ___qtablewidgetitem25 = self.TProveedores.horizontalHeaderItem(1)
+        ___qtablewidgetitem25.setText(QCoreApplication.translate("MainWindow", u"Fecha", None));
+        ___qtablewidgetitem26 = self.TProveedores.horizontalHeaderItem(2)
+        ___qtablewidgetitem26.setText(QCoreApplication.translate("MainWindow", u"Razon Social", None));
+        ___qtablewidgetitem27 = self.TProveedores.horizontalHeaderItem(3)
+        ___qtablewidgetitem27.setText(QCoreApplication.translate("MainWindow", u"NIT", None));
+        ___qtablewidgetitem28 = self.TProveedores.horizontalHeaderItem(4)
+        ___qtablewidgetitem28.setText(QCoreApplication.translate("MainWindow", u"Telefonos", None));
+        ___qtablewidgetitem29 = self.TProveedores.horizontalHeaderItem(5)
+        ___qtablewidgetitem29.setText(QCoreApplication.translate("MainWindow", u"E-mail", None));
+        ___qtablewidgetitem30 = self.TProveedores.horizontalHeaderItem(6)
+        ___qtablewidgetitem30.setText(QCoreApplication.translate("MainWindow", u"Direccion", None));
+        ___qtablewidgetitem31 = self.TProveedores.horizontalHeaderItem(7)
+        ___qtablewidgetitem31.setText(QCoreApplication.translate("MainWindow", u"Fax", None));
+        ___qtablewidgetitem32 = self.TProveedores.horizontalHeaderItem(8)
+        ___qtablewidgetitem32.setText(QCoreApplication.translate("MainWindow", u"Ciudad", None));
+        ___qtablewidgetitem33 = self.TProveedores.horizontalHeaderItem(9)
+        ___qtablewidgetitem33.setText(QCoreApplication.translate("MainWindow", u"Contacto Ventas", None));
+        ___qtablewidgetitem34 = self.TProveedores.horizontalHeaderItem(10)
+        ___qtablewidgetitem34.setText(QCoreApplication.translate("MainWindow", u"Contacto Soporte Tecnico", None));
+        ___qtablewidgetitem35 = self.TProveedores.horizontalHeaderItem(11)
+        ___qtablewidgetitem35.setText(QCoreApplication.translate("MainWindow", u"PDF", None));
         self.label_109.setText(QCoreApplication.translate("MainWindow", u"TABLA CONSULTA", None))
         self.label_110.setText(QCoreApplication.translate("MainWindow", u"Filtro De Busqueda", None))
         self.comboBoxBProveedores.setItemText(0, "")
@@ -2298,28 +2140,28 @@ class Ui_MainWindow(object):
         self.pushButton_64.setText("")
         self.pushButton_65.setText(QCoreApplication.translate("MainWindow", u"Eliminar", None))
         self.pushButton_66.setText(QCoreApplication.translate("MainWindow", u"Consultar", None))
-        ___qtablewidgetitem26 = self.TConsultaProveedores.horizontalHeaderItem(0)
-        ___qtablewidgetitem26.setText(QCoreApplication.translate("MainWindow", u"ID", None));
-        ___qtablewidgetitem27 = self.TConsultaProveedores.horizontalHeaderItem(1)
-        ___qtablewidgetitem27.setText(QCoreApplication.translate("MainWindow", u"Fecha", None));
-        ___qtablewidgetitem28 = self.TConsultaProveedores.horizontalHeaderItem(2)
-        ___qtablewidgetitem28.setText(QCoreApplication.translate("MainWindow", u"Razon Social", None));
-        ___qtablewidgetitem29 = self.TConsultaProveedores.horizontalHeaderItem(3)
-        ___qtablewidgetitem29.setText(QCoreApplication.translate("MainWindow", u"NIT", None));
-        ___qtablewidgetitem30 = self.TConsultaProveedores.horizontalHeaderItem(4)
-        ___qtablewidgetitem30.setText(QCoreApplication.translate("MainWindow", u"Telefonos", None));
-        ___qtablewidgetitem31 = self.TConsultaProveedores.horizontalHeaderItem(5)
-        ___qtablewidgetitem31.setText(QCoreApplication.translate("MainWindow", u"E-mail", None));
-        ___qtablewidgetitem32 = self.TConsultaProveedores.horizontalHeaderItem(6)
-        ___qtablewidgetitem32.setText(QCoreApplication.translate("MainWindow", u"Direccion", None));
-        ___qtablewidgetitem33 = self.TConsultaProveedores.horizontalHeaderItem(7)
-        ___qtablewidgetitem33.setText(QCoreApplication.translate("MainWindow", u"Fax", None));
-        ___qtablewidgetitem34 = self.TConsultaProveedores.horizontalHeaderItem(8)
-        ___qtablewidgetitem34.setText(QCoreApplication.translate("MainWindow", u"Ciudad", None));
-        ___qtablewidgetitem35 = self.TConsultaProveedores.horizontalHeaderItem(9)
-        ___qtablewidgetitem35.setText(QCoreApplication.translate("MainWindow", u"Contacto Ventas", None));
-        ___qtablewidgetitem36 = self.TConsultaProveedores.horizontalHeaderItem(10)
-        ___qtablewidgetitem36.setText(QCoreApplication.translate("MainWindow", u"Contacto Soporte Tecnico", None));
+        ___qtablewidgetitem36 = self.TConsultaProveedores.horizontalHeaderItem(0)
+        ___qtablewidgetitem36.setText(QCoreApplication.translate("MainWindow", u"ID", None));
+        ___qtablewidgetitem37 = self.TConsultaProveedores.horizontalHeaderItem(1)
+        ___qtablewidgetitem37.setText(QCoreApplication.translate("MainWindow", u"Fecha", None));
+        ___qtablewidgetitem38 = self.TConsultaProveedores.horizontalHeaderItem(2)
+        ___qtablewidgetitem38.setText(QCoreApplication.translate("MainWindow", u"Razon Social", None));
+        ___qtablewidgetitem39 = self.TConsultaProveedores.horizontalHeaderItem(3)
+        ___qtablewidgetitem39.setText(QCoreApplication.translate("MainWindow", u"NIT", None));
+        ___qtablewidgetitem40 = self.TConsultaProveedores.horizontalHeaderItem(4)
+        ___qtablewidgetitem40.setText(QCoreApplication.translate("MainWindow", u"Telefonos", None));
+        ___qtablewidgetitem41 = self.TConsultaProveedores.horizontalHeaderItem(5)
+        ___qtablewidgetitem41.setText(QCoreApplication.translate("MainWindow", u"E-mail", None));
+        ___qtablewidgetitem42 = self.TConsultaProveedores.horizontalHeaderItem(6)
+        ___qtablewidgetitem42.setText(QCoreApplication.translate("MainWindow", u"Direccion", None));
+        ___qtablewidgetitem43 = self.TConsultaProveedores.horizontalHeaderItem(7)
+        ___qtablewidgetitem43.setText(QCoreApplication.translate("MainWindow", u"Fax", None));
+        ___qtablewidgetitem44 = self.TConsultaProveedores.horizontalHeaderItem(8)
+        ___qtablewidgetitem44.setText(QCoreApplication.translate("MainWindow", u"Ciudad", None));
+        ___qtablewidgetitem45 = self.TConsultaProveedores.horizontalHeaderItem(9)
+        ___qtablewidgetitem45.setText(QCoreApplication.translate("MainWindow", u"Contacto Ventas", None));
+        ___qtablewidgetitem46 = self.TConsultaProveedores.horizontalHeaderItem(10)
+        ___qtablewidgetitem46.setText(QCoreApplication.translate("MainWindow", u"Contacto Soporte Tecnico", None));
         self.label_89.setText(QCoreApplication.translate("MainWindow", u"Calibraci\u00f3n:", None))
         self.label_88.setText(QCoreApplication.translate("MainWindow", u"Laboratorio:", None))
         self.label_74.setText(QCoreApplication.translate("MainWindow", u"ID:", None))
@@ -2336,28 +2178,28 @@ class Ui_MainWindow(object):
         self.pushButton_20.setText(QCoreApplication.translate("MainWindow", u"Modificar", None))
         self.pushButton_21.setText(QCoreApplication.translate("MainWindow", u"Registrar", None))
         self.label_84.setText(QCoreApplication.translate("MainWindow", u"Registro Equipos", None))
-        ___qtablewidgetitem37 = self.Tequipos.horizontalHeaderItem(0)
-        ___qtablewidgetitem37.setText(QCoreApplication.translate("MainWindow", u"ID", None));
-        ___qtablewidgetitem38 = self.Tequipos.horizontalHeaderItem(1)
-        ___qtablewidgetitem38.setText(QCoreApplication.translate("MainWindow", u"Nombre", None));
-        ___qtablewidgetitem39 = self.Tequipos.horizontalHeaderItem(2)
-        ___qtablewidgetitem39.setText(QCoreApplication.translate("MainWindow", u"Vida \u00fatil", None));
-        ___qtablewidgetitem40 = self.Tequipos.horizontalHeaderItem(3)
-        ___qtablewidgetitem40.setText(QCoreApplication.translate("MainWindow", u"Mantenimientos", None));
-        ___qtablewidgetitem41 = self.Tequipos.horizontalHeaderItem(4)
-        ___qtablewidgetitem41.setText(QCoreApplication.translate("MainWindow", u"Estado", None));
-        ___qtablewidgetitem42 = self.Tequipos.horizontalHeaderItem(5)
-        ___qtablewidgetitem42.setText(QCoreApplication.translate("MainWindow", u"Codigo", None));
-        ___qtablewidgetitem43 = self.Tequipos.horizontalHeaderItem(6)
-        ___qtablewidgetitem43.setText(QCoreApplication.translate("MainWindow", u"Fecha Registro", None));
-        ___qtablewidgetitem44 = self.Tequipos.horizontalHeaderItem(7)
-        ___qtablewidgetitem44.setText(QCoreApplication.translate("MainWindow", u"Fabricante", None));
-        ___qtablewidgetitem45 = self.Tequipos.horizontalHeaderItem(8)
-        ___qtablewidgetitem45.setText(QCoreApplication.translate("MainWindow", u"Laboratorio", None));
-        ___qtablewidgetitem46 = self.Tequipos.horizontalHeaderItem(9)
-        ___qtablewidgetitem46.setText(QCoreApplication.translate("MainWindow", u"Calibraci\u00f3n", None));
-        ___qtablewidgetitem47 = self.Tequipos.horizontalHeaderItem(10)
-        ___qtablewidgetitem47.setText(QCoreApplication.translate("MainWindow", u"Valor", None));
+        ___qtablewidgetitem47 = self.Tequipos.horizontalHeaderItem(0)
+        ___qtablewidgetitem47.setText(QCoreApplication.translate("MainWindow", u"ID", None));
+        ___qtablewidgetitem48 = self.Tequipos.horizontalHeaderItem(1)
+        ___qtablewidgetitem48.setText(QCoreApplication.translate("MainWindow", u"Nombre", None));
+        ___qtablewidgetitem49 = self.Tequipos.horizontalHeaderItem(2)
+        ___qtablewidgetitem49.setText(QCoreApplication.translate("MainWindow", u"Vida \u00fatil", None));
+        ___qtablewidgetitem50 = self.Tequipos.horizontalHeaderItem(3)
+        ___qtablewidgetitem50.setText(QCoreApplication.translate("MainWindow", u"Mantenimientos", None));
+        ___qtablewidgetitem51 = self.Tequipos.horizontalHeaderItem(4)
+        ___qtablewidgetitem51.setText(QCoreApplication.translate("MainWindow", u"Estado", None));
+        ___qtablewidgetitem52 = self.Tequipos.horizontalHeaderItem(5)
+        ___qtablewidgetitem52.setText(QCoreApplication.translate("MainWindow", u"Codigo", None));
+        ___qtablewidgetitem53 = self.Tequipos.horizontalHeaderItem(6)
+        ___qtablewidgetitem53.setText(QCoreApplication.translate("MainWindow", u"Fecha Registro", None));
+        ___qtablewidgetitem54 = self.Tequipos.horizontalHeaderItem(7)
+        ___qtablewidgetitem54.setText(QCoreApplication.translate("MainWindow", u"Fabricante", None));
+        ___qtablewidgetitem55 = self.Tequipos.horizontalHeaderItem(8)
+        ___qtablewidgetitem55.setText(QCoreApplication.translate("MainWindow", u"Laboratorio", None));
+        ___qtablewidgetitem56 = self.Tequipos.horizontalHeaderItem(9)
+        ___qtablewidgetitem56.setText(QCoreApplication.translate("MainWindow", u"Calibraci\u00f3n", None));
+        ___qtablewidgetitem57 = self.Tequipos.horizontalHeaderItem(10)
+        ___qtablewidgetitem57.setText(QCoreApplication.translate("MainWindow", u"Valor", None));
         self.label_85.setText(QCoreApplication.translate("MainWindow", u"TABLA CONSULTA", None))
         self.label_86.setText(QCoreApplication.translate("MainWindow", u"Filtro De Busqueda", None))
         self.comboBoxBuscarEquipo.setItemText(0, "")
@@ -2367,61 +2209,63 @@ class Ui_MainWindow(object):
         self.pushButton_52.setText("")
         self.pushButton_53.setText(QCoreApplication.translate("MainWindow", u"Eliminar", None))
         self.pushButton_54.setText(QCoreApplication.translate("MainWindow", u"Consultar", None))
-        ___qtablewidgetitem48 = self.TConsultaInstrumento.horizontalHeaderItem(0)
-        ___qtablewidgetitem48.setText(QCoreApplication.translate("MainWindow", u"ID", None));
-        ___qtablewidgetitem49 = self.TConsultaInstrumento.horizontalHeaderItem(1)
-        ___qtablewidgetitem49.setText(QCoreApplication.translate("MainWindow", u"Nombre", None));
-        ___qtablewidgetitem50 = self.TConsultaInstrumento.horizontalHeaderItem(2)
-        ___qtablewidgetitem50.setText(QCoreApplication.translate("MainWindow", u"Vida \u00fatil", None));
-        ___qtablewidgetitem51 = self.TConsultaInstrumento.horizontalHeaderItem(3)
-        ___qtablewidgetitem51.setText(QCoreApplication.translate("MainWindow", u"Mantenimientos", None));
-        ___qtablewidgetitem52 = self.TConsultaInstrumento.horizontalHeaderItem(4)
-        ___qtablewidgetitem52.setText(QCoreApplication.translate("MainWindow", u"Estado", None));
-        ___qtablewidgetitem53 = self.TConsultaInstrumento.horizontalHeaderItem(5)
-        ___qtablewidgetitem53.setText(QCoreApplication.translate("MainWindow", u"Codigo", None));
-        ___qtablewidgetitem54 = self.TConsultaInstrumento.horizontalHeaderItem(6)
-        ___qtablewidgetitem54.setText(QCoreApplication.translate("MainWindow", u"Fecha Registro", None));
-        ___qtablewidgetitem55 = self.TConsultaInstrumento.horizontalHeaderItem(7)
-        ___qtablewidgetitem55.setText(QCoreApplication.translate("MainWindow", u"Fabricante", None));
-        ___qtablewidgetitem56 = self.TConsultaInstrumento.horizontalHeaderItem(8)
-        ___qtablewidgetitem56.setText(QCoreApplication.translate("MainWindow", u"Valor", None));
-        ___qtablewidgetitem57 = self.TPlan.horizontalHeaderItem(0)
-        ___qtablewidgetitem57.setText(QCoreApplication.translate("MainWindow", u"Laboratorio", None));
-        ___qtablewidgetitem58 = self.TPlan.horizontalHeaderItem(1)
-        ___qtablewidgetitem58.setText(QCoreApplication.translate("MainWindow", u"Codigo", None));
-        ___qtablewidgetitem59 = self.TPlan.horizontalHeaderItem(2)
+        ___qtablewidgetitem58 = self.TConsultaInstrumento.horizontalHeaderItem(0)
+        ___qtablewidgetitem58.setText(QCoreApplication.translate("MainWindow", u"ID", None));
+        ___qtablewidgetitem59 = self.TConsultaInstrumento.horizontalHeaderItem(1)
         ___qtablewidgetitem59.setText(QCoreApplication.translate("MainWindow", u"Nombre", None));
-        ___qtablewidgetitem60 = self.TPlan.horizontalHeaderItem(3)
-        ___qtablewidgetitem60.setText(QCoreApplication.translate("MainWindow", u"Vida Util", None));
-        ___qtablewidgetitem61 = self.TPlan.horizontalHeaderItem(4)
-        ___qtablewidgetitem61.setText(QCoreApplication.translate("MainWindow", u"Calibracion", None));
-        ___qtablewidgetitem62 = self.TPlan.horizontalHeaderItem(5)
-        ___qtablewidgetitem62.setText(QCoreApplication.translate("MainWindow", u"Frecuencia", None));
-        ___qtablewidgetitem63 = self.TPlan.horizontalHeaderItem(6)
-        ___qtablewidgetitem63.setText(QCoreApplication.translate("MainWindow", u"Ultimo Mantenimiento", None));
-        ___qtablewidgetitem64 = self.TPlan.horizontalHeaderItem(7)
-        ___qtablewidgetitem64.setText(QCoreApplication.translate("MainWindow", u"Proximo Mantenimiento", None));
-        ___qtablewidgetitem65 = self.TPlan.horizontalHeaderItem(8)
-        ___qtablewidgetitem65.setText(QCoreApplication.translate("MainWindow", u"Mantenimiento 2022", None));
-        ___qtablewidgetitem66 = self.TPlan.horizontalHeaderItem(9)
-        ___qtablewidgetitem66.setText(QCoreApplication.translate("MainWindow", u"Mantenimiento 2023", None));
-        ___qtablewidgetitem67 = self.TPlan.horizontalHeaderItem(10)
-        ___qtablewidgetitem67.setText(QCoreApplication.translate("MainWindow", u"Mantenimiento 2024", None));
-        ___qtablewidgetitem68 = self.TPlan.horizontalHeaderItem(11)
-        ___qtablewidgetitem68.setText(QCoreApplication.translate("MainWindow", u"Mantenimiento 2025", None));
-        ___qtablewidgetitem69 = self.TPlan.horizontalHeaderItem(12)
-        ___qtablewidgetitem69.setText(QCoreApplication.translate("MainWindow", u"Mantenimiento 2026", None));
-        ___qtablewidgetitem70 = self.TPlan.horizontalHeaderItem(13)
-        ___qtablewidgetitem70.setText(QCoreApplication.translate("MainWindow", u"Mantenimiento 2027", None));
-        ___qtablewidgetitem71 = self.TPlan.horizontalHeaderItem(14)
-        ___qtablewidgetitem71.setText(QCoreApplication.translate("MainWindow", u"Mantenimiento 2028", None));
-        ___qtablewidgetitem72 = self.TPlan.horizontalHeaderItem(15)
-        ___qtablewidgetitem72.setText(QCoreApplication.translate("MainWindow", u"Observaciones", None));
+        ___qtablewidgetitem60 = self.TConsultaInstrumento.horizontalHeaderItem(2)
+        ___qtablewidgetitem60.setText(QCoreApplication.translate("MainWindow", u"Vida \u00fatil", None));
+        ___qtablewidgetitem61 = self.TConsultaInstrumento.horizontalHeaderItem(3)
+        ___qtablewidgetitem61.setText(QCoreApplication.translate("MainWindow", u"Mantenimientos", None));
+        ___qtablewidgetitem62 = self.TConsultaInstrumento.horizontalHeaderItem(4)
+        ___qtablewidgetitem62.setText(QCoreApplication.translate("MainWindow", u"Estado", None));
+        ___qtablewidgetitem63 = self.TConsultaInstrumento.horizontalHeaderItem(5)
+        ___qtablewidgetitem63.setText(QCoreApplication.translate("MainWindow", u"Codigo", None));
+        ___qtablewidgetitem64 = self.TConsultaInstrumento.horizontalHeaderItem(6)
+        ___qtablewidgetitem64.setText(QCoreApplication.translate("MainWindow", u"Fecha Registro", None));
+        ___qtablewidgetitem65 = self.TConsultaInstrumento.horizontalHeaderItem(7)
+        ___qtablewidgetitem65.setText(QCoreApplication.translate("MainWindow", u"Fabricante", None));
+        ___qtablewidgetitem66 = self.TConsultaInstrumento.horizontalHeaderItem(8)
+        ___qtablewidgetitem66.setText(QCoreApplication.translate("MainWindow", u"Valor", None));
+        ___qtablewidgetitem67 = self.TPlan.horizontalHeaderItem(0)
+        ___qtablewidgetitem67.setText(QCoreApplication.translate("MainWindow", u"Laboratorio", None));
+        ___qtablewidgetitem68 = self.TPlan.horizontalHeaderItem(1)
+        ___qtablewidgetitem68.setText(QCoreApplication.translate("MainWindow", u"Codigo", None));
+        ___qtablewidgetitem69 = self.TPlan.horizontalHeaderItem(2)
+        ___qtablewidgetitem69.setText(QCoreApplication.translate("MainWindow", u"Nombre", None));
+        ___qtablewidgetitem70 = self.TPlan.horizontalHeaderItem(3)
+        ___qtablewidgetitem70.setText(QCoreApplication.translate("MainWindow", u"Vida Util", None));
+        ___qtablewidgetitem71 = self.TPlan.horizontalHeaderItem(4)
+        ___qtablewidgetitem71.setText(QCoreApplication.translate("MainWindow", u"Calibracion", None));
+        ___qtablewidgetitem72 = self.TPlan.horizontalHeaderItem(5)
+        ___qtablewidgetitem72.setText(QCoreApplication.translate("MainWindow", u"Ultimo Mantenimiento", None));
+        ___qtablewidgetitem73 = self.TPlan.horizontalHeaderItem(6)
+        ___qtablewidgetitem73.setText(QCoreApplication.translate("MainWindow", u"Proximo Mantenimiento", None));
+        ___qtablewidgetitem74 = self.TPlan.horizontalHeaderItem(7)
+        ___qtablewidgetitem74.setText(QCoreApplication.translate("MainWindow", u"Mantenimiento 2022", None));
+        ___qtablewidgetitem75 = self.TPlan.horizontalHeaderItem(8)
+        ___qtablewidgetitem75.setText(QCoreApplication.translate("MainWindow", u"Mantenimiento 2023", None));
+        ___qtablewidgetitem76 = self.TPlan.horizontalHeaderItem(9)
+        ___qtablewidgetitem76.setText(QCoreApplication.translate("MainWindow", u"Mantenimiento 2024", None));
+        ___qtablewidgetitem77 = self.TPlan.horizontalHeaderItem(10)
+        ___qtablewidgetitem77.setText(QCoreApplication.translate("MainWindow", u"Mantenimiento 2025", None));
+        ___qtablewidgetitem78 = self.TPlan.horizontalHeaderItem(11)
+        ___qtablewidgetitem78.setText(QCoreApplication.translate("MainWindow", u"Mantenimiento 2026", None));
+        ___qtablewidgetitem79 = self.TPlan.horizontalHeaderItem(12)
+        ___qtablewidgetitem79.setText(QCoreApplication.translate("MainWindow", u"Mantenimiento 2027", None));
+        ___qtablewidgetitem80 = self.TPlan.horizontalHeaderItem(13)
+        ___qtablewidgetitem80.setText(QCoreApplication.translate("MainWindow", u"Mantenimiento 2028", None));
+        ___qtablewidgetitem81 = self.TPlan.horizontalHeaderItem(14)
+        ___qtablewidgetitem81.setText(QCoreApplication.translate("MainWindow", u"Observaciones", None));
         self.comboBoxBProveedores_3.setItemText(0, "")
 
         self.label_117.setText(QCoreApplication.translate("MainWindow", u"Filtro De Busqueda", None))
         self.label_118.setText(QCoreApplication.translate("MainWindow", u"Buscar:", None))
         self.pushButton_71.setText(QCoreApplication.translate("MainWindow", u"Consultar", None))
         self.label_114.setText(QCoreApplication.translate("MainWindow", u"Plan De Mantenimiento Correctivo", None))
+        ___qtablewidgetitem82 = self.TNotifi.horizontalHeaderItem(0)
+        ___qtablewidgetitem82.setText(QCoreApplication.translate("MainWindow", u"Notificaciones", None));
+        self.label_115.setText(QCoreApplication.translate("MainWindow", u"Notificaciones Pendientes:", None))
+        self.pushButton_10.setText(QCoreApplication.translate("MainWindow", u"Prueba", None))
     # retranslateUi
 

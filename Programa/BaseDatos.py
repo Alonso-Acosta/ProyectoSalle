@@ -15,14 +15,21 @@ sqlinstertLaboratorista = "INSERT INTO t_usuarios (id_laboratorista,cedula,nombr
 
 sqlinstertPlanM = "INSERT INTO t_planm (laboratorio,codigo_equipo,nombre,vida_util,calibracion,frec_mantenimiento,ultimoM,proximoM,pronostico1,pronostico2,pronostico3,pronostico4,pronostico5,pronostico6,pronostico7,observaciones) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
 sqlinstertEquipo =  "INSERT INTO t_equipo (id_equipo,nombre,vida_util,frec_mantenimiento,estado_equipo,codigo_equipo,fecha_registro,fabricante,laboratorio,calibracion,valor) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
-sqlinstertInstrumento = "INSERT INTO t_instrumento (id_instrumento,nombre,tipo_instr,tipo_practica,estado_instr,cod_seguridad,fecha_registro,fabricante,valor,id_banco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
-sqlinstertMaquina = "INSERT INTO t_maquina (id_maquina,nombre,tipo_maq,tipo_practica,fecha_registro,fabricante,valor,estado_maq) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)"
 sqlinstertReparacion = "INSERT INTO t_reparacion (id_reparacion,fecha_ingreso,fecha_retorno,descripcion,id_laboratorista,id_maquina,id_instrumento) VALUES (%s,%s,%s,%s,%s,%s,%s)"
 sqlinstertProveedores = "INSERT INTO t_proveedores (id_proveedor,FechaDiligenciamiento,RazonSocial,Nit,Telefonos,Email,Direccion,Fax,Ciudad,ContactoVentas,ContactoSoporte,PDFProveedor) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+sqlinstertMantenimientosEnCurso = "INSERT INTO t_mantenimientosencurso (id,fecha_registro,fecha_retorno,observaciones,id_laboratorista,id_equipo,id_proveedor,costo) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)"
+sqlinstertMantenimientosRealizado = "INSERT INTO t_mantenimientorealizado (id,fecha_registro,fecha_retorno,observaciones,id_laboratorista,id_equipo,id_proveedor,costo) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)"
+sqlinstertNoficaciones = "INSERT INTO t_notificaciones (tipo_noti,codigo_equipo,nombre_equipo) VALUES (%s,%s,%s)"
+
+
 
 # CONSULTAR DATOS EN BASE DE DATOS
 sqlselectUsuarios = "SELECT * FROM t_usuarios WHERE user = %s"
 sqlselectLaboratorista = "SELECT * FROM t_laboratorista WHERE id_laboratorista = %s"
+
+sqlselectNoficaciones = "SELECT * FROM t_notificaciones "
+sqlselectNoficacionesCodigoEquipo = "SELECT * FROM t_notificaciones WHERE codigo_equipo = %s"
+sqlselectNoficacionesId = "SELECT * FROM tt_notificaciones WHERE id = %s"
 
 sqlselectEquipo = "SELECT * FROM t_equipo "
 sqlselectEquipoID = "SELECT * FROM t_equipo WHERE id_equipo = %s"
@@ -33,6 +40,20 @@ sqlselectPlanM = "SELECT * FROM t_planm "
 sqlselectPlanMLaboratorio = "SELECT * FROM t_planm WHERE laboratorio = %s"
 sqlselectPlanMNombre = "SELECT * FROM t_planm WHERE nombre = %s"
 sqlselectPlanMCodigo = "SELECT * FROM t_planm WHERE codigo_equipo = %s"
+
+sqlselectMantenimientosEnCurso = "SELECT * FROM t_mantenimientosencurso "
+sqlselectMantenimientosEnCursoID = "SELECT * FROM t_mantenimientosencurso WHERE id = %s"
+sqlselectMantenimientosEnCursoIDProveedor = "SELECT * FROM t_mantenimientosencurso WHERE id_proveedor = %s"
+sqlselectMantenimientosEnCursoIDLaboratorista = "SELECT * FROM t_mantenimientosencurso WHERE id_laboratorista = %s"
+sqlselectMantenimientosEnCursoIDEquipo = "SELECT * FROM t_mantenimientosencurso WHERE id_equipo = %s"
+
+sqlselectMantenimientosRealizado = "SELECT * FROM t_mantenimientorealizado "
+sqlselectMantenimientosRealizadoID = "SELECT * FROM t_mantenimientorealizado WHERE id = %s"
+sqlselectMantenimientosRealizadoIDProveedor = "SELECT * FROM t_mantenimientorealizado WHERE id_proveedor = %s"
+sqlselectMantenimientosRealizadoIDLaboratorista = "SELECT * FROM t_mantenimientorealizado WHERE id_laboratorista = %s"
+sqlselectMantenimientosRealizadoIDEquipo = "SELECT * FROM t_mantenimientorealizado WHERE id_equipo = %s"
+
+
 
 
 sqlselectInstrumento = "SELECT * FROM t_instrumento "
@@ -61,6 +82,10 @@ sqlselectProveedoresNit = "SELECT * FROM t_proveedores WHERE Nit = %s"
 
 sqlupdateEquipo = "UPDATE t_equipo SET nombre = %s,	vida_util = %s,frec_mantenimiento = %s,estado_equipo = %s,codigo_equipo = %s,fecha_registro = %s,fabricante = %s,laboratorio = %s,calibracion = %s,valor = %s WHERE id_equipo = %s"
 sqlupdatePlanM = "UPDATE t_planm SET laboratorio = %s, nombre = %s,	vida_util = %s,calibracion = %s,frec_mantenimiento = %s,ultimoM = %s, proximoM = %s, pronostico1 = %s,pronostico2 = %s,pronostico3 = %s,pronostico4 = %s,pronostico5 = %s,pronostico6 = %s,pronostico7 = %s, observaciones = %s  WHERE codigo_equipo = %s"
+sqlupdateMantenimientosEnCurso = "UPDATE t_mantenimientosencurso SET fecha_registro = %s,	fecha_retorno = %s,observaciones = %s,id_laboratorista = %s,id_equipo = %s, id_proveedor = %s, costo = %s  WHERE id = %s"
+sqlupdateMantenimientosRealizado = "UPDATE t_mantenimientorealizado SET fecha_registro = %s,	fecha_retorno = %s,observaciones = %s,id_laboratorista = %s,id_equipo = %s, id_proveedor = %s, costo = %s  WHERE id = %s"
+sqlupdateNoficaciones = "UPDATE t_notificaciones SET tipo_noti = %s, codigo_equipo=%s, nombre_equipo=%s WHERE id = %s"
+
 
 sqlupdateInstrumento = "UPDATE t_instrumento SET nombre = %s,tipo_instr = %s,tipo_practica = %s,estado_instr = %s,cod_seguridad = %s,fecha_registro = %s,fabricante = %s,valor = %s,id_banco = %s WHERE id_instrumento = %s"
 sqlupdateMaquina = "UPDATE t_maquina SET nombre = %s, tipo_maq = %s,tipo_practica = %s, fecha_registro = %s, fabricante = %s, valor = %s, estado_maq = %s WHERE id_maquina = %s"
@@ -73,6 +98,14 @@ sqlupdateProveedores = "UPDATE t_proveedores SET FechaDiligenciamiento = %s, Raz
 # ELIMINAR DATOS EN BASE DE DATOS
 sqlDeleteEquipo = "DELETE FROM t_equipo WHERE id_equipo = %s"
 sqlDeletePlanM = "DELETE FROM t_planm WHERE codigo_equipo = %s"
+sqlDeleteMantenimientosRealizado = "DELETE FROM t_mantenimientorealizado WHERE id = %s"
+sqlDeleteMantenimientosRealizadoIDEquipo = "DELETE FROM t_mantenimientorealizado WHERE id_equipo = %s"
+sqlDeleteMantenimientosRealizadoIDProveedores = "DELETE FROM t_mantenimientorealizado WHERE id_proveedor = %s"
+sqlDeleteMantenimientosEnCurso = "DELETE FROM t_mantenimientosencurso WHERE id = %s"
+sqlDeleteMantenimientosEnCursoIDEquipo = "DELETE FROM t_mantenimientosencurso WHERE id_equipo = %s"
+sqlDeleteMantenimientosEnCursoIDProveedores = "DELETE FROM t_mantenimientosencurso WHERE id_proveedor = %s"
+sqlDeleteNotificaciones = "DELETE FROM t_notificaciones WHERE id = %s"
+
 
 sqlDeleteInstrumento = "DELETE FROM t_instrumento WHERE id_instrumento = %s"
 sqlDeleteMaquina = "DELETE FROM t_maquina WHERE id_maquina = %s"
@@ -83,6 +116,36 @@ sqlDeleteProveedor = "DELETE FROM t_proveedores WHERE id_proveedor = %s"
 #val = ("45161004","126304","Miguel","Rojas","917508","321225461","Sincelejo","2000/10/15","calle walabi 4 2 sydni",)
 #mycursor.execute(sqlinstertLaboratorista,val)
 #mydb.commit()
+class Notificaciones:
+    def agregar(val):
+        mycursor.execute(sqlinstertNoficaciones, val)
+        mydb.commit()
+
+    def ConsultarTablaNotifiaciones(self):
+        mycursor.execute(sqlselectNoficaciones)
+        myresult = mycursor.fetchall()
+        return myresult
+
+    def ConsultaID(adr):
+        mycursor.execute(sqlselectNoficacionesId, adr)
+        myresult = mycursor.fetchall()
+        return myresult
+
+    def ConsultaCodigo(adr):
+        mycursor.execute(sqlselectNoficacionesCodigoEquipo, adr)
+        myresult = mycursor.fetchall()
+        return myresult
+
+    def Actualizar(val):
+        mycursor.execute(sqlupdateNoficaciones, val)
+        mydb.commit()
+        print(mycursor.rowcount, "registros afectado/s")
+
+    def Eliminar(val):
+        mycursor.execute(sqlDeleteNotificaciones, val)
+        mydb.commit()
+        print(mycursor.rowcount, "record(s) deleted")
+
 
 class Equipo:
     def agregar(val):
@@ -152,78 +215,110 @@ class PlanM:
         mycursor.execute(sqlDeletePlanM, val)
         mydb.commit()
 
-
-class Instrumento:
+class MantenimientosEnCurso:
     def agregar(val):
-        mycursor.execute(sqlinstertInstrumento, val)
+        mycursor.execute(sqlinstertMantenimientosEnCurso, val)
         mydb.commit()
 
-    def ConsultarTablaInstrumento(self):
-        mycursor.execute(sqlselectInstrumento)
+    def ConsultarTablaMantenimientosEnCurso(self):
+        mycursor.execute(sqlselectMantenimientosEnCurso)
         myresult = mycursor.fetchall()
         return myresult
 
-    def ConsultaID(adr):
-        mycursor.execute(sqlselectInstrumentoID, adr)
+    def ConsultaId(adr):
+        mycursor.execute(sqlselectMantenimientosEnCursoID, adr)
         myresult = mycursor.fetchall()
         return myresult
 
-    def ConsultaNombre(adr):
-        mycursor.execute(sqlselectInstrumentoNombre, adr)
+    def ConsultaIdLaboratorista(adr):
+        mycursor.execute(sqlselectMantenimientosEnCursoIDLaboratorista, adr)
         myresult = mycursor.fetchall()
         return myresult
 
-    def ConsultaTIpo(adr):
-        mycursor.execute(sqlselectInstrumentoTipo, adr)
+    def ConsultaIdProveedor(adr):
+        mycursor.execute(sqlselectMantenimientosEnCursoIDProveedor, adr)
+        myresult = mycursor.fetchall()
+        return myresult
+
+    def ConsultaIdEquipo(adr):
+        mycursor.execute(sqlselectMantenimientosEnCursoIDEquipo, adr)
         myresult = mycursor.fetchall()
         return myresult
 
     def Actualizar(val):
-        mycursor.execute(sqlupdateInstrumento, val)
+        mycursor.execute(sqlupdateMantenimientosEnCurso, val)
         mydb.commit()
-        print(mycursor.rowcount, "registros afectado/s")
 
     def Eliminar(val):
-        mycursor.execute(sqlDeleteInstrumento, val)
+        mycursor.execute(sqlDeleteMantenimientosEnCurso, val)
         mydb.commit()
-        print(mycursor.rowcount, "record(s) deleted")
+
+    def EliminarEquipos(val,self):
+        A = MantenimientosEnCurso.ConsultarTablaMantenimientosEnCurso(self)
+        for num in A:
+            if num[5] == val[0]:
+                mycursor.execute(sqlDeleteMantenimientosEnCursoIDEquipo, val)
+                mydb.commit()
+
+    def EliminarProveedores(val,self):
+        A = MantenimientosEnCurso.ConsultarTablaMantenimientosEnCurso(self)
+        for num in A:
+            if num[6] == val[0]:
+                mycursor.execute(sqlDeleteMantenimientosEnCursoIDProveedores, val)
+                mydb.commit()
 
 
-class Maquina:
+class MantenimientosRealizado:
     def agregar(val):
-        mycursor.execute(sqlinstertMaquina, val)
+        mycursor.execute(sqlinstertMantenimientosRealizado, val)
         mydb.commit()
 
-    def ConsultaID(adr):
-        mycursor.execute(sqlselectMaquinaID, adr)
+    def ConsultarTablaMantenimientosRealizado(self):
+        mycursor.execute(sqlselectMantenimientosRealizado)
         myresult = mycursor.fetchall()
         return myresult
 
-    def ConsultaNombre(adr):
-        mycursor.execute(sqlselectMaquinaNombre, adr)
+    def ConsultaId(adr):
+        mycursor.execute(sqlselectMantenimientosRealizadoID, adr)
         myresult = mycursor.fetchall()
         return myresult
 
-    def ConsultaTipo(adr):
-        mycursor.execute(sqlselectMaquinaTipo, adr)
+    def ConsultaIdLaboratorista(adr):
+        mycursor.execute(sqlselectMantenimientosRealizadoIDLaboratorista, adr)
         myresult = mycursor.fetchall()
         return myresult
 
-    def ConsultarTablaMaquina(self):
-        mycursor.execute(sqlselectMaquina)
+    def ConsultaIdProveedor(adr):
+        mycursor.execute(sqlselectMantenimientosRealizadoIDProveedor, adr)
+        myresult = mycursor.fetchall()
+        return myresult
+
+    def ConsultaIdEquipo(adr):
+        mycursor.execute(sqlselectMantenimientosRealizadoIDEquipo, adr)
         myresult = mycursor.fetchall()
         return myresult
 
     def Actualizar(val):
-        mycursor.execute(sqlupdateMaquina, val)
+        mycursor.execute(sqlupdateMantenimientosRealizado, val)
         mydb.commit()
-        print(mycursor.rowcount, "registros afectado/s")
 
     def Eliminar(val):
-        mycursor.execute(sqlDeleteMaquina, val)
+        mycursor.execute(sqlDeleteMantenimientosRealizado, val)
         mydb.commit()
-        print(mycursor.rowcount, "record(s) deleted")
 
+    def EliminarEquipos(val,self):
+        A = MantenimientosRealizado.ConsultarTablaMantenimientosRealizado(self)
+        for num in A:
+            if num[5] == val:
+                mycursor.execute(sqlDeleteMantenimientosRealizadoIDEquipo, val)
+                mydb.commit()
+
+    def EliminarProveedores(val,self):
+        A = MantenimientosRealizado.ConsultarTablaMantenimientosRealizado(self)
+        for num in A:
+            if num[6] == val:
+                mycursor.execute(sqlDeleteMantenimientosRealizadoIDEquipo, val)
+                mydb.commit()
 
 class Reparacion:
     def agregar(val):
@@ -262,8 +357,6 @@ class Proveedores:
     def agregar(val):
         mycursor.execute(sqlinstertProveedores,val)
         mydb.commit()
-
-
 
     def ConsultaID(adr):
         mycursor.execute(sqlselectProveedoresID, adr)
@@ -358,28 +451,23 @@ class metodos:
         self.TConsultaInstrumento.setSelectionMode(QAbstractItemView.SingleSelection)
 
 
-    """def LoadDataTabla2(self):
-        data = Maquina.ConsultarTablaMaquina(self)
+    def LoadDataTablaNotificaciones(self):
+        data = Notificaciones.ConsultarTablaNotifiaciones(self)
         fila = 0
-        self.TMaquina.setRowCount(len(data))
+        self.TNotifi.setRowCount(len(data))
         # self.tableWidget.setColumnCount(9)
         for num in data:
-            fecha = "{}".format(num[4])
-            valor = "$ {}".format(num[6])
-            self.TMaquina.setItem(fila, 0, QTableWidgetItem(num[0]))
-            self.TMaquina.setItem(fila, 1, QTableWidgetItem(num[1]))
-            self.TMaquina.setItem(fila, 2, QTableWidgetItem(num[2]))
-            self.TMaquina.setItem(fila, 3, QTableWidgetItem(num[3]))
-            self.TMaquina.setItem(fila, 4, QTableWidgetItem(fecha))
-            self.TMaquina.setItem(fila, 5, QTableWidgetItem(num[5]))
-            self.TMaquina.setItem(fila, 6, QTableWidgetItem(valor))
-            self.TMaquina.setItem(fila, 7, QTableWidgetItem(num[7]))
+            Estatus = num[1]
+            codigoEquipo = num[2]
+            nombre = num[3]
+            salida = f"Estatus: {Estatus} Codigo Del Equipo:{codigoEquipo}  Mensaje: Enviar el {nombre} a Mantenimiento Correctivo"
+            self.TNotifi.setItem(fila, 0, QTableWidgetItem(salida))
             fila += 1
-        self.TMaquina.setEditTriggers(QAbstractItemView.NoEditTriggers)
-        self.TMaquina.setSelectionMode(QAbstractItemView.SingleSelection)"""
+        self.TNotifi.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.TNotifi.setSelectionMode(QAbstractItemView.SingleSelection)
 
 
-    def ConsultaDataTabla2(self,val,aux):
+    """def ConsultaDataTabla2(self,val,aux):
         if aux in "ID":
             data = Maquina.ConsultaID(val)
         if aux in "NOMBRE":
@@ -404,59 +492,83 @@ class metodos:
             fila += 1
         self.TConsultaMaquina.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.TConsultaMaquina.setSelectionMode(QAbstractItemView.SingleSelection)
-
+"""
 
     def LoadDataTabla3(self):
-        data = Reparacion.ConsultarTablaReparacion(self)
+        data = MantenimientosEnCurso.ConsultarTablaMantenimientosEnCurso(self)
         fila = 0
-        self.TInstrumentoReparacion.setRowCount(len(data))
+        self.TMantenimientosEnCurso.setRowCount(len(data))
         # self.tableWidget.setColumnCount(9)
         for num in data:
             aux = "{}".format(num[0])
             fecha1 = "{}".format(num[1])
             fecha2 = "{}".format(num[2])
-            self.TInstrumentoReparacion.setItem(fila, 0, QTableWidgetItem(aux))
-            self.TInstrumentoReparacion.setItem(fila, 1, QTableWidgetItem(fecha1))
-            self.TInstrumentoReparacion.setItem(fila, 2, QTableWidgetItem(fecha2))
-            self.TInstrumentoReparacion.setItem(fila, 3, QTableWidgetItem(num[3]))
-            self.TInstrumentoReparacion.setItem(fila, 4, QTableWidgetItem(num[4]))
-            self.TInstrumentoReparacion.setItem(fila, 5, QTableWidgetItem(num[5]))
-            self.TInstrumentoReparacion.setItem(fila, 6, QTableWidgetItem(num[6]))
+            self.TMantenimientosEnCurso.setItem(fila, 0, QTableWidgetItem(aux))
+            self.TMantenimientosEnCurso.setItem(fila, 1, QTableWidgetItem(fecha1))
+            self.TMantenimientosEnCurso.setItem(fila, 2, QTableWidgetItem(fecha2))
+            self.TMantenimientosEnCurso.setItem(fila, 3, QTableWidgetItem(num[3]))
+            self.TMantenimientosEnCurso.setItem(fila, 4, QTableWidgetItem(num[4]))
+            self.TMantenimientosEnCurso.setItem(fila, 5, QTableWidgetItem(num[5]))
+            self.TMantenimientosEnCurso.setItem(fila, 6, QTableWidgetItem(num[6]))
+            self.TMantenimientosEnCurso.setItem(fila, 7, QTableWidgetItem(num[7]))
             fila += 1
-        self.TInstrumentoReparacion.setEditTriggers(QAbstractItemView.NoEditTriggers)
-        self.TInstrumentoReparacion.setSelectionMode(QAbstractItemView.SingleSelection)
+        self.TMantenimientosEnCurso.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.TMantenimientosEnCurso.setSelectionMode(QAbstractItemView.SingleSelection)
+
+    def LoadDataTablaMantenimientosRealizados(self):
+        data = MantenimientosRealizado.ConsultarTablaMantenimientosRealizado(self)
+        fila = 0
+        self.TManteniR.setRowCount(len(data))
+        # self.tableWidget.setColumnCount(9)
+        for num in data:
+            aux = "{}".format(num[0])
+            fecha1 = "{}".format(num[1])
+            fecha2 = "{}".format(num[2])
+            self.TManteniR.setItem(fila, 0, QTableWidgetItem(aux))
+            self.TManteniR.setItem(fila, 1, QTableWidgetItem(fecha1))
+            self.TManteniR.setItem(fila, 2, QTableWidgetItem(fecha2))
+            self.TManteniR.setItem(fila, 3, QTableWidgetItem(num[3]))
+            self.TManteniR.setItem(fila, 4, QTableWidgetItem(num[4]))
+            self.TManteniR.setItem(fila, 5, QTableWidgetItem(num[5]))
+            self.TManteniR.setItem(fila, 6, QTableWidgetItem(num[6]))
+            self.TManteniR.setItem(fila, 7, QTableWidgetItem(num[7]))
+            fila += 1
+        self.TManteniR.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.TManteniR.setSelectionMode(QAbstractItemView.SingleSelection)
+
 
 
     def ConsultaDataTabla3(self,val,aux):
         if aux in "ID":
-            aux1 = Reparacion.ConsultaID(val)
-        if aux in "ID LABORATORISTA":
-            aux2 = Reparacion.ConsultaIDInstrumento(val)
-        if aux in "ID MAQUINA":
-            aux3 = Reparacion.ConsultaIDMaquina(val)
-            if aux1 != 0:
-                data = aux1
-            elif aux2 !=0:
-                data = aux2
-            elif aux3 != 0:
-                data = aux
+            data = MantenimientosEnCurso.ConsultaId(val)
+        if aux in "LABORATORISTA":
+            data = MantenimientosEnCurso.ConsultaIdLaboratorista(val)
+
+        if aux in "EQUIPO":
+            data = MantenimientosEnCurso.ConsultaIdEquipo(val)
+
+        if aux in "PROVEEDOR":
+            data = MantenimientosEnCurso.ConsultaIdProveedor(val)
+
         fila = 0
-        self.TConsultaInstrumentoReparacion.setRowCount(len(data))
+        print(len(data))
+        self.TConsultaMantenimientos1.setRowCount(len(data))
         # self.tableWidget.setColumnCount(9)
         for num in data:
             aux = "{}".format(num[0])
             fecha1 = "{}".format(num[1])
             fecha2 = "$ {}".format(num[2])
-            self.TConsultaInstrumentoReparacion.setItem(fila, 0, QTableWidgetItem(aux))
-            self.TConsultaInstrumentoReparacion.setItem(fila, 1, QTableWidgetItem(fecha1))
-            self.TConsultaInstrumentoReparacion.setItem(fila, 2, QTableWidgetItem(fecha2))
-            self.TConsultaInstrumentoReparacion.setItem(fila, 3, QTableWidgetItem(num[3]))
-            self.TConsultaInstrumentoReparacion.setItem(fila, 4, QTableWidgetItem(num[4]))
-            self.TConsultaInstrumentoReparacion.setItem(fila, 5, QTableWidgetItem(num[5]))
-            self.TConsultaInstrumentoReparacion.setItem(fila, 6, QTableWidgetItem(num[6]))
+            self.TConsultaMantenimientos1.setItem(fila, 0, QTableWidgetItem(aux))
+            self.TConsultaMantenimientos1.setItem(fila, 1, QTableWidgetItem(fecha1))
+            self.TConsultaMantenimientos1.setItem(fila, 2, QTableWidgetItem(fecha2))
+            self.TConsultaMantenimientos1.setItem(fila, 3, QTableWidgetItem(num[3]))
+            self.TConsultaMantenimientos1.setItem(fila, 4, QTableWidgetItem(num[4]))
+            self.TConsultaMantenimientos1.setItem(fila, 5, QTableWidgetItem(num[5]))
+            self.TConsultaMantenimientos1.setItem(fila, 6, QTableWidgetItem(num[6]))
+            self.TConsultaMantenimientos1.setItem(fila, 7, QTableWidgetItem(num[7]))
             fila += 1
-        self.TConsultaInstrumentoReparacion.setEditTriggers(QAbstractItemView.NoEditTriggers)
-        self.TConsultaInstrumentoReparacion.setSelectionMode(QAbstractItemView.SingleSelection)
+        self.TConsultaMantenimientos1.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.TConsultaMantenimientos1.setSelectionMode(QAbstractItemView.SingleSelection)
 
 
     def LoadDataTablaProveedores(self):
